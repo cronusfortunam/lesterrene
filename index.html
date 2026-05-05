@@ -27,7 +27,8 @@ a{color:inherit;text-decoration:none;}
 #ring{width:36px;height:36px;border:1px solid rgba(255,255,255,0.35);z-index:9998;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.15rem 3.5rem;background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.08) 42%,rgba(0,0,0,.035) 76%,rgba(0,0,0,0) 100%);border-bottom:0;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.15rem 3.5rem;background:transparent;border-bottom:0;}
+nav::before{content:"";position:absolute;left:0;right:0;top:0;height:8rem;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.12) 0%,rgba(0,0,0,.07) 34%,rgba(0,0,0,.025) 68%,rgba(0,0,0,0) 100%);}
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;color:var(--white);}
 .nav-links{display:flex;gap:2.5rem;}
 .nav-links a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,237,232,.68);transition:color .2s;}
