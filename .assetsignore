@@ -1,0 +1,7 @@
+.git
+.DS_Store
+__MACOSX
+README.md
+wrangler.jsonc
+.assetsignore
+*.zip
