@@ -654,6 +654,24 @@ const translations = {
 };
 
 let currentLang = 'en';
+const langOrder = ['en', 'es', 'de', 'it'];
+
+function reorderLangButtons(lang) {
+  const sel = document.querySelector('.lang-sel');
+  if(!sel) return;
+  const buttons = Object.fromEntries(Array.from(sel.querySelectorAll('.lang-btn')).map(btn => [btn.dataset.lang, btn]));
+  const ordered = [lang, ...langOrder.filter(code => code !== lang)];
+  sel.innerHTML = '';
+  ordered.forEach((code, idx) => {
+    if(idx) {
+      const sep = document.createElement('span');
+      sep.className = 'lang-sep';
+      sep.textContent = '·';
+      sel.appendChild(sep);
+    }
+    if(buttons[code]) sel.appendChild(buttons[code]);
+  });
+}
 
 function applyLang(lang) {
   currentLang = lang;
@@ -682,6 +700,7 @@ function applyLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
+  reorderLangButtons(lang);
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
