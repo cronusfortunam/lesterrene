@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lester René — Choreographer</title>
 <style>html,body{background:#000;}</style>
+<script>document.documentElement.classList.add('hero-type-loading');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/img_3540.jpeg" fetchpriority="high">
@@ -46,7 +47,9 @@ nav.scrolled{padding:1rem 3.5rem;background:rgba(0,0,0,.72);border-bottom-color:
 .hero-bg img.hero-vertical{object-position:center 18%;}
 .hero-bg img.active{opacity:.78;}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 48%,rgba(0,0,0,.12) 78%,rgba(0,0,0,.28) 100%);pointer-events:none;}
-.hero-c{position:relative;z-index:2;}
+.hero-c{position:relative;z-index:2;transition:opacity .65s ease,transform .65s ease;}
+html.hero-type-loading .hero-c{opacity:0;transform:translateY(10px);}
+html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-tag{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
 .hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,14rem);line-height:.88;letter-spacing:.02em;color:var(--white);margin-bottom:2.5rem;}
 .hero-ital{font-family:'DM Serif Display',serif;font-style:italic;font-size:.82em;letter-spacing:0;display:block;}
@@ -840,6 +843,19 @@ applyLang = function(lang) {
   heroQuoteIdx = 0;
   startHeroQuotes(lang);
 };
+
+(function(){
+  const showHeroType = () => {
+    document.documentElement.classList.remove('hero-type-loading');
+    document.documentElement.classList.add('hero-type-ready');
+  };
+  if(document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(showHeroType);
+    setTimeout(showHeroType, 900);
+  } else {
+    showHeroType();
+  }
+})();
 
 </script>
 </body>
