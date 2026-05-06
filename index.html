@@ -38,6 +38,7 @@ nav.scrolled{padding:1rem 3.5rem;background:rgba(0,0,0,.72);border-bottom-color:
 #hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 4rem;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:#000;}
 .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease-in-out;will-change:opacity;}
+.hero-bg img.hero-top-safe{object-position:center 22%;}
 .hero-bg img.active{opacity:.5;}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.1) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.8) 100%);pointer-events:none;}
 .hero-c{position:relative;z-index:2;}
@@ -225,7 +226,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 <!-- HERO: cycling background images -->
 <section id="hero">
   <div class="hero-bg" id="hero-bg">
-    <img src="images/eleonora-lester-4.jpg" alt="Lester René" class="active">
+    <img src="images/eleonora-lester-4.jpg" alt="Lester René" class="active hero-top-safe">
     <img data-src="images/hero-lighthouse.jpg" alt="From the Lighthouse">
     <img data-src="images/hero-quantum-leap.jpg" alt="Quantum Leap">
     <img data-src="images/hero-saturn.jpg" alt="Saturn Return">
