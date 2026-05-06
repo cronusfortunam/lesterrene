@@ -38,7 +38,7 @@ nav.scrolled{padding:1rem 3.5rem;background:rgba(0,0,0,.72);border-bottom-color:
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;color:var(--white);}
 .nav-links{display:flex;gap:2.5rem;}
 .nav-links a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,237,232,.5);transition:color .2s;}
-.nav-links a:hover{color:var(--white);}
+.nav-links a:hover,.nav-links a.active{color:var(--white);}
 
 /* HERO */
 #hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 4rem;position:relative;overflow:hidden;}
@@ -179,23 +179,25 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
     display:grid;
     grid-template-columns:1fr auto;
     align-items:center;
-    row-gap:.85rem;
-    padding:1.05rem 1.25rem;
+    column-gap:.9rem;
+    padding:.82rem 1.25rem;
+    background:rgba(0,0,0,.54);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
   }
-  .nav-logo{font-size:1.25rem;letter-spacing:.12em;}
+  .nav-logo{display:none;}
   .lang-sel{justify-self:end;gap:.38rem;}
   .lang-btn{font-size:.58rem;letter-spacing:.12em;}
   .nav-links{
-    grid-column:1/-1;
+    grid-column:1;
     width:100%;
-    justify-content:space-between;
-    gap:.75rem;
+    justify-content:flex-start;
+    gap:clamp(.72rem,3.2vw,1.12rem);
+    min-width:0;
   }
-  .nav-links a{font-size:.62rem;letter-spacing:.16em;}
+  .nav-links a{font-size:clamp(.55rem,2.35vw,.62rem);letter-spacing:.12em;}
 
-  /* Mobile: once scrolling starts, hide logo and keep everything on one row */
-  nav.scrolled{row-gap:0;padding:.72rem 1.25rem;background:rgba(0,0,0,.64);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
-  nav.scrolled .nav-logo{display:none;}
+  nav.scrolled{padding:.72rem 1.25rem;background:rgba(0,0,0,.64);}
   nav.scrolled .nav-links{grid-column:1;justify-content:flex-start;gap:1.1rem;}
   nav.scrolled .lang-sel{grid-column:2;justify-self:end;}
   .hero-bot{align-items:flex-start;gap:1.5rem;}
@@ -524,10 +526,34 @@ if(window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
 
 // Compact header after hero
 const navEl=document.querySelector('nav');
+const navSectionLinks=Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+const navSections=navSectionLinks
+  .map(link => ({link, section: document.querySelector(link.getAttribute('href'))}))
+  .filter(item => item.section);
 let navTicking=false;
+function updateActiveNav(){
+  const marker=window.innerHeight * .42;
+  let active=null;
+  let closest=Infinity;
+  navSections.forEach(item => {
+    const rect=item.section.getBoundingClientRect();
+    if(rect.top <= marker && rect.bottom > marker) {
+      active=item;
+    } else {
+      const distance=Math.abs(rect.top-marker);
+      if(!active && distance < closest) {
+        closest=distance;
+        active=item;
+      }
+    }
+  });
+  if(navSections[0] && navSections[0].section.getBoundingClientRect().top > marker) active=null;
+  navSectionLinks.forEach(link => link.classList.toggle('active', active && link === active.link));
+}
 function updateNavState(){
   const mobileNav = window.matchMedia('(max-width:900px)').matches;
   navEl.classList.toggle('scrolled', window.scrollY > (mobileNav ? 12 : window.innerHeight * .72));
+  updateActiveNav();
 }
 updateNavState();
 window.addEventListener('scroll',()=>{
@@ -538,6 +564,8 @@ window.addEventListener('scroll',()=>{
     navTicking=false;
   });
 },{passive:true});
+window.addEventListener('load',()=>setTimeout(updateNavState,120));
+window.addEventListener('hashchange',()=>setTimeout(updateNavState,120));
 
 // Reveal on scroll
 const io=new IntersectionObserver(es=>{
