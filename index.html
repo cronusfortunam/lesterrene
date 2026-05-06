@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lester René — Choreographer</title>
 <style>html,body{background:#000;}</style>
-<script>document.documentElement.classList.add('hero-type-loading');</script>
+<script>document.documentElement.classList.add('hero-type-loading','hero-image-loading');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/img_3540.jpeg" fetchpriority="high">
@@ -46,8 +46,10 @@ nav.scrolled{padding:1rem 3.5rem;background:rgba(0,0,0,.72);border-bottom-color:
 .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.6s ease-in-out;will-change:opacity;}
 .hero-bg img.hero-vertical{object-position:center 18%;}
 .hero-bg img.active{opacity:.78;}
+html.hero-image-loading .hero-bg img.active{opacity:0;}
+html.hero-image-ready .hero-bg img.active{opacity:.78;}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 48%,rgba(0,0,0,.12) 78%,rgba(0,0,0,.28) 100%);pointer-events:none;}
-.hero-c{position:relative;z-index:2;transition:opacity 1.2s ease,transform 1.2s ease;}
+.hero-c{position:relative;z-index:2;transition:opacity 1.8s ease,transform 1.8s ease;}
 html.hero-type-loading .hero-c{opacity:0;transform:translateY(16px);}
 html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-tag{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
@@ -845,6 +847,18 @@ applyLang = function(lang) {
 };
 
 (function(){
+  const showHeroImage = () => {
+    document.documentElement.classList.remove('hero-image-loading');
+    document.documentElement.classList.add('hero-image-ready');
+  };
+  const firstHeroImage = document.querySelector('.hero-bg img.active');
+  if(firstHeroImage && firstHeroImage.decode) {
+    firstHeroImage.decode().then(showHeroImage).catch(showHeroImage);
+    setTimeout(showHeroImage, 650);
+  } else {
+    showHeroImage();
+  }
+
   const showHeroType = () => {
     document.documentElement.classList.remove('hero-type-loading');
     document.documentElement.classList.add('hero-type-ready');
