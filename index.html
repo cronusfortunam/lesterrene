@@ -153,6 +153,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .cb-role{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.28);margin-bottom:.55rem;}
 .cb-note{font-size:.88rem;line-height:1.75;color:rgba(240,237,232,.52);max-width:620px;}
 .cb-link{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(240,237,232,.35);white-space:nowrap;transition:color .2s;}
+.cb-link::after,.m-yt::after{content:"";display:inline-block;width:.42rem;height:.42rem;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-.05rem) rotate(45deg);margin-left:.45rem;}
 .cb-link:hover{color:var(--white);}
 
 /* PRESS */
@@ -452,7 +453,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
         <div class="cb-role" data-i18n="collab_ele_role">Life partner · central creative collaborator</div>
         <p class="cb-note" data-i18n="collab_ele_note">A foundational presence in Lester René's artistic and personal path: co-creator, choreographic assistant, costume designer and a key performer across his works.</p>
       </div>
-      <a class="cb-link" href="https://staatstheater.de/das-theater/leitung-teams/gaeste/eleonora-fabrizi" target="_blank" rel="noopener">Bio ↗</a>
+      <a class="cb-link" href="https://staatstheater.de/das-theater/leitung-teams/gaeste/eleonora-fabrizi" target="_blank" rel="noopener">Bio</a>
     </div>
     <div class="cb-item rv">
       <div class="cb-name">Johann<br>Pätzold</div>
@@ -460,7 +461,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
         <div class="cb-role" data-i18n="collab_johann_role">Composer · emotional architecture</div>
         <p class="cb-note" data-i18n="collab_johann_note">Another pillar in Lester René's career, helping guide the emotions he wants audiences and dancers to feel through music. A collaborator since 2017, he has composed original scores for most of his works.</p>
       </div>
-      <a class="cb-link" href="https://secretofelements.com/" target="_blank" rel="noopener">Website ↗</a>
+      <a class="cb-link" href="https://secretofelements.com/" target="_blank" rel="noopener">Website</a>
     </div>
     <div class="cb-item rv">
       <div class="cb-name">Anastasia<br>Cordes</div>
@@ -468,7 +469,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
         <div class="cb-role" data-i18n="collab_nastasia_role">Costume designer</div>
         <p class="cb-note" data-i18n="collab_nastasia_note">Designed the costumes for Lester René's first choreographic work, helping define the visual identity of that debut piece.</p>
       </div>
-      <a class="cb-link" href="https://lotikova.com/" target="_blank" rel="noopener">Website ↗</a>
+      <a class="cb-link" href="https://lotikova.com/" target="_blank" rel="noopener">Website</a>
     </div>
   </div>
 </section>
@@ -527,7 +528,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
         <div class="m-title" id="mtitle"></div>
         <div class="m-sub" id="msub"></div>
       </div>
-      <a class="m-yt" id="m-yt" href="#" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+      <a class="m-yt" id="m-yt" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
     </div>
   </div>
 </div>
@@ -727,7 +728,7 @@ const translations = {
     press_title: 'Press', press_sub: 'Selected reviews',
     contact_sub: 'Available for choreographic commissions, collaborations and residencies. Germany and internationally.',
     watch_trailer: 'Watch trailer',
-    close: 'Close', watch_yt: 'Watch on YouTube ↗',
+    close: 'Close', watch_yt: 'Watch on YouTube',
     scroll: 'Scroll',
     footer_choreo: 'Choreographer · Oldenburg',
     press_q1: 'Very fresh. Very surprising. Essential viewing.',
@@ -761,7 +762,7 @@ const translations = {
     press_title: 'Prensa', press_sub: 'Críticas seleccionadas',
     contact_sub: 'Disponible para encargos coreográficos, colaboraciones y residencias. Alemania e internacional.',
     watch_trailer: 'Ver tráiler',
-    close: 'Cerrar', watch_yt: 'Ver en YouTube ↗',
+    close: 'Cerrar', watch_yt: 'Ver en YouTube',
     scroll: 'Scroll',
     footer_choreo: 'Coreógrafo · Oldenburg',
     press_q1: 'Muy fresco. Muy sorprendente. Imprescindible.',
@@ -795,7 +796,7 @@ const translations = {
     press_title: 'Presse', press_sub: 'Ausgewählte Kritiken',
     contact_sub: 'Verfügbar für choreografische Aufträge, Kollaborationen und Residenzen. Deutschland und international.',
     watch_trailer: 'Trailer ansehen',
-    close: 'Schließen', watch_yt: 'Auf YouTube ansehen ↗',
+    close: 'Schließen', watch_yt: 'Auf YouTube ansehen',
     scroll: 'Scroll',
     footer_choreo: 'Choreograf · Oldenburg',
     press_q1: 'Sehr frisch. Sehr überraschend. Unbedingt sehenswert.',
@@ -829,7 +830,7 @@ const translations = {
     press_title: 'Stampa', press_sub: 'Recensioni selezionate',
     contact_sub: 'Disponibile per commissioni coreografiche, collaborazioni e residenze. Germania e internazionale.',
     watch_trailer: 'Guarda il trailer',
-    close: 'Chiudi', watch_yt: 'Guarda su YouTube ↗',
+    close: 'Chiudi', watch_yt: 'Guarda su YouTube',
     scroll: 'Scorri',
     footer_choreo: 'Coreografo · Oldenburg',
     press_q1: 'Molto fresco. Molto sorprendente. Assolutamente da vedere.',
