@@ -140,6 +140,21 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .d-row span:first-child{color:rgba(240,237,232,.55);}
 .d-row span:last-child{font-size:.7rem;color:rgba(240,237,232,.22);letter-spacing:.05em;}
 
+/* COLLABORATORS */
+#collaborators{padding:8rem 3.5rem;border-top:1px solid var(--line);}
+.cb-head{display:grid;grid-template-columns:1fr minmax(260px,420px);gap:5rem;align-items:end;margin-bottom:4rem;}
+.cb-k{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;}
+.cb-head h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,7rem);line-height:.88;letter-spacing:.02em;}
+.cb-head h2 em{font-family:'DM Serif Display',serif;font-size:.88em;font-style:italic;display:block;}
+.cb-intro{font-size:.9rem;color:rgba(240,237,232,.48);line-height:1.85;}
+.cb-list{border-top:1px solid var(--line);}
+.cb-item{display:grid;grid-template-columns:minmax(220px,32vw) 1fr auto;gap:2rem;align-items:baseline;padding:1.35rem 0;border-bottom:1px solid var(--line);}
+.cb-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:.92;letter-spacing:.03em;color:var(--white);}
+.cb-role{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.28);margin-bottom:.55rem;}
+.cb-note{font-size:.88rem;line-height:1.75;color:rgba(240,237,232,.52);max-width:620px;}
+.cb-link{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(240,237,232,.35);white-space:nowrap;transition:color .2s;}
+.cb-link:hover{color:var(--white);}
+
 /* PRESS */
 #press{padding:8rem 3.5rem;border-top:1px solid var(--line);}
 .ph{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4rem;}
@@ -172,7 +187,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 .rl{opacity:0;transform:translateX(-24px);transition:opacity .85s ease,transform .85s ease;}
 .rl.in{opacity:1;transform:none;}
 
-.work,#about,#press,#contact{content-visibility:auto;contain-intrinsic-size:800px;}
+.work,#about,#collaborators,#press,#contact{content-visibility:auto;contain-intrinsic-size:800px;}
 
 @media(max-width:900px){
   html{scroll-behavior:auto;}
@@ -231,6 +246,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
   .rv,.rl{transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;}
   .rl.in,.rv.in{transform:none;}
   #about,#contact{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
+  #collaborators{padding:5rem 1.5rem;}
+  .cb-head{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem;}
+  .cb-item{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0;}
+  .cb-link{width:fit-content;}
   #press{padding:5rem 1.5rem;}
   .pg{grid-template-columns:1fr;}
   footer{flex-direction:column;gap:.4rem;}
@@ -413,6 +432,43 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
       <div class="d-row"><span>Festival Internacional de Benicasim</span><span></span></div>
       <div class="d-row"><span>5th TanzGala, Graz</span><span></span></div>
       <div class="d-row"><span>Ballettgala Kiel · Benefiz Galas</span><span>DE</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLABORATORS -->
+<section id="collaborators">
+  <div class="cb-head rv">
+    <div>
+      <div class="cb-k" data-i18n="collab_label">Collaborators</div>
+      <h2>Creative<br><em>constellations</em></h2>
+    </div>
+    <p class="cb-intro" data-i18n="collab_intro">A small circle of artists whose presence, sound and visual worlds have shaped key works across the years.</p>
+  </div>
+  <div class="cb-list">
+    <div class="cb-item rv">
+      <div class="cb-name">Eleonora<br>Fabrizi</div>
+      <div>
+        <div class="cb-role" data-i18n="collab_ele_role">Dancer · choreographic partner</div>
+        <p class="cb-note" data-i18n="collab_ele_note">Freelance dancer and co-creator of Casita, a dance-theatre work developed and performed with Lester René at theater hof/19.</p>
+      </div>
+      <a class="cb-link" href="https://www.theaterhof19.de/das-haus/team" target="_blank" rel="noopener">Bio ↗</a>
+    </div>
+    <div class="cb-item rv">
+      <div class="cb-name">Johann<br>Pätzold</div>
+      <div>
+        <div class="cb-role" data-i18n="collab_johann_role">Composer · sound artist</div>
+        <p class="cb-note" data-i18n="collab_johann_note">Long-term collaborator since 2017, building musical and atmospheric worlds for works including From the Lighthouse and Saturn Return.</p>
+      </div>
+      <a class="cb-link" href="https://secretofelements.com/" target="_blank" rel="noopener">Website ↗</a>
+    </div>
+    <div class="cb-item rv">
+      <div class="cb-name">Nastasia<br>Cordes</div>
+      <div>
+        <div class="cb-role" data-i18n="collab_nastasia_role">Costume designer</div>
+        <p class="cb-note" data-i18n="collab_nastasia_note">Designed the costumes for Lester René's first choreographic work, helping define the visual identity of that debut piece.</p>
+      </div>
+      <a class="cb-link" href="https://lotikova.com/" target="_blank" rel="noopener">Website ↗</a>
     </div>
   </div>
 </section>
@@ -660,6 +716,14 @@ const translations = {
     works_title: 'Selected Works',
 
     about_label: 'Biography',
+    collab_label: 'Collaborators',
+    collab_intro: 'A small circle of artists whose presence, sound and visual worlds have shaped key works across the years.',
+    collab_ele_role: 'Dancer · choreographic partner',
+    collab_ele_note: 'Freelance dancer and co-creator of Casita, a dance-theatre work developed and performed with Lester René at theater hof/19.',
+    collab_johann_role: 'Composer · sound artist',
+    collab_johann_note: 'Long-term collaborator since 2017, building musical and atmospheric worlds for works including From the Lighthouse and Saturn Return.',
+    collab_nastasia_role: 'Costume designer',
+    collab_nastasia_note: "Designed the costumes for Lester René's first choreographic work, helping define the visual identity of that debut piece.",
     press_title: 'Press', press_sub: 'Selected reviews',
     contact_sub: 'Available for choreographic commissions, collaborations and residencies. Germany and internationally.',
     watch_trailer: 'Watch trailer',
@@ -686,6 +750,14 @@ const translations = {
     works_title: 'Obras seleccionadas',
 
     about_label: 'Biografía',
+    collab_label: 'Colaboradores',
+    collab_intro: 'Un pequeño círculo de artistas cuya presencia, sonido e imaginario visual han marcado obras clave a lo largo de los años.',
+    collab_ele_role: 'Bailarina · colaboradora coreográfica',
+    collab_ele_note: 'Bailarina freelance y cocreadora de Casita, una pieza de danza-teatro desarrollada e interpretada con Lester René en theater hof/19.',
+    collab_johann_role: 'Compositor · artista sonoro',
+    collab_johann_note: 'Colaborador cercano desde 2017, creando mundos musicales y atmosféricos para obras como From the Lighthouse y Saturn Return.',
+    collab_nastasia_role: 'Diseñadora de vestuario',
+    collab_nastasia_note: 'Diseñó el vestuario de la primera obra coreográfica de Lester René, ayudando a definir la identidad visual de esa pieza debut.',
     press_title: 'Prensa', press_sub: 'Críticas seleccionadas',
     contact_sub: 'Disponible para encargos coreográficos, colaboraciones y residencias. Alemania e internacional.',
     watch_trailer: 'Ver tráiler',
@@ -712,6 +784,14 @@ const translations = {
     works_title: 'Ausgewählte Werke',
 
     about_label: 'Biografie',
+    collab_label: 'Kollaborationen',
+    collab_intro: 'Ein kleiner Kreis von Künstlerinnen und Künstlern, deren Präsenz, Klang und visuelle Welten zentrale Arbeiten geprägt haben.',
+    collab_ele_role: 'Tänzerin · choreografische Partnerin',
+    collab_ele_note: 'Freie Tänzerin und Ko-Kreateurin von Casita, einem Tanztheaterstück, das mit Lester René am theater hof/19 entwickelt und aufgeführt wurde.',
+    collab_johann_role: 'Komponist · Soundkünstler',
+    collab_johann_note: 'Langjähriger Kollaborateur seit 2017, der musikalische und atmosphärische Welten für Arbeiten wie From the Lighthouse und Saturn Return entwickelt.',
+    collab_nastasia_role: 'Kostümdesignerin',
+    collab_nastasia_note: 'Entwarf die Kostüme für Lester Renés erste choreografische Arbeit und prägte damit die visuelle Identität dieses Debüts.',
     press_title: 'Presse', press_sub: 'Ausgewählte Kritiken',
     contact_sub: 'Verfügbar für choreografische Aufträge, Kollaborationen und Residenzen. Deutschland und international.',
     watch_trailer: 'Trailer ansehen',
@@ -738,6 +818,14 @@ const translations = {
     works_title: 'Opere selezionate',
 
     about_label: 'Biografia',
+    collab_label: 'Collaboratori',
+    collab_intro: 'Un piccolo cerchio di artisti la cui presenza, il suono e l’immaginario visivo hanno segnato lavori chiave negli anni.',
+    collab_ele_role: 'Danzatrice · partner coreografica',
+    collab_ele_note: 'Danzatrice freelance e co-creatrice di Casita, un lavoro di danza-teatro sviluppato e interpretato con Lester René al theater hof/19.',
+    collab_johann_role: 'Compositore · artista sonoro',
+    collab_johann_note: 'Collaboratore di lungo corso dal 2017, crea mondi musicali e atmosferici per lavori come From the Lighthouse e Saturn Return.',
+    collab_nastasia_role: 'Costumista',
+    collab_nastasia_note: 'Ha disegnato i costumi per la prima opera coreografica di Lester René, contribuendo a definirne l’identità visiva.',
     press_title: 'Stampa', press_sub: 'Recensioni selezionate',
     contact_sub: 'Disponibile per commissioni coreografiche, collaborazioni e residenze. Germania e internazionale.',
     watch_trailer: 'Guarda il trailer',
