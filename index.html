@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lester René — Choreographer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -23,7 +25,7 @@ button,a,.work{touch-action:manipulation;-webkit-tap-highlight-color:transparent
 
 
 /* CURSOR */
-#cur,#ring{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cur,#ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate3d(-120px,-120px,0);mix-blend-mode:difference;will-change:transform;}
 #cur{width:8px;height:8px;background:#fff;}
 #ring{width:36px;height:36px;border:1px solid rgba(255,255,255,0.35);z-index:9998;}
 
@@ -83,7 +85,7 @@ nav.scrolled{padding:1rem 3.5rem;background:rgba(0,0,0,.72);border-bottom-color:
 
 .work{display:grid;grid-template-columns:1fr 1fr;min-height:72vh;border-top:1px solid var(--line);overflow:hidden;cursor:pointer;position:relative;text-decoration:none;color:inherit;}
 .work-th{position:relative;overflow:hidden;background:#111;}
-.work-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s ease;}
+.work-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .55s ease;}
 .work:hover .work-bg{transform:scale(1.04);}
 .work-th-ov{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,#000);pointer-events:none;}
 .work-in{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem;position:relative;z-index:1;}
@@ -242,7 +244,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 <!-- HERO: cycling background images -->
 <section id="hero">
   <div class="hero-bg" id="hero-bg">
-    <img src="images/img_3540.jpeg" alt="Saturn Return" class="active">
+    <img src="images/img_3540.jpeg" alt="Saturn Return" class="active" decoding="async" fetchpriority="high">
     <img data-src="images/eleonora-lester-4.jpg" alt="Lester René" class="hero-vertical">
     <img data-src="images/hero-lighthouse.jpg" alt="From the Lighthouse">
     <img data-src="images/hero-quantum-leap.jpg" alt="Quantum Leap" class="hero-vertical">
@@ -289,7 +291,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 
   <div class="work" data-vid="pzR0bAEY5iQ" data-title="Shockheaded Peter" data-sub="Staatstheater Oldenburg · 2026">
     <div class="work-th">
-      <div class="work-bg" style="background-image:url('images/thumbnail shockheaded Peter.jpg')"></div>
+      <div class="work-bg" data-bg="images/thumbnail shockheaded Peter.jpg"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
@@ -303,7 +305,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 
   <div class="work alt" data-vid="SlcQWtYrpK4" data-title="Casita" data-sub="theater hof/19, Oldenburg · 2023">
     <div class="work-th">
-      <div class="work-bg" style="background-image:url('images/img_8535-2.jpg')"></div>
+      <div class="work-bg" data-bg="images/img_8535-2.jpg"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
@@ -317,7 +319,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 
   <div class="work" data-vid="aGiRpuLrWPw" data-title="Saturn Return" data-sub="TanzCompagnie, Volkstheater Rostock · 2020 & 2022">
     <div class="work-th">
-      <div class="work-bg" style="background-image:url('images/IMG_3542.JPG')"></div>
+      <div class="work-bg" data-bg="images/IMG_3542.JPG"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
@@ -331,7 +333,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 
   <div class="work alt" data-vid="BYc_OdOUKCM" data-title="Quantum Leap" data-sub="BallettCompagnie Oldenburg · 2019">
     <div class="work-th">
-      <div class="work-bg" style="background-image:url('images/thumbnail.Quantum Leap.JPG')"></div>
+      <div class="work-bg" data-bg="images/thumbnail.Quantum Leap.JPG"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
@@ -345,7 +347,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 
   <div class="work" data-vid="sfSVtK-gxGg" data-title="From the Lighthouse" data-sub="BallettCompagnie Oldenburg · Debut · 2017">
     <div class="work-th">
-      <div class="work-bg" style="background-image:url('https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg')"></div>
+      <div class="work-bg" data-bg="https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
@@ -505,29 +507,56 @@ if(window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{
     mx=e.clientX;my=e.clientY;
-    cur.style.left=mx+'px';cur.style.top=my+'px';
-  });
+    cur.style.transform='translate3d('+mx+'px,'+my+'px,0) translate(-50%,-50%)';
+  },{passive:true});
   (function anim(){
     rx+=(mx-rx)*.12;ry+=(my-ry)*.12;
-    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    ring.style.transform='translate3d('+rx+'px,'+ry+'px,0) translate(-50%,-50%)';
     requestAnimationFrame(anim);
   })();
 }
 
 // Compact header after hero
 const navEl=document.querySelector('nav');
+let navTicking=false;
 function updateNavState(){
   const mobileNav = window.matchMedia('(max-width:900px)').matches;
   navEl.classList.toggle('scrolled', window.scrollY > (mobileNav ? 12 : window.innerHeight * .72));
 }
 updateNavState();
-window.addEventListener('scroll',updateNavState,{passive:true});
+window.addEventListener('scroll',()=>{
+  if(navTicking) return;
+  navTicking=true;
+  requestAnimationFrame(()=>{
+    updateNavState();
+    navTicking=false;
+  });
+},{passive:true});
 
 // Reveal on scroll
 const io=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
 },{threshold:.07,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv,.rl').forEach(el=>io.observe(el));
+
+// Lazy work images
+const workBgObserver=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const bg=e.target;
+    if(bg.dataset.bg) {
+      bg.style.backgroundImage='url("'+bg.dataset.bg+'")';
+      delete bg.dataset.bg;
+    }
+    workBgObserver.unobserve(bg);
+  });
+},{rootMargin:'600px 0px'});
+document.querySelectorAll('.work-bg[data-bg]').forEach(bg=>workBgObserver.observe(bg));
 
 // Modal
 const modal=document.getElementById('modal');
