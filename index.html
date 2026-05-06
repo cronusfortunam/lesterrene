@@ -35,7 +35,8 @@ button,a,.work{touch-action:manipulation;-webkit-tap-highlight-color:transparent
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.8rem 3.5rem;background:transparent;border-bottom:1px solid transparent;transition:padding .35s ease,background .35s ease,border-color .35s ease,backdrop-filter .35s ease;}
 nav.scrolled{padding:1rem 3.5rem;background:rgba(0,0,0,.72);border-bottom-color:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
-.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;color:var(--white);}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.15em;color:var(--white);opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .55s ease,transform .55s ease;}
+nav.scrolled .nav-logo{opacity:1;transform:none;pointer-events:auto;}
 .nav-links{display:flex;gap:2.5rem;}
 .nav-links a{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,237,232,.5);transition:color .2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--white);}
