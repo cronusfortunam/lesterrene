@@ -225,7 +225,8 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 <!-- HERO: cycling background images -->
 <section id="hero">
   <div class="hero-bg" id="hero-bg">
-    <img src="images/hero-lighthouse.jpg" alt="From the Lighthouse" class="active">
+    <img src="images/IMG_5302.jpg" alt="Lester René" class="active">
+    <img data-src="images/hero-lighthouse.jpg" alt="From the Lighthouse">
     <img data-src="images/hero-quantum-leap.jpg" alt="Quantum Leap">
     <img data-src="images/hero-saturn.jpg" alt="Saturn Return">
     <img data-src="images/hero-quantum-leap-2.jpg" alt="Quantum Leap">
@@ -233,8 +234,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
     <img data-src="images/hero-29.jpg" alt="Lester René">
     <img data-src="images/hero-44.jpg" alt="Lester René">
     <img data-src="images/hero-56.jpg" alt="Lester René">
-    <img data-src="images/IMG_5302.jpg" alt="Lester René">
     <img data-src="images/PHOTO-2023-05-08-22-48-27.jpg" alt="Lester René">
+    <img data-src="images/IMG_8518.jpg" alt="Lester René">
+    <img data-src="images/Eleonora%26Lester%20-4.jpg" alt="Lester René">
   </div>
   <div class="hero-ov"></div>
   <div class="hero-c">
@@ -435,20 +437,34 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
 <script>
 // Hero image loop
 (function(){
-  const imgs = document.querySelectorAll('#hero-bg img');
+  const container = document.getElementById('hero-bg');
+  if(!container) return;
+  const imgs = Array.from(container.querySelectorAll('img'));
   if(imgs.length < 2) return;
-  imgs.forEach(img => {
+
+  // Keep the first image fixed as the starting slide, shuffle the rest once.
+  const first = imgs[0];
+  const rest = imgs.slice(1);
+  for(let i = rest.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [rest[i], rest[j]] = [rest[j], rest[i]];
+  }
+  rest.forEach(img => container.appendChild(img));
+
+  const ordered = [first, ...rest];
+  ordered.forEach(img => {
     if(img.dataset.src){
       const pre = new Image();
       pre.src = img.dataset.src;
       pre.onload = () => { img.src = img.dataset.src; };
     }
   });
+
   let idx = 0;
   setInterval(() => {
-    imgs[idx].classList.remove('active');
-    idx = (idx + 1) % imgs.length;
-    imgs[idx].classList.add('active');
+    ordered[idx].classList.remove('active');
+    idx = (idx + 1) % ordered.length;
+    ordered[idx].classList.add('active');
   }, 5000);
 })();
 
