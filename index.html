@@ -50,7 +50,7 @@ nav.scrolled .nav-links{gap:2.5rem;}
 .hero-bg img.active{opacity:.78;}
 html.hero-image-loading .hero-bg img.active{opacity:0;}
 html.hero-image-ready .hero-bg img.active{opacity:.78;}
-html.hero-image-ready .hero-bg img.active{animation:heroFloat 13s ease-in-out infinite alternate;}
+html.hero-image-ready .hero-bg img{animation:heroFloat 13s ease-in-out infinite alternate;}
 @keyframes heroFloat{
   0%{transform:scale(1.035) translate3d(-.45%,-.35%,0);}
   50%{transform:scale(1.045) translate3d(.35%,.25%,0);}
@@ -237,7 +237,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
   .hero-copy{max-width:100%;}
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
   .hero-bg img{transition:opacity 1.8s ease-in-out;}
-  html.hero-image-ready .hero-bg img.active{animation-duration:11s;}
+  html.hero-image-ready .hero-bg img{animation-duration:11s;}
   .hero-title{font-size:clamp(4.5rem,25vw,7.2rem);margin-bottom:1.6rem;}
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
@@ -263,7 +263,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
   footer{flex-direction:column;gap:.4rem;}
 }
 @media(prefers-reduced-motion:reduce){
-  html.hero-image-ready .hero-bg img.active{animation:none;}
+  html.hero-image-ready .hero-bg img{animation:none;}
 }
 </style>
 </head>
