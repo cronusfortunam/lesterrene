@@ -45,11 +45,17 @@ nav.scrolled .nav-links{gap:2.5rem;}
 /* HERO */
 #hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 4rem;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:#000;}
-.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2.6s ease-in-out;will-change:opacity;}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.035) translate3d(0,0,0);transition:opacity 2.6s ease-in-out;will-change:opacity,transform;}
 .hero-bg img.hero-vertical{object-position:center 18%;}
 .hero-bg img.active{opacity:.78;}
 html.hero-image-loading .hero-bg img.active{opacity:0;}
 html.hero-image-ready .hero-bg img.active{opacity:.78;}
+html.hero-image-ready .hero-bg img.active{animation:heroFloat 13s ease-in-out infinite alternate;}
+@keyframes heroFloat{
+  0%{transform:scale(1.035) translate3d(-.45%,-.35%,0);}
+  50%{transform:scale(1.045) translate3d(.35%,.25%,0);}
+  100%{transform:scale(1.038) translate3d(.55%,-.2%,0);}
+}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 48%,rgba(0,0,0,.12) 78%,rgba(0,0,0,.28) 100%);pointer-events:none;}
 .hero-c{position:relative;z-index:2;transition:opacity 1.8s ease,transform 1.8s ease;}
 html.hero-type-loading .hero-c{opacity:0;transform:translateY(16px);}
@@ -231,6 +237,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
   .hero-copy{max-width:100%;}
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
   .hero-bg img{transition:opacity 1.8s ease-in-out;}
+  html.hero-image-ready .hero-bg img.active{animation-duration:11s;}
   .hero-title{font-size:clamp(4.5rem,25vw,7.2rem);margin-bottom:1.6rem;}
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
@@ -254,6 +261,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
   #press{padding:5rem 1.5rem;}
   .pg{grid-template-columns:1fr;}
   footer{flex-direction:column;gap:.4rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  html.hero-image-ready .hero-bg img.active{animation:none;}
 }
 </style>
 </head>
@@ -492,6 +502,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:flex;justi
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q4">Powerful and striking images. Every movement precisely choreographed.</p><div><div class="pc-src">Ostsee Zeitung</div><div class="pc-w">Saturn Return, 2020</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q5">Impressive and humorous in equal measure — with a whole range of emotions.</p><div><div class="pc-src">NWZ</div><div class="pc-w">Casita, 2023</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q6">The ensemble also brilliantly delivers in the choreography of Lester René. Everything just works.</p><div><div class="pc-src">NWZ</div><div class="pc-w">Shockheaded Peter, 2026</div></div></div>
+    <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q7">Brave and full of esprit, revealing inner distress and passionate longing through individual expression.</p><div><div class="pc-src">Die Deutsche Bühne</div><div class="pc-w">L'Arlésienne, 2014</div></div></div>
   </div>
 </section>
 
@@ -747,6 +758,7 @@ const translations = {
     press_q4: 'Powerful and striking images. Every movement precisely choreographed.',
     press_q5: 'Impressive and humorous in equal measure — with a whole range of emotions.',
     press_q6: 'The ensemble also brilliantly delivers in the choreography of Lester René. Everything just works.',
+    press_q7: 'Brave and full of esprit, revealing inner distress and passionate longing through individual expression.',
     wp1: '"The ensemble brilliantly delivers in the choreography of Lester René" — NWZ, 2026',
     wp2: '"Impressive and humorous in equal measure" — NWZ, 2023',
     wp3: '"Powerful and striking images — every movement precisely choreographed" — Ostsee Zeitung',
@@ -783,6 +795,7 @@ const translations = {
     press_q4: 'Imágenes poderosas e impactantes. Cada movimiento coreografiado con precisión.',
     press_q5: 'Impresionante y humorística a partes iguales — con toda una gama de emociones.',
     press_q6: 'El ensemble brilla también en la coreografía de Lester René. Todo encaja a la perfección.',
+    press_q7: 'Valiente y con esprit, revela necesidad interior y deseo apasionado a través de una expresión individual.',
     wp1: '"El ensemble brilla en la coreografía de Lester René" — NWZ, 2026',
     wp2: '"Impresionante y humorística a partes iguales" — NWZ, 2023',
     wp3: '"Imágenes poderosas — cada movimiento coreografiado con precisión" — Ostsee Zeitung',
@@ -819,6 +832,7 @@ const translations = {
     press_q4: 'Kraftvolle und eindrucksvolle Bilder. Jede Bewegung ist durchchoreografiert.',
     press_q5: 'Beeindruckende und zugleich humorvolle Performance — mit einer ganzen Bandbreite an Emotionen.',
     press_q6: 'Auch tänzerisch brilliert das Ensemble in der Choreografie von Lester René. Hier passt einfach alles.',
+    press_q7: 'Mutig und mit Esprit vermittelt er innere Not und leidenschaftliche Sehnsucht.',
     wp1: '„Das Ensemble brilliert in der Choreografie von Lester René" — NWZ, 2026',
     wp2: '„Beeindruckende und zugleich humorvolle Performance" — NWZ, 2023',
     wp3: '„Kraftvolle Bilder — jede Bewegung durchchoreografiert" — Ostsee Zeitung',
@@ -855,6 +869,7 @@ const translations = {
     press_q4: 'Immagini potenti e suggestive. Ogni movimento è coreografato con precisione.',
     press_q5: 'Impressionante e umoristica allo stesso tempo — con tutta una gamma di emozioni.',
     press_q6: "L\u2019ensemble brilla anche nella coreografia di Lester René. Qui tutto funziona alla perfezione.",
+    press_q7: 'Coraggioso e pieno di esprit, rivela turbamento interiore e desiderio appassionato attraverso un’espressione individuale.',
     wp1: '"L\u2019ensemble brilla nella coreografia di Lester René" — NWZ, 2026',
     wp2: '"Impressionante e umoristica allo stesso tempo" — NWZ, 2023',
     wp3: '"Immagini potenti — ogni movimento coreografato con precisione" — Ostsee Zeitung',
@@ -927,6 +942,7 @@ const heroQuotes = {
     '“A rich dance vocabulary.” — Radio Bremen',
     '“They draw out emotion through the movement of their bodies.” — NWZ',
     '“A dark piece carried by the circling beam of an imaginary lighthouse.” — Oldenburger Onlinezeitung',
+    '“Brave and full of esprit.” — Die Deutsche Bühne',
   ],
   es: [
     '“Muy fresco. Muy sorprendente. Imprescindible.” — Radio Bremen',
@@ -937,6 +953,7 @@ const heroQuotes = {
     '“Un vocabulario de danza muy rico.” — Radio Bremen',
     '“Extraen la emoción a través del movimiento de sus cuerpos.” — NWZ',
     '“Una pieza oscura sostenida por el haz de un faro imaginario.” — Oldenburger Onlinezeitung',
+    '“Valiente y con esprit.” — Die Deutsche Bühne',
   ],
   de: [
     '„Sehr frisch. Sehr überraschend. Unbedingt sehenswert.“ — Radio Bremen',
@@ -947,6 +964,7 @@ const heroQuotes = {
     '„Ein reichhaltiges Tanzvokabular.“ — Radio Bremen',
     '„Sie arbeiten Emotionen durch die Bewegungen ihrer Körper heraus.“ — NWZ',
     '„Ein düsteres Stück, getragen vom Lichtstrahl eines imaginären Leuchtturms.“ — Oldenburger Onlinezeitung',
+    '„Mutig und mit Esprit.“ — Die Deutsche Bühne',
   ],
   it: [
     '“Molto fresco. Molto sorprendente. Assolutamente da vedere.” — Radio Bremen',
@@ -957,6 +975,7 @@ const heroQuotes = {
     '“Un vocabolario di danza ricchissimo.” — Radio Bremen',
     '“Fanno emergere l’emozione attraverso il movimento dei corpi.” — NWZ',
     '“Un pezzo oscuro guidato dal fascio di un faro immaginario.” — Oldenburger Onlinezeitung',
+    '“Coraggioso e pieno di esprit.” — Die Deutsche Bühne',
   ],
 };
 
