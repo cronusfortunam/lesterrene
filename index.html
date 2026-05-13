@@ -89,7 +89,7 @@ html.hero-image-ready .hero-bg img.hero-vertical{animation-name:heroFloatVertica
 html.hero-type-loading .hero-c{opacity:0;transform:translateY(16px);}
 html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-tag{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,14rem);line-height:.88;letter-spacing:.02em;color:var(--white);margin-bottom:2.5rem;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.6rem,13.5vw,12.5rem);line-height:.88;letter-spacing:.02em;color:var(--white);margin-bottom:2.5rem;}
 .hero-ital{font-family:'DM Serif Display',serif;font-style:italic;font-size:.82em;letter-spacing:0;display:block;}
 .hero-bot{display:flex;align-items:flex-end;justify-content:space-between;}
 .hero-copy{
@@ -146,10 +146,10 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 /* MODAL */
 .modal{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;}
 .modal.open{opacity:1;pointer-events:all;}
-.m-in{width:min(90vw,1100px);position:relative;}
-.m-close{position:absolute;top:-2.8rem;right:0;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.5);cursor:pointer;transition:color .2s;display:flex;align-items:center;gap:.5rem;background:none;border:none;}
+.m-in{width:min(90vw,1100px);max-height:90vh;overflow:auto;position:relative;padding-top:.2rem;background:#000;}
+.m-close{position:sticky;top:0;margin-left:auto;margin-bottom:.7rem;z-index:3;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.5);cursor:pointer;transition:color .2s;display:flex;align-items:center;gap:.5rem;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.12);padding:.55rem .75rem;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
 .m-close:hover{color:#fff;}
-.m-vid{position:relative;width:100%;aspect-ratio:16/9;background:#000;}
+.m-vid{position:relative;width:100%;height:min(48vh,560px);background:#000;}
 .m-vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .m-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .m-playbtn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;}
@@ -160,6 +160,14 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-sub{font-size:.68rem;color:rgba(240,237,232,.4);letter-spacing:.15em;text-transform:uppercase;margin-top:.1rem;}
 .m-yt{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.4);border:1px solid rgba(255,255,255,.15);padding:.55rem 1.1rem;transition:all .3s;white-space:nowrap;}
 .m-yt:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+.m-archive{margin-top:1.6rem;border-top:1px solid var(--line);padding-top:1.5rem;display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;gap:2rem;max-height:34vh;overflow:auto;}
+.m-archive h3{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.32);margin-bottom:.65rem;font-weight:400;}
+.m-archive p{font-size:.78rem;line-height:1.75;color:rgba(240,237,232,.58);margin-bottom:1rem;}
+.m-archive dl{display:grid;grid-template-columns:minmax(86px,120px) 1fr;gap:.65rem 1rem;margin:0;}
+.m-archive dt{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,237,232,.28);}
+.m-archive dd{font-size:.76rem;line-height:1.65;color:rgba(240,237,232,.58);margin:0;}
+.m-source{display:inline-flex;margin-top:.2rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.36);transition:color .2s;}
+.m-source:hover{color:var(--white);}
 
 /* ABOUT */
 #about{padding:10rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;border-top:1px solid var(--line);}
@@ -239,7 +247,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 .rl{opacity:0;transform:translateX(-24px);transition:opacity .85s ease,transform .85s ease;}
 .rl.in{opacity:1;transform:none;}
 
-.work,#about,#collaborators,#press,#contact{content-visibility:auto;contain-intrinsic-size:800px;}
+#about,#collaborators,#press,#contact{content-visibility:auto;contain-intrinsic-size:800px;}
 
 @media(max-width:900px){
   html{scroll-behavior:auto;}
@@ -283,7 +291,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
   .hero-bg img{transition:opacity 1.8s ease-in-out;}
   html.hero-image-ready .hero-bg img{animation-duration:11s;}
-  .hero-title{font-size:clamp(4.5rem,25vw,7.2rem);margin-bottom:1.6rem;}
+  .hero-title{font-size:clamp(4rem,22vw,6.4rem);margin-bottom:1.6rem;}
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
   .hero-scroll{display:none;}
@@ -296,6 +304,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .work:hover .work-cta{background:transparent;color:inherit;}
   .work-th-ov{background:linear-gradient(to top,#000,transparent)!important;}
   .work-in{padding:2rem 1.5rem;}
+  .m-archive{grid-template-columns:1fr;max-height:38vh;gap:1rem;}
   .rv,.rl{transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;}
   .rl.in,.rv.in{transform:none;}
   #about,#contact{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
@@ -403,7 +412,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <h2 data-i18n="works_title">Selected Works</h2>
   </div>
 
-  <div class="work" data-vid="pzR0bAEY5iQ" data-title="Shockheaded Peter" data-sub="Staatstheater Oldenburg · 2026">
+  <div class="work" data-work="shockheaded" data-vid="pzR0bAEY5iQ" data-poster="images/thumbnail shockheaded Peter.jpg" data-title="Shockheaded Peter" data-sub="Staatstheater Oldenburg · 2026">
     <div class="work-th">
       <div class="work-bg" data-bg="images/thumbnail shockheaded Peter.jpg"></div>
       <div class="work-th-ov"></div>
@@ -417,7 +426,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
   </div>
 
-  <div class="work alt" data-vid="SlcQWtYrpK4" data-title="Casita" data-sub="theater hof/19, Oldenburg · 2023">
+  <div class="work alt" data-work="casita" data-vid="SlcQWtYrpK4" data-poster="images/img_8535-2.jpg" data-title="Casita" data-sub="theater hof/19, Oldenburg · 2023">
     <div class="work-th">
       <div class="work-bg" data-bg="images/img_8535-2.jpg"></div>
       <div class="work-th-ov"></div>
@@ -431,7 +440,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
   </div>
 
-  <div class="work" data-vid="aGiRpuLrWPw" data-title="Saturn Return" data-sub="TanzCompagnie, Volkstheater Rostock · 2020 & 2022">
+  <div class="work" data-work="saturn" data-vid="aGiRpuLrWPw" data-poster="images/IMG_3542.JPG" data-title="Saturn Return" data-sub="TanzCompagnie, Volkstheater Rostock · 2021 / 2022">
     <div class="work-th">
       <div class="work-bg" data-bg="images/IMG_3542.JPG"></div>
       <div class="work-th-ov"></div>
@@ -445,7 +454,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
   </div>
 
-  <div class="work alt" data-vid="BYc_OdOUKCM" data-title="Quantum Leap" data-sub="BallettCompagnie Oldenburg · 2019">
+  <div class="work alt" data-work="quantum" data-vid="BYc_OdOUKCM" data-poster="images/thumbnail.Quantum Leap.JPG" data-title="Quantum Leap" data-sub="BallettCompagnie Oldenburg · 2019">
     <div class="work-th">
       <div class="work-bg" data-bg="images/thumbnail.Quantum Leap.JPG"></div>
       <div class="work-th-ov"></div>
@@ -459,7 +468,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
   </div>
 
-  <div class="work" data-vid="sfSVtK-gxGg" data-title="From the Lighthouse" data-sub="BallettCompagnie Oldenburg · Debut · 2017">
+  <div class="work" data-work="lighthouse" data-vid="sfSVtK-gxGg" data-poster="https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg" data-title="From the Lighthouse" data-sub="BallettCompagnie Oldenburg · Debut · 2017">
     <div class="work-th">
       <div class="work-bg" data-bg="https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg"></div>
       <div class="work-th-ov"></div>
@@ -650,6 +659,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       </div>
       <a class="m-yt" id="m-yt" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
     </div>
+    <div class="m-archive" id="m-archive"></div>
   </div>
 </div>
 
@@ -790,27 +800,125 @@ const mplaybtn=document.getElementById('m-playbtn');
 const mtitle=document.getElementById('mtitle');
 const msub=document.getElementById('msub');
 const myt=document.getElementById('m-yt');
+const marchive=document.getElementById('m-archive');
+let currentVideoId='';
+
+const workArchive = {
+  shockheaded: {
+    synopsis: 'Junk-opera world based on Der Struwwelpeter: grotesque humour, rebellion against authoritarian obedience, a live-band theatre machine, and movement work for a full Schauspiel ensemble.',
+    details: [
+      ['Role', 'Movement choreography'],
+      ['Production', 'Junk opera by The Tiger Lillies, Julian Crouch and Phelim McDermott; music by Martyn Jacques'],
+      ['Director', 'Milena Paulovics'],
+      ['Music', 'Jochen Kilian, musical direction and piano'],
+      ['Stage / costumes', 'Pascale Arndtz'],
+      ['Light', 'Steff Flächsenhaar'],
+      ['Dramaturgy', 'Pau Hoff'],
+      ['Venue', 'Kleines Haus, Oldenburgisches Staatstheater'],
+      ['Premiere', '25 April 2026']
+    ],
+    press: 'NWZ described the ensemble as brilliantly delivering in Lester René’s choreography.',
+    source: ['Oldenburgisches Staatstheater', 'https://staatstheater.de/programm/schauspiel/spielzeit-2526/shockheaded-peter']
+  },
+  casita: {
+    synopsis: 'A dance-theatre duet about a couple moving in together and negotiating the house as shelter, commitment, dependence, community, risk, humour and the possibility of growing together.',
+    details: [
+      ['By / with', 'Eleonora Fabrizi and Lester René González Álvarez'],
+      ['Format', 'Dance-theatre duet'],
+      ['Venue', 'theater hof/19, Oldenburg'],
+      ['Theme', 'Home, intimacy, cohabitation, individuality and togetherness'],
+      ['Support', 'Oldenburgische Landschaft, OLB-Stiftung, EWE-Stiftung']
+    ],
+    press: 'NWZ called the work impressive and humorous in equal measure.',
+    source: ['theater hof/19', 'https://www.theaterhof19.de/spielplan/archiv/archiv-details?tx_news_pi1%5Bnews%5D=8&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Baction%5D=detail']
+  },
+  saturn: {
+    synopsis: 'A full-evening ensemble work around the astrological Saturn return: a cosmic wake-up call that pushes the dancers through space, identity and turning points in human life.',
+    details: [
+      ['Choreography', 'Lester René González Álvarez'],
+      ['Composition', 'Johann Pätzold / Secret Of Elements'],
+      ['Stage', 'Franziska Schmidt'],
+      ['Costumes', 'Eleonora Fabrizi'],
+      ['Video installation', 'Christian Pulkenat / Bad Cube'],
+      ['Assistants', 'Natalie Shults, Malika Ali, Yannis Karalis'],
+      ['Dramaturgy', 'Jens Ponath'],
+      ['Ensemble', '8 dancers, TanzCompagnie Volkstheater Rostock'],
+      ['Premiere', 'Volkstheater Rostock, 2021; resumed 2022']
+    ],
+    press: 'Ostsee Zeitung highlighted the work’s powerful images and precisely choreographed movement.',
+    source: ['Volkstheater Rostock / Franziska Schmidt archive', 'https://figurenbau.jimdofree.com/inszenierungen/']
+  },
+  quantum: {
+    synopsis: 'An ensemble work for 13 dancers about identity loss and transformation: two conflicting worlds move toward a shared harmony through a large-scale stage language.',
+    details: [
+      ['Choreography', 'Lester René González Álvarez'],
+      ['Company', 'BallettCompagnie Oldenburg'],
+      ['Context', 'Opening premiere, 2019/20 season, Großes Haus'],
+      ['Music', 'Original score by Johann Pätzold / Secret Of Elements'],
+      ['Ensemble', '13 dancers'],
+      ['Press', 'Radio Bremen described the ballet as catapulted into the next millennium']
+    ],
+    press: 'Radio Bremen described the ensemble as moving with its era.',
+    source: ['Oldenburgisches Staatstheater biography', 'https://staatstheater.de/programm/ballett/ensemble/lester-rene-gonzalez-alvarez']
+  },
+  lighthouse: {
+    synopsis: 'Lester René’s choreographic debut, built around a lighthouse as a symbol of warning and illumination. A seven-person ensemble confronts fear, storm, danger and collective resilience around a heavy rope.',
+    details: [
+      ['Choreography / stage', 'Lester René González Álvarez'],
+      ['Costumes', 'Anastasia Lotikova'],
+      ['Music', 'Johann Pätzold'],
+      ['Light', 'Sofie Thyssen'],
+      ['Ballet master', 'Antoine Jully'],
+      ['Dramaturgy', 'Nastasja Fischer'],
+      ['Cast', 'Eleonora Fabrizi, Nicol Omezzolli, Gabrune Sablinskaite, Marié Shimada, Timothée Cuny, Floriado Komino, Gianluca Sermattei'],
+      ['Premiere', 'Drei Generationen, Kleines Haus, Oldenburgisches Staatstheater, 2017']
+    ],
+    press: 'Radio Bremen called it very fresh, very surprising and essential viewing.',
+    source: ['Theaterkompass', 'https://theaterkompass.de/beitraege/urauffuhrungen-drei-generationen-ballettabend-im-oldenburgischen-staatstheater-49848']
+  }
+};
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+
+function renderWorkArchive(key){
+  const data=workArchive[key];
+  if(!marchive || !data) {
+    if(marchive) marchive.innerHTML='';
+    return;
+  }
+  const details=data.details.map(([term,desc]) => '<dt>'+escapeHtml(term)+'</dt><dd>'+escapeHtml(desc)+'</dd>').join('');
+  const source=data.source ? '<a class="m-source" href="'+escapeHtml(data.source[1])+'" target="_blank" rel="noopener">'+escapeHtml(data.source[0])+'</a>' : '';
+  marchive.innerHTML =
+    '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+source+'</div>' +
+    '<div><h3>Credits</h3><dl>'+details+'</dl></div>';
+}
 
 document.querySelectorAll('.work').forEach(w=>{
   w.addEventListener('click',function(e){
     const vid=this.dataset.vid;
     if(!vid)return;
+    currentVideoId=vid;
+    mframe.src='';
+    mframe.style.display='none';
+    mposter.removeAttribute('src');
     mposter.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/'+vid+'/hqdefault.jpg';};
     mposter.src='https://img.youtube.com/vi/'+vid+'/maxresdefault.jpg';
     mposter.style.display='block';
     mplaybtn.style.display='flex';
-    mframe.style.display='none';
-    mframe.src='';
     mtitle.textContent=this.dataset.title||'';
     msub.textContent=this.dataset.sub||'';
     myt.href='https://www.youtube.com/watch?v='+vid;
+    renderWorkArchive(this.dataset.work);
     modal.classList.add('open');
     document.body.style.overflow='hidden';
   });
 });
 
 mplaybtn.addEventListener('click',function(){
-  const vid=myt.href.split('v=')[1];
+  const vid=currentVideoId;
+  if(!vid)return;
   mframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
   mframe.style.display='block';
   mposter.style.display='none';
@@ -821,6 +929,7 @@ function closeModal(){
   modal.classList.remove('open');
   mframe.src='';
   mframe.style.display='none';
+  if(marchive) marchive.innerHTML='';
   document.body.style.overflow='';
 }
 document.getElementById('mclose').addEventListener('click',closeModal);
