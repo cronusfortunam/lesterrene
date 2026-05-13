@@ -23,7 +23,10 @@ button,a,.work{touch-action:manipulation;-webkit-tap-highlight-color:transparent
 /* LANG SELECTOR */
 .lang-sel{display:flex;gap:.5rem;align-items:center;}
 .lang-btn{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,237,232,.35);background:none;border:none;cursor:pointer;padding:.2rem .1rem;transition:color .2s;font-family:'DM Sans',sans-serif;font-weight:400;}
-.lang-btn:hover,.lang-btn.active{color:var(--white);}
+.lang-btn.active{color:var(--white);}
+@media(hover:hover) and (pointer:fine){
+  .lang-btn:hover{color:var(--white);}
+}
 .lang-btn.active{border-bottom:1px solid rgba(240,237,232,.5);}
 .lang-sep{color:rgba(255,255,255,.12);font-size:.55rem;}
 
@@ -1207,7 +1210,10 @@ function applyLang(lang) {
 }
 
 document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  btn.addEventListener('click', () => {
+    applyLang(btn.dataset.lang);
+    btn.blur();
+  });
 });
 
 const heroQuotes = {
