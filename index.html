@@ -161,6 +161,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 /* ABOUT */
 #about{padding:10rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;border-top:1px solid var(--line);}
 .a-label{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;}
+.about-title-row{display:contents;}
 .a-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,7rem);letter-spacing:.02em;line-height:.88;margin-bottom:3rem;}
 .a-h em{font-family:'DM Serif Display',serif;font-style:italic;font-size:.88em;display:block;}
 .about-portrait{float:right;width:min(34vw,220px);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center 18%;margin:.2rem 0 1.7rem 2rem;filter:grayscale(1);opacity:.82;border:1px solid rgba(240,237,232,.22);box-shadow:0 0 0 10px rgba(240,237,232,.035);transition:filter .35s ease,opacity .35s ease,transform .35s ease,border-color .35s ease,box-shadow .35s ease;shape-outside:circle(50%);}
@@ -184,6 +185,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .cb-item{display:grid;grid-template-columns:minmax(260px,32vw) 1fr auto;gap:2rem;align-items:center;padding:1.35rem 0;border-bottom:1px solid var(--line);}
 .cb-person{display:flex;align-items:center;gap:1.25rem;min-width:0;}
 .cb-photo{width:clamp(74px,8vw,108px);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1);transition:filter .35s ease,transform .35s ease;flex:0 0 auto;}
+.cb-photo-badcube{object-position:22% 48%;}
 .cb-item:hover .cb-photo{filter:grayscale(0);transform:scale(1.03);}
 .cb-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:.92;letter-spacing:.03em;color:var(--white);}
 .cb-role{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.28);margin-bottom:.55rem;}
@@ -294,7 +296,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .rv,.rl{transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;}
   .rl.in,.rv.in{transform:none;}
   #about,#contact{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
-  .about-portrait{float:none;width:min(58vw,210px);margin:0 0 2rem;display:block;}
+  .about-title-row{display:flex;align-items:center;justify-content:space-between;gap:1.1rem;margin-bottom:2rem;}
+  .about-title-row .a-h{margin-bottom:0;flex:1 1 auto;}
+  .about-portrait{float:none;width:clamp(88px,29vw,128px);margin:0;display:block;flex:0 0 auto;}
   #collaborators{padding:5rem 1.5rem;}
   .cb-head{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem;}
   .cb-item{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0;}
@@ -471,8 +475,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 <section id="about">
   <div class="rl">
     <div class="a-label" data-i18n="about_label">Biography</div>
-    <h2 class="a-h">Body<br>as<br><em>language</em></h2>
-    <img class="about-portrait" src="images/csm_lester_gonzales_24_25_c_Stephan_Walzl_8875938947.jpg" alt="Portrait of Lester René González Álvarez" loading="lazy" decoding="async">
+    <div class="about-title-row">
+      <h2 class="a-h">Body<br>as<br><em>language</em></h2>
+      <img class="about-portrait" src="images/csm_lester_gonzales_24_25_c_Stephan_Walzl_8875938947.jpg" alt="Portrait of Lester René González Álvarez" loading="lazy" decoding="async">
+    </div>
     <p class="a-p">Lester René is a choreographer working at the intersection of contemporary dance, physical theatre, and interdisciplinary performance. His work draws on a rich and distinctive movement vocabulary — at once expressive and precise, fluid and exacting — to build choreographic worlds that move between the visceral and the poetic.</p>
     <p class="a-p">Whether for large ensembles or intimate duets, his pieces navigate tension and transformation: between <strong>fear and courage</strong>, chaos and harmony, tradition and new reality.</p>
     <p class="a-p">Born in Cuba, trained in Camagüey, Madrid and Dresden — including studies at the <strong>Palucca University of Dance</strong> and a formative period with <strong>The Forsythe Company</strong> — he has been based in northern Germany since 2012.</p>
@@ -533,15 +539,18 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
         <div class="cb-name">Johann<br>Pätzold</div>
       </div>
       <div>
-        <div class="cb-role" data-i18n="collab_johann_role">Composer · emotional architecture</div>
+        <div class="cb-role" data-i18n="collab_johann_role">Secret Of Elements · composer · emotional architecture</div>
         <p class="cb-note" data-i18n="collab_johann_note">Another pillar in Lester René's career, helping guide the emotions he wants audiences and dancers to feel through music. A collaborator since 2017, he has composed original scores for most of his works.</p>
       </div>
       <a class="cb-link" href="https://secretofelements.com/" target="_blank" rel="noopener">Website</a>
     </div>
     <div class="cb-item rv">
-      <div class="cb-name">Christian<br>Pulkenat</div>
+      <div class="cb-person">
+        <img class="cb-photo cb-photo-badcube" src="images/bad-cube-robot.jpg" alt="Bad Cube robot" loading="lazy">
+        <div class="cb-name">Christian<br>Pulkenat</div>
+      </div>
       <div>
-        <div class="cb-role" data-i18n="collab_christian_role">Animation · stage visuals</div>
+        <div class="cb-role" data-i18n="collab_christian_role">Bad Cube · animation · stage visuals</div>
         <p class="cb-note" data-i18n="collab_christian_note">Animator and visual collaborator for Quantum Leap and Saturn Return, contributing projected worlds that expanded the physical stage space.</p>
       </div>
       <a class="cb-link" href="http://www.badcube.de/" target="_blank" rel="noopener">Website</a>
@@ -829,9 +838,9 @@ const translations = {
     collab_intro: 'A small circle of artists whose presence, sound and visual worlds have shaped key works across the years.',
     collab_ele_role: 'Life partner · central creative collaborator',
     collab_ele_note: "A foundational presence in Lester René's artistic and personal path: co-creator, choreographic assistant, costume designer and a key performer across his works.",
-    collab_johann_role: 'Composer · emotional architecture',
+    collab_johann_role: 'Secret Of Elements · composer · emotional architecture',
     collab_johann_note: "Another pillar in Lester René's career, helping guide the emotions he wants audiences and dancers to feel through music. A collaborator since 2017, he has composed original scores for most of his works.",
-    collab_christian_role: 'Animation · stage visuals',
+    collab_christian_role: 'Bad Cube · animation · stage visuals',
     collab_christian_note: 'Animator and visual collaborator for Quantum Leap and Saturn Return, contributing projected worlds that expanded the physical stage space.',
     collab_nastasia_role: 'Costume designer',
     collab_nastasia_note: "Designed the costumes for Lester René's first choreographic work, helping define the visual identity of that debut piece.",
@@ -878,9 +887,9 @@ const translations = {
     collab_intro: 'Un pequeño círculo de artistas cuya presencia, sonido e imaginario visual han marcado obras clave a lo largo de los años.',
     collab_ele_role: 'Pareja · colaboradora creativa central',
     collab_ele_note: 'Una presencia fundamental en el camino artístico y sentimental de Lester René: cocreadora, asistente coreográfica, diseñadora de vestuario e intérprete clave en sus obras.',
-    collab_johann_role: 'Compositor · arquitectura emocional',
+    collab_johann_role: 'Secret Of Elements · compositor · arquitectura emocional',
     collab_johann_note: 'Otro pilar en la carrera de Lester René: ayuda a guiar, a través de la música, las emociones que quiere que sientan el público y los bailarines. Colaborador desde 2017, ha compuesto scores originales para la gran mayoría de sus obras.',
-    collab_christian_role: 'Animación · visuales escénicos',
+    collab_christian_role: 'Bad Cube · animación · visuales escénicos',
     collab_christian_note: 'Animador y colaborador visual en Quantum Leap y Saturn Return, aportando mundos proyectados que expandieron el espacio físico del escenario.',
     collab_nastasia_role: 'Diseñadora de vestuario',
     collab_nastasia_note: 'Diseñó el vestuario de la primera obra coreográfica de Lester René, ayudando a definir la identidad visual de esa pieza debut.',
@@ -927,9 +936,9 @@ const translations = {
     collab_intro: 'Ein kleiner Kreis von Künstlerinnen und Künstlern, deren Präsenz, Klang und visuelle Welten zentrale Arbeiten geprägt haben.',
     collab_ele_role: 'Lebenspartnerin · zentrale kreative Partnerin',
     collab_ele_note: 'Eine grundlegende Präsenz in Lester Renés künstlerischem und persönlichem Weg: Ko-Kreateurin, choreografische Assistentin, Kostümdesignerin und wichtige Interpretin in seinen Arbeiten.',
-    collab_johann_role: 'Komponist · emotionale Architektur',
+    collab_johann_role: 'Secret Of Elements · Komponist · emotionale Architektur',
     collab_johann_note: 'Eine weitere tragende Säule in Lester Renés Laufbahn: Durch Musik hilft er, die Emotionen zu führen, die Publikum und Tänzerinnen und Tänzer spüren sollen. Seit 2017 Kollaborateur, komponierte er Originalscores für den Großteil seiner Arbeiten.',
-    collab_christian_role: 'Animation · Bühnenvisuals',
+    collab_christian_role: 'Bad Cube · Animation · Bühnenvisuals',
     collab_christian_note: 'Animator und visueller Kollaborateur für Quantum Leap und Saturn Return, mit projizierten Welten, die den physischen Bühnenraum erweiterten.',
     collab_nastasia_role: 'Kostümdesignerin',
     collab_nastasia_note: 'Entwarf die Kostüme für Lester Renés erste choreografische Arbeit und prägte damit die visuelle Identität dieses Debüts.',
@@ -976,9 +985,9 @@ const translations = {
     collab_intro: 'Un piccolo cerchio di artisti la cui presenza, il suono e l’immaginario visivo hanno segnato lavori chiave negli anni.',
     collab_ele_role: 'Partner di vita · collaboratrice creativa centrale',
     collab_ele_note: 'Una presenza fondamentale nel percorso artistico e personale di Lester René: co-creatrice, assistente coreografica, costumista e interprete chiave nei suoi lavori.',
-    collab_johann_role: 'Compositore · architettura emotiva',
+    collab_johann_role: 'Secret Of Elements · compositore · architettura emotiva',
     collab_johann_note: 'Un altro pilastro nella carriera di Lester René: attraverso la musica aiuta a guidare le emozioni che desidera far sentire al pubblico e ai danzatori. Collaboratore dal 2017, ha composto score originali per la grande maggioranza dei suoi lavori.',
-    collab_christian_role: 'Animazione · visuali sceniche',
+    collab_christian_role: 'Bad Cube · animazione · visuali sceniche',
     collab_christian_note: 'Animatore e collaboratore visivo per Quantum Leap e Saturn Return, ha contribuito con mondi proiettati che hanno ampliato lo spazio fisico della scena.',
     collab_nastasia_role: 'Costumista',
     collab_nastasia_note: 'Ha disegnato i costumi per la prima opera coreografica di Lester René, contribuendo a definirne l’identità visiva.',
