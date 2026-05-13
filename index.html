@@ -176,6 +176,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-archive dd{font-size:.76rem;line-height:1.65;color:rgba(240,237,232,.58);margin:0;}
 .m-source{display:inline-flex;margin-top:.2rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.36);transition:color .2s;}
 .m-source:hover{color:var(--white);}
+.m-sources{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;}
 
 /* ABOUT */
 #about{padding:10rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;border-top:1px solid var(--line);}
@@ -206,6 +207,9 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .cb-photo{width:clamp(74px,8vw,108px);aspect-ratio:1;border-radius:50%;object-fit:cover;filter:grayscale(1);transition:filter .35s ease,transform .35s ease;flex:0 0 auto;}
 .cb-photo-badcube{object-position:22% 48%;}
 .cb-item:hover .cb-photo{filter:grayscale(0);transform:scale(1.03);}
+.cb-avatar{width:clamp(74px,8vw,108px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;border:1px solid rgba(240,237,232,.22);background:linear-gradient(135deg,rgba(240,237,232,.16),rgba(240,237,232,.045));filter:grayscale(1);transition:filter .35s ease,transform .35s ease,border-color .35s ease,background .35s ease;}
+.cb-avatar span{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4.5vw,4.2rem);letter-spacing:.03em;color:rgba(240,237,232,.74);transform:translateY(.04em);}
+.cb-item:hover .cb-avatar{filter:grayscale(0);transform:scale(1.03);border-color:rgba(240,237,232,.55);background:linear-gradient(135deg,rgba(238,188,54,.32),rgba(240,237,232,.07));}
 .cb-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,4rem);line-height:.92;letter-spacing:.03em;color:var(--white);}
 .cb-role{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.28);margin-bottom:.55rem;}
 .cb-note{font-size:.88rem;line-height:1.75;color:rgba(240,237,232,.52);max-width:620px;}
@@ -326,7 +330,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .cb-head{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem;}
   .cb-item{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0;}
   .cb-person{gap:1rem;}
-  .cb-photo{width:72px;}
+  .cb-photo,.cb-avatar{width:72px;}
   .cb-link{width:fit-content;}
   #press{padding:5rem 1.5rem;}
   .pg{grid-template-columns:1fr;}
@@ -580,6 +584,17 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
     <div class="cb-item rv">
       <div class="cb-person">
+        <img class="cb-photo" src="images/franziska-schmidt.png" alt="Franziska Schmidt" loading="lazy">
+        <div class="cb-name">Franziska<br>Schmidt</div>
+      </div>
+      <div>
+        <div class="cb-role" data-i18n="collab_franziska_role">Stage design · figures · objects</div>
+        <p class="cb-note" data-i18n="collab_franziska_note">Stage and figure designer for Saturn Return, shaping the sculptural world around the dancers and the piece's cosmic architecture.</p>
+      </div>
+      <a class="cb-link" href="https://figurenbau.jimdofree.com/inszenierungen/" target="_blank" rel="noopener">Archive</a>
+    </div>
+    <div class="cb-item rv">
+      <div class="cb-person">
         <img class="cb-photo" src="images/Anastasia.jpg" alt="Anastasia Cordes" loading="lazy">
         <div class="cb-name">Anastasia<br>Cordes</div>
       </div>
@@ -602,7 +617,6 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q4">Powerful and striking images. Every movement precisely choreographed.</p><div><div class="pc-src"><a href="https://www.ostsee-zeitung.de/lokales/rostock/volkstheater-rostock-lohnen-sich-die-tanzstuecke-saturn-return-und-the-great-migration-TSAAEEGYCZRRZFIZSTZDBIWCVM.html" target="_blank" rel="noopener">Ostsee Zeitung</a></div><div class="pc-w">Saturn Return, 2020</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q5">Impressive and humorous in equal measure — with a whole range of emotions.</p><div><div class="pc-src"><a href="press/casita-presse-nwz.pdf" target="_blank" rel="noopener">NWZ</a></div><div class="pc-w">Casita, 2023</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q6">The ensemble also brilliantly delivers in the choreography of Lester René. Everything just works.</p><div><div class="pc-src"><a href="https://www.nwzonline.de/kultur/struwwelpeter-als-musical-premiere-begeistert-in-oldenburg_a_4,3,333327922.html" target="_blank" rel="noopener">NWZ</a></div><div class="pc-w">Shockheaded Peter, 2026</div></div></div>
-    <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q7">Brave and full of esprit, revealing inner distress and passionate longing through individual expression.</p><div><div class="pc-src"><a href="https://www.die-deutsche-buehne.de/kritiken/hochglanztanz/?highlight=lester+rene" target="_blank" rel="noopener">Die Deutsche Bühne</a></div><div class="pc-w">L'Arlésienne, 2014</div></div></div>
   </div>
 </section>
 
@@ -835,7 +849,11 @@ const workArchive = {
       ['Premiere', '25 April 2026']
     ],
     press: 'NWZ described the ensemble as brilliantly delivering in Lester René’s choreography.',
-    source: ['Oldenburgisches Staatstheater', 'https://staatstheater.de/programm/schauspiel/spielzeit-2526/shockheaded-peter']
+    sources: [
+      ['NWZ review', 'https://www.nwzonline.de/kultur/struwwelpeter-als-musical-premiere-begeistert-in-oldenburg_a_4,3,333327922.html'],
+      ['Oldenburgisches Staatstheater', 'https://staatstheater.de/programm/schauspiel/spielzeit-2526/shockheaded-peter'],
+      ['Theaterkompass archive', 'https://theaterkompass.de/beitraege/shockheaded-peter-junk-oper-nach-motiven-aus-der-struwwelpeter-von-heinrich-hoffmann-oldenburgisches-staatstheater-62483']
+    ]
   },
   casita: {
     synopsis: 'A dance-theatre duet about a couple moving in together and negotiating the house as shelter, commitment, dependence, community, risk, humour and the possibility of growing together.',
@@ -847,7 +865,11 @@ const workArchive = {
       ['Support', 'Oldenburgische Landschaft, OLB-Stiftung, EWE-Stiftung']
     ],
     press: 'NWZ called the work impressive and humorous in equal measure.',
-    source: ['theater hof/19', 'https://www.theaterhof19.de/spielplan/archiv/archiv-details?tx_news_pi1%5Bnews%5D=8&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Baction%5D=detail']
+    sources: [
+      ['NWZ review PDF', 'press/casita-presse-nwz.pdf'],
+      ['theater hof/19 archive', 'https://www.theaterhof19.de/spielplan/archiv/archiv-details?cHash=cfb6ca54c7a2f6facbd24989b548c976&tx_news_pi1%5Baction%5D=detail&tx_news_pi1%5Bcontroller%5D=News&tx_news_pi1%5Bnews%5D=149'],
+      ['theater hof/19 productions', 'https://www.theaterhof19.de/das-haus/produktionen-stationen']
+    ]
   },
   saturn: {
     synopsis: 'A full-evening ensemble work around the astrological Saturn return: a cosmic wake-up call that pushes the dancers through space, identity and turning points in human life.',
@@ -863,7 +885,12 @@ const workArchive = {
       ['Premiere', 'Volkstheater Rostock, 2021; resumed 2022']
     ],
     press: 'Ostsee Zeitung highlighted the work’s powerful images and precisely choreographed movement.',
-    source: ['Volkstheater Rostock / Franziska Schmidt archive', 'https://figurenbau.jimdofree.com/inszenierungen/']
+    sources: [
+      ['Ostsee Zeitung review', 'https://www.ostsee-zeitung.de/lokales/rostock/volkstheater-rostock-lohnen-sich-die-tanzstuecke-saturn-return-und-the-great-migration-TSAAEEGYCZRRZFIZSTZDBIWCVM.html'],
+      ['Volkstheater Rostock theater newspaper, March 2022', 'https://www.volkstheater-rostock.de/download/3868/vtr_theaterzeitung_maerz_2022.pdf'],
+      ['Volkstheater Rostock theater newspaper, September 2022', 'https://www.volkstheater-rostock.de/download/4223/theaterzeitung_september_2022.pdf'],
+      ['Franziska Schmidt archive', 'https://figurenbau.jimdofree.com/inszenierungen/']
+    ]
   },
   quantum: {
     synopsis: 'An ensemble work for 13 dancers about identity loss and transformation: two conflicting worlds move toward a shared harmony through a large-scale stage language.',
@@ -876,7 +903,9 @@ const workArchive = {
       ['Press', 'Radio Bremen described the ballet as catapulted into the next millennium']
     ],
     press: 'Radio Bremen described the ensemble as moving with its era.',
-    source: ['Oldenburgisches Staatstheater biography', 'https://staatstheater.de/programm/ballett/ensemble/lester-rene-gonzalez-alvarez']
+    sources: [
+      ['Oldenburgisches Staatstheater biography', 'https://staatstheater.de/programm/ballett/ensemble/lester-rene-gonzalez-alvarez']
+    ]
   },
   lighthouse: {
     synopsis: 'Lester René’s choreographic debut, built around a lighthouse as a symbol of warning and illumination. A seven-person ensemble confronts fear, storm, danger and collective resilience around a heavy rope.',
@@ -891,7 +920,11 @@ const workArchive = {
       ['Premiere', 'Drei Generationen, Kleines Haus, Oldenburgisches Staatstheater, 2017']
     ],
     press: 'Radio Bremen called it very fresh, very surprising and essential viewing.',
-    source: ['Theaterkompass', 'https://theaterkompass.de/beitraege/urauffuhrungen-drei-generationen-ballettabend-im-oldenburgischen-staatstheater-49848']
+    sources: [
+      ['Oldenburger Onlinezeitung review', 'https://www.oldenburger-onlinezeitung.de/kultur/ballettcompagnie-zeigt-tanz-vielfalt-25188.html'],
+      ['Tanznetz.de review', 'https://www.tanznetz.de/de/article/2017/ballettcompagnie-oldenburg-jully-nikolais-alvarez'],
+      ['Theaterkompass archive', 'https://theaterkompass.de/beitraege/urauffuhrungen-drei-generationen-ballettabend-im-oldenburgischen-staatstheater-49848']
+    ]
   }
 };
 
@@ -906,9 +939,11 @@ function renderWorkArchive(key){
     return;
   }
   const details=data.details.map(([term,desc]) => '<dt>'+escapeHtml(term)+'</dt><dd>'+escapeHtml(desc)+'</dd>').join('');
-  const source=data.source ? '<a class="m-source" href="'+escapeHtml(data.source[1])+'" target="_blank" rel="noopener">'+escapeHtml(data.source[0])+'</a>' : '';
+  const sources=data.sources || (data.source ? [data.source] : []);
+  const sourceLinks=sources.map(source => '<a class="m-source" href="'+escapeHtml(source[1])+'" target="_blank" rel="noopener">'+escapeHtml(source[0])+'</a>').join('');
+  const sourceBlock=sourceLinks ? '<div class="m-sources">'+sourceLinks+'</div>' : '';
   marchive.innerHTML =
-    '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+source+'</div>' +
+    '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+sourceBlock+'</div>' +
     '<div><h3>Credits</h3><dl>'+details+'</dl></div>';
 }
 
@@ -973,6 +1008,8 @@ const translations = {
     collab_johann_note: "Another pillar in Lester René's career, helping guide the emotions he wants audiences and dancers to feel through music. A collaborator since 2017, he has composed original scores for most of his works.",
     collab_christian_role: 'Bad Cube · animation · stage visuals',
     collab_christian_note: 'Animator and visual collaborator for Quantum Leap and Saturn Return, contributing projected worlds that expanded the physical stage space.',
+    collab_franziska_role: 'Stage design · figures · objects',
+    collab_franziska_note: "Stage and figure designer for Saturn Return, shaping the sculptural world around the dancers and the piece's cosmic architecture.",
     collab_nastasia_role: 'Costume designer',
     collab_nastasia_note: "Designed the costumes for Lester René's first choreographic work, helping define the visual identity of that debut piece.",
     press_title: 'Press', press_sub: 'Selected reviews',
@@ -999,7 +1036,6 @@ const translations = {
     press_q4: 'Powerful and striking images. Every movement precisely choreographed.',
     press_q5: 'Impressive and humorous in equal measure — with a whole range of emotions.',
     press_q6: 'The ensemble also brilliantly delivers in the choreography of Lester René. Everything just works.',
-    press_q7: 'Brave and full of esprit, revealing inner distress and passionate longing through individual expression.',
     wp1: '"The ensemble brilliantly delivers in the choreography of Lester René" — NWZ, 2026',
     wp2: '"Impressive and humorous in equal measure" — NWZ, 2023',
     wp3: '"Powerful and striking images — every movement precisely choreographed" — Ostsee Zeitung',
@@ -1022,6 +1058,8 @@ const translations = {
     collab_johann_note: 'Otro pilar en la carrera de Lester René: ayuda a guiar, a través de la música, las emociones que quiere que sientan el público y los bailarines. Colaborador desde 2017, ha compuesto scores originales para la gran mayoría de sus obras.',
     collab_christian_role: 'Bad Cube · animación · visuales escénicos',
     collab_christian_note: 'Animador y colaborador visual en Quantum Leap y Saturn Return, aportando mundos proyectados que expandieron el espacio físico del escenario.',
+    collab_franziska_role: 'Escenografía · figuras · objetos',
+    collab_franziska_note: 'Escenógrafa y creadora de figuras para Saturn Return, dando forma al mundo escultórico que rodea a los bailarines y a la arquitectura cósmica de la pieza.',
     collab_nastasia_role: 'Diseñadora de vestuario',
     collab_nastasia_note: 'Diseñó el vestuario de la primera obra coreográfica de Lester René, ayudando a definir la identidad visual de esa pieza debut.',
     press_title: 'Prensa', press_sub: 'Críticas seleccionadas',
@@ -1048,7 +1086,6 @@ const translations = {
     press_q4: 'Imágenes poderosas e impactantes. Cada movimiento coreografiado con precisión.',
     press_q5: 'Impresionante y humorística a partes iguales — con toda una gama de emociones.',
     press_q6: 'El ensemble brilla también en la coreografía de Lester René. Todo encaja a la perfección.',
-    press_q7: 'Valiente y con esprit, revela necesidad interior y deseo apasionado a través de una expresión individual.',
     wp1: '"El ensemble brilla en la coreografía de Lester René" — NWZ, 2026',
     wp2: '"Impresionante y humorística a partes iguales" — NWZ, 2023',
     wp3: '"Imágenes poderosas — cada movimiento coreografiado con precisión" — Ostsee Zeitung',
@@ -1071,6 +1108,8 @@ const translations = {
     collab_johann_note: 'Eine weitere tragende Säule in Lester Renés Laufbahn: Durch Musik hilft er, die Emotionen zu führen, die Publikum und Tänzerinnen und Tänzer spüren sollen. Seit 2017 Kollaborateur, komponierte er Originalscores für den Großteil seiner Arbeiten.',
     collab_christian_role: 'Bad Cube · Animation · Bühnenvisuals',
     collab_christian_note: 'Animator und visueller Kollaborateur für Quantum Leap und Saturn Return, mit projizierten Welten, die den physischen Bühnenraum erweiterten.',
+    collab_franziska_role: 'Bühnenbild · Figuren · Objekte',
+    collab_franziska_note: 'Bühnen- und Figurenbildnerin für Saturn Return; sie formte die skulpturale Welt um die Tänzerinnen und Tänzer und die kosmische Architektur des Stücks.',
     collab_nastasia_role: 'Kostümdesignerin',
     collab_nastasia_note: 'Entwarf die Kostüme für Lester Renés erste choreografische Arbeit und prägte damit die visuelle Identität dieses Debüts.',
     press_title: 'Presse', press_sub: 'Ausgewählte Kritiken',
@@ -1097,7 +1136,6 @@ const translations = {
     press_q4: 'Kraftvolle und eindrucksvolle Bilder. Jede Bewegung ist durchchoreografiert.',
     press_q5: 'Beeindruckende und zugleich humorvolle Performance — mit einer ganzen Bandbreite an Emotionen.',
     press_q6: 'Auch tänzerisch brilliert das Ensemble in der Choreografie von Lester René. Hier passt einfach alles.',
-    press_q7: 'Mutig und mit Esprit vermittelt er innere Not und leidenschaftliche Sehnsucht.',
     wp1: '„Das Ensemble brilliert in der Choreografie von Lester René" — NWZ, 2026',
     wp2: '„Beeindruckende und zugleich humorvolle Performance" — NWZ, 2023',
     wp3: '„Kraftvolle Bilder — jede Bewegung durchchoreografiert" — Ostsee Zeitung',
@@ -1120,6 +1158,8 @@ const translations = {
     collab_johann_note: 'Un altro pilastro nella carriera di Lester René: attraverso la musica aiuta a guidare le emozioni che desidera far sentire al pubblico e ai danzatori. Collaboratore dal 2017, ha composto score originali per la grande maggioranza dei suoi lavori.',
     collab_christian_role: 'Bad Cube · animazione · visuali sceniche',
     collab_christian_note: 'Animatore e collaboratore visivo per Quantum Leap e Saturn Return, ha contribuito con mondi proiettati che hanno ampliato lo spazio fisico della scena.',
+    collab_franziska_role: 'Scenografia · figure · oggetti',
+    collab_franziska_note: 'Scenografa e creatrice di figure per Saturn Return, ha dato forma al mondo scultoreo intorno ai danzatori e all’architettura cosmica del pezzo.',
     collab_nastasia_role: 'Costumista',
     collab_nastasia_note: 'Ha disegnato i costumi per la prima opera coreografica di Lester René, contribuendo a definirne l’identità visiva.',
     press_title: 'Stampa', press_sub: 'Recensioni selezionate',
@@ -1146,7 +1186,6 @@ const translations = {
     press_q4: 'Immagini potenti e suggestive. Ogni movimento è coreografato con precisione.',
     press_q5: 'Impressionante e umoristica allo stesso tempo — con tutta una gamma di emozioni.',
     press_q6: "L\u2019ensemble brilla anche nella coreografia di Lester René. Qui tutto funziona alla perfezione.",
-    press_q7: 'Coraggioso e pieno di esprit, rivela turbamento interiore e desiderio appassionato attraverso un’espressione individuale.',
     wp1: '"L\u2019ensemble brilla nella coreografia di Lester René" — NWZ, 2026',
     wp2: '"Impressionante e umoristica allo stesso tempo" — NWZ, 2023',
     wp3: '"Immagini potenti — ogni movimento coreografato con precisione" — Ostsee Zeitung',
@@ -1226,7 +1265,6 @@ const heroQuotes = {
     '“A rich dance vocabulary.” — Radio Bremen',
     '“They draw out emotion through the movement of their bodies.” — NWZ',
     '“A dark piece carried by the circling beam of an imaginary lighthouse.” — Oldenburger Onlinezeitung',
-    '“Brave and full of esprit.” — Die Deutsche Bühne',
   ],
   es: [
     '“Muy fresco. Muy sorprendente. Imprescindible.” — Radio Bremen',
@@ -1237,7 +1275,6 @@ const heroQuotes = {
     '“Un vocabulario de danza muy rico.” — Radio Bremen',
     '“Extraen la emoción a través del movimiento de sus cuerpos.” — NWZ',
     '“Una pieza oscura sostenida por el haz de un faro imaginario.” — Oldenburger Onlinezeitung',
-    '“Valiente y con esprit.” — Die Deutsche Bühne',
   ],
   de: [
     '„Sehr frisch. Sehr überraschend. Unbedingt sehenswert.“ — Radio Bremen',
@@ -1248,7 +1285,6 @@ const heroQuotes = {
     '„Ein reichhaltiges Tanzvokabular.“ — Radio Bremen',
     '„Sie arbeiten Emotionen durch die Bewegungen ihrer Körper heraus.“ — NWZ',
     '„Ein düsteres Stück, getragen vom Lichtstrahl eines imaginären Leuchtturms.“ — Oldenburger Onlinezeitung',
-    '„Mutig und mit Esprit.“ — Die Deutsche Bühne',
   ],
   it: [
     '“Molto fresco. Molto sorprendente. Assolutamente da vedere.” — Radio Bremen',
@@ -1259,7 +1295,6 @@ const heroQuotes = {
     '“Un vocabolario di danza ricchissimo.” — Radio Bremen',
     '“Fanno emergere l’emozione attraverso il movimento dei corpi.” — NWZ',
     '“Un pezzo oscuro guidato dal fascio di un faro immaginario.” — Oldenburger Onlinezeitung',
-    '“Coraggioso e pieno di esprit.” — Die Deutsche Bühne',
   ],
 };
 
