@@ -146,21 +146,26 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 /* MODAL */
 .modal{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;}
 .modal.open{opacity:1;pointer-events:all;}
-.m-in{width:min(90vw,1100px);max-height:90vh;overflow:auto;position:relative;padding-top:.2rem;background:#000;}
+.m-in{width:min(92vw,1180px);max-height:90vh;overflow:auto;position:relative;padding-top:.2rem;background:#000;}
 .m-close{position:sticky;top:0;margin-left:auto;margin-bottom:.7rem;z-index:3;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.5);cursor:pointer;transition:color .2s;display:flex;align-items:center;gap:.5rem;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.12);padding:.55rem .75rem;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
 .m-close:hover{color:#fff;}
-.m-vid{position:relative;width:100%;height:min(48vh,560px);background:#000;}
+.m-grid{display:grid;grid-template-columns:minmax(300px,.88fr) minmax(420px,1.12fr);gap:2rem;align-items:start;}
+.modal.alt-layout .m-info{order:2;}
+.modal.alt-layout .m-media{order:1;}
+.m-media{min-width:0;}
+.m-info{min-width:0;padding-top:.4rem;}
+.m-vid{position:relative;width:100%;aspect-ratio:16/9;background:#000;}
 .m-vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .m-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .m-playbtn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;}
 .m-playbtn-inner{width:72px;height:72px;border:1.5px solid rgba(255,255,255,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;background:rgba(0,0,0,.4);}
 .m-playbtn:hover .m-playbtn-inner{background:rgba(255,255,255,.15);border-color:#fff;}
-.m-foot{display:flex;align-items:center;justify-content:space-between;margin-top:1.2rem;flex-wrap:wrap;gap:1rem;}
-.m-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.1em;}
+.m-foot{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:1.4rem;gap:1.2rem;}
+.m-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,4.7rem);line-height:.9;letter-spacing:.04em;}
 .m-sub{font-size:.68rem;color:rgba(240,237,232,.4);letter-spacing:.15em;text-transform:uppercase;margin-top:.1rem;}
 .m-yt{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.4);border:1px solid rgba(255,255,255,.15);padding:.55rem 1.1rem;transition:all .3s;white-space:nowrap;}
 .m-yt:hover{color:#fff;border-color:rgba(255,255,255,.5);}
-.m-archive{margin-top:1.6rem;border-top:1px solid var(--line);padding-top:1.5rem;display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;gap:2rem;max-height:34vh;overflow:auto;}
+.m-archive{border-top:1px solid var(--line);padding-top:1.5rem;display:grid;grid-template-columns:1fr;gap:1.2rem;max-height:none;overflow:visible;}
 .m-archive h3{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.32);margin-bottom:.65rem;font-weight:400;}
 .m-archive p{font-size:.78rem;line-height:1.75;color:rgba(240,237,232,.58);margin-bottom:1rem;}
 .m-archive dl{display:grid;grid-template-columns:minmax(86px,120px) 1fr;gap:.65rem 1rem;margin:0;}
@@ -304,7 +309,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .work:hover .work-cta{background:transparent;color:inherit;}
   .work-th-ov{background:linear-gradient(to top,#000,transparent)!important;}
   .work-in{padding:2rem 1.5rem;}
-  .m-archive{grid-template-columns:1fr;max-height:38vh;gap:1rem;}
+  .m-grid{grid-template-columns:1fr;gap:1.4rem;}
+  .modal.alt-layout .m-info,.modal.alt-layout .m-media{order:initial;}
+  .m-foot{margin-bottom:1rem;}
+  .m-archive{grid-template-columns:1fr;gap:1rem;}
   .rv,.rl{transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;}
   .rl.in,.rv.in{transform:none;}
   #about,#contact{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
@@ -643,23 +651,29 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
       Close
     </button>
-    <div class="m-vid" id="m-vid">
-      <img id="m-poster" src="" alt="">
-      <div class="m-playbtn" id="m-playbtn">
-        <div class="m-playbtn-inner">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="white"><path d="M7 4.5l12 6.5-12 6.5V4.5z"/></svg>
+    <div class="m-grid">
+      <div class="m-info">
+        <div class="m-foot">
+          <div>
+            <div class="m-title" id="mtitle"></div>
+            <div class="m-sub" id="msub"></div>
+          </div>
+          <a class="m-yt" id="m-yt" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+        <div class="m-archive" id="m-archive"></div>
+      </div>
+      <div class="m-media">
+        <div class="m-vid" id="m-vid">
+          <img id="m-poster" src="" alt="">
+          <div class="m-playbtn" id="m-playbtn">
+            <div class="m-playbtn-inner">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="white"><path d="M7 4.5l12 6.5-12 6.5V4.5z"/></svg>
+            </div>
+          </div>
+          <iframe id="mframe" src="" frameborder="0" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen style="display:none"></iframe>
         </div>
       </div>
-      <iframe id="mframe" src="" frameborder="0" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen style="display:none"></iframe>
     </div>
-    <div class="m-foot">
-      <div>
-        <div class="m-title" id="mtitle"></div>
-        <div class="m-sub" id="msub"></div>
-      </div>
-      <a class="m-yt" id="m-yt" href="#" target="_blank" rel="noopener">Watch on YouTube</a>
-    </div>
-    <div class="m-archive" id="m-archive"></div>
   </div>
 </div>
 
@@ -911,6 +925,7 @@ document.querySelectorAll('.work').forEach(w=>{
     msub.textContent=this.dataset.sub||'';
     myt.href='https://www.youtube.com/watch?v='+vid;
     renderWorkArchive(this.dataset.work);
+    modal.classList.toggle('alt-layout', this.classList.contains('alt'));
     modal.classList.add('open');
     document.body.style.overflow='hidden';
   });
@@ -929,6 +944,7 @@ function closeModal(){
   modal.classList.remove('open');
   mframe.src='';
   mframe.style.display='none';
+  modal.classList.remove('alt-layout');
   if(marchive) marchive.innerHTML='';
   document.body.style.overflow='';
 }
