@@ -68,7 +68,7 @@ These are useful sources and quotes found for Lester Rene's work. Some are alrea
 
 - Source: Franziska Schmidt vita page
 - Link: https://figurenbau.jimdofree.com/vita/
-- Use: collaborator portrait image, saved locally as images/franziska-schmidt.png.
+- Use: collaborator portrait image, saved locally as images/franziska-schmidt.png. Colorized from the black-and-white source with natural skin, brown hair, neutral background and dark clothing tones.
 
 ### Shockheaded Peter, 2026
 
