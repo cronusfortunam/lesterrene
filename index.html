@@ -275,7 +275,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 .rl{opacity:0;transform:translateX(-24px);transition:opacity .85s ease,transform .85s ease;}
 .rl.in{opacity:1;transform:none;}
 
-#about,#collaborators,#press,#contact{content-visibility:auto;contain-intrinsic-size:800px;}
+#collaborators,#press,#contact{content-visibility:auto;contain-intrinsic-size:800px;}
 
 @media(max-width:900px){
   html{scroll-behavior:auto;}
@@ -795,6 +795,19 @@ const navSections=navSectionLinks
   .map(link => ({link, section: document.querySelector(link.getAttribute('href'))}))
   .filter(item => item.section);
 let navTicking=false;
+navSectionLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    if(link.getAttribute('href') !== '#about') return;
+    const label=document.querySelector('#about .a-label');
+    if(!label) return;
+    e.preventDefault();
+    const navHeight=navEl ? navEl.getBoundingClientRect().height : 0;
+    const top=label.getBoundingClientRect().top + window.scrollY - navHeight - 22;
+    window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    history.replaceState(null,'','#about');
+    setTimeout(updateNavState,260);
+  });
+});
 function updateActiveNav(){
   const marker=window.innerHeight * .42;
   let active=null;
