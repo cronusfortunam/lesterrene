@@ -179,10 +179,13 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-sources{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;}
 .m-media-gallery{margin-top:1.1rem;}
 .m-media-gallery h3{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.32);margin-bottom:.65rem;font-weight:400;}
+.m-gallery-stage{display:block;width:100%;max-height:52vh;margin-bottom:.65rem;background:#0e0e0e;border:1px solid rgba(255,255,255,.08);overflow:hidden;}
+.m-gallery-stage img{width:100%;height:100%;max-height:52vh;object-fit:contain;display:block;background:#050505;}
 .m-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.1rem;}
-.m-gallery a{display:block;aspect-ratio:4/3;overflow:hidden;background:#101010;border:1px solid rgba(255,255,255,.08);}
+.m-gallery button{display:block;aspect-ratio:4/3;overflow:hidden;background:#101010;border:1px solid rgba(255,255,255,.08);cursor:pointer;padding:0;}
 .m-gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.18);transition:filter .25s ease,transform .35s ease;}
-.m-gallery a:hover img{filter:grayscale(0);transform:scale(1.04);}
+.m-gallery button:hover img,.m-gallery button.active img{filter:grayscale(0);transform:scale(1.04);}
+.m-gallery button.active{border-color:rgba(240,237,232,.55);}
 
 /* ABOUT */
 #about{padding:10rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;border-top:1px solid var(--line);}
@@ -913,6 +916,20 @@ const workArchive = {
       ['Volkstheater Rostock theater newspaper, March 2022', 'https://www.volkstheater-rostock.de/download/3868/vtr_theaterzeitung_maerz_2022.pdf'],
       ['Volkstheater Rostock theater newspaper, September 2022', 'https://www.volkstheater-rostock.de/download/4223/theaterzeitung_september_2022.pdf'],
       ['Franziska Schmidt archive', 'https://figurenbau.jimdofree.com/inszenierungen/']
+    ],
+    gallery: [
+      'images/work/saturn-return/581E6AC2-829F-49B0-B969-B72FE7CE63D6.jpeg',
+      'images/work/saturn-return/DSCF1591 2.jpeg',
+      'images/work/saturn-return/DSCF1691.jpeg',
+      'images/work/saturn-return/DSCF1696.jpeg',
+      'images/work/saturn-return/DSCF1737.jpeg',
+      'images/work/saturn-return/DSCF1776.jpeg',
+      'images/work/saturn-return/IMG_3540.jpeg',
+      'images/work/saturn-return/IMG_3544.jpeg',
+      'images/work/saturn-return/IMG_3545.jpeg',
+      'images/work/saturn-return/IMG_3546.jpeg',
+      'images/work/saturn-return/IMG_3547.jpeg',
+      'images/work/saturn-return/IMG_3548.jpeg'
     ]
   },
   quantum: {
@@ -995,8 +1012,18 @@ function renderWorkArchive(key){
     '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+sourceBlock+'</div>' +
     '<div><h3>Credits</h3><dl>'+details+'</dl></div>';
   if(mgallery) {
-    mgallery.innerHTML = data.gallery ? '<h3>Gallery</h3><div class="m-gallery">'+data.gallery.map((src,idx) => '<a href="'+escapeHtml(src)+'" target="_blank" rel="noopener"><img src="'+escapeHtml(src)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy"></a>').join('')+'</div>' : '';
+    mgallery.innerHTML = data.gallery ? '<h3>Gallery</h3><div class="m-gallery-stage"><img src="'+escapeHtml(data.gallery[0])+'" alt="'+escapeHtml(data.title || key)+' production photo selected" id="m-gallery-active"></div><div class="m-gallery">'+data.gallery.map((src,idx) => '<button type="button" class="'+(idx === 0 ? 'active' : '')+'" data-gallery-src="'+escapeHtml(src)+'" aria-label="Show production photo '+(idx+1)+'"><img src="'+escapeHtml(src)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy"></button>').join('')+'</div>' : '';
   }
+}
+
+if(mgallery) {
+  mgallery.addEventListener('click', e => {
+    const btn=e.target.closest('[data-gallery-src]');
+    if(!btn) return;
+    const active=mgallery.querySelector('#m-gallery-active');
+    if(active) active.src=btn.dataset.gallerySrc;
+    mgallery.querySelectorAll('[data-gallery-src]').forEach(item => item.classList.toggle('active', item === btn));
+  });
 }
 
 document.querySelectorAll('.work').forEach(w=>{

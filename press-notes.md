@@ -63,6 +63,7 @@ These are useful sources and quotes found for Lester Rene's work. Some are alrea
 - Source: Franziska Schmidt archive
 - Link: https://figurenbau.jimdofree.com/inszenierungen/
 - Use: archive source and collaborator link.
+- Production photos: 12 images saved locally under images/work/saturn-return/ and shown in the work archive gallery.
 
 ### Franziska Schmidt portrait
 
