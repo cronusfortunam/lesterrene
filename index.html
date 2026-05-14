@@ -174,7 +174,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-archive dl{display:grid;grid-template-columns:minmax(86px,120px) 1fr;gap:.65rem 1rem;margin:0;}
 .m-archive dt{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,237,232,.28);}
 .m-archive dd{font-size:.76rem;line-height:1.65;color:rgba(240,237,232,.58);margin:0;}
-.m-source{display:inline-flex;margin-top:.2rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.36);transition:color .2s;}
+.m-source{display:inline-flex;margin-top:.2rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.68);border-bottom:1px solid rgba(240,237,232,.28);transition:color .2s,border-color .2s;}
 .m-source:hover{color:var(--white);}
 .m-sources{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;}
 .m-media-gallery{margin-top:1.1rem;}
@@ -242,9 +242,10 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .pc:hover{background:var(--dark);}
 .pc-mark{font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:.8;color:rgba(255,255,255,.05);}
 .pc-q{font-family:'DM Serif Display',serif;font-size:.98rem;font-style:italic;color:rgba(240,237,232,.65);line-height:1.7;flex:1;}
-.pc-src{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.22);}
-.pc-src a{transition:color .2s;}
-.pc-src a:hover{color:rgba(240,237,232,.72);}
+.pc-src{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.28);}
+.pc-src a{color:rgba(240,237,232,.74);border-bottom:1px solid rgba(240,237,232,.28);transition:color .2s,border-color .2s;}
+.pc-src a::after{content:"";display:inline-block;width:.38rem;height:.38rem;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-.05rem) rotate(45deg);margin-left:.42rem;}
+.pc-src a:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 .pc-w{font-size:.73rem;color:rgba(240,237,232,.3);margin-top:.2rem;font-style:italic;}
 
 /* CONTACT */
@@ -611,7 +612,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
         <div class="cb-role" data-i18n="collab_franziska_role">Stage design · figures · objects</div>
         <p class="cb-note" data-i18n="collab_franziska_note">Stage and figure designer for Saturn Return, creator of the Saturn ring that also dances on stage and gives the piece its sculptural centre.</p>
       </div>
-      <a class="cb-link" href="https://figurenbau.jimdofree.com/inszenierungen/" target="_blank" rel="noopener">Archive</a>
+      <a class="cb-link" href="https://figurenbau.jimdofree.com/inszenierungen/" target="_blank" rel="noopener">Website</a>
     </div>
     <div class="cb-item rv">
       <div class="cb-person">
