@@ -101,6 +101,7 @@ These are useful sources and quotes found for Lester Rene's work. Some are alrea
 - Source: Radio Bremen
 - Status: kept as a historical quote, but without a verified link.
 - Use: work card and hero quote.
+- Production photos: 9 images saved locally under images/work/from-the-lighthouse/ and shown in the work archive gallery.
 
 ## Saved for later, not currently shown
 
