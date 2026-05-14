@@ -177,6 +177,8 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-source{display:inline-flex;margin-top:.2rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.36);transition:color .2s;}
 .m-source:hover{color:var(--white);}
 .m-sources{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;}
+.m-media-gallery{margin-top:1.1rem;}
+.m-media-gallery h3{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.32);margin-bottom:.65rem;font-weight:400;}
 .m-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.1rem;}
 .m-gallery a{display:block;aspect-ratio:4/3;overflow:hidden;background:#101010;border:1px solid rgba(255,255,255,.08);}
 .m-gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.18);transition:filter .25s ease,transform .35s ease;}
@@ -694,6 +696,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
           </div>
           <iframe id="mframe" src="" frameborder="0" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen style="display:none"></iframe>
         </div>
+        <div class="m-media-gallery" id="m-gallery-wrap"></div>
       </div>
     </div>
   </div>
@@ -837,6 +840,7 @@ const mtitle=document.getElementById('mtitle');
 const msub=document.getElementById('msub');
 const myt=document.getElementById('m-yt');
 const marchive=document.getElementById('m-archive');
+const mgallery=document.getElementById('m-gallery-wrap');
 let currentVideoId='';
 
 const workArchive = {
@@ -955,17 +959,19 @@ function renderWorkArchive(key){
   const data=workArchive[key];
   if(!marchive || !data) {
     if(marchive) marchive.innerHTML='';
+    if(mgallery) mgallery.innerHTML='';
     return;
   }
   const details=data.details.map(([term,desc]) => '<dt>'+escapeHtml(term)+'</dt><dd>'+escapeHtml(desc)+'</dd>').join('');
   const sources=data.sources || (data.source ? [data.source] : []);
   const sourceLinks=sources.map(source => '<a class="m-source" href="'+escapeHtml(source[1])+'" target="_blank" rel="noopener">'+escapeHtml(source[0])+'</a>').join('');
   const sourceBlock=sourceLinks ? '<div class="m-sources">'+sourceLinks+'</div>' : '';
-  const gallery=data.gallery ? '<div><h3>Gallery</h3><div class="m-gallery">'+data.gallery.map((src,idx) => '<a href="'+escapeHtml(src)+'" target="_blank" rel="noopener"><img src="'+escapeHtml(src)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy"></a>').join('')+'</div></div>' : '';
   marchive.innerHTML =
     '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+sourceBlock+'</div>' +
-    '<div><h3>Credits</h3><dl>'+details+'</dl></div>' +
-    gallery;
+    '<div><h3>Credits</h3><dl>'+details+'</dl></div>';
+  if(mgallery) {
+    mgallery.innerHTML = data.gallery ? '<h3>Gallery</h3><div class="m-gallery">'+data.gallery.map((src,idx) => '<a href="'+escapeHtml(src)+'" target="_blank" rel="noopener"><img src="'+escapeHtml(src)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy"></a>').join('')+'</div>' : '';
+  }
 }
 
 document.querySelectorAll('.work').forEach(w=>{
