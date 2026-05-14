@@ -83,6 +83,7 @@ These are useful sources and quotes found for Lester Rene's work. Some are alrea
   - Oldenburgisches Staatstheater: https://staatstheater.de/programm/schauspiel/spielzeit-2526/shockheaded-peter
   - Theaterkompass: https://theaterkompass.de/beitraege/shockheaded-peter-junk-oper-nach-motiven-aus-der-struwwelpeter-von-heinrich-hoffmann-oldenburgisches-staatstheater-62483
 - Use: archive sources for production context.
+- Production photos: 12 images saved locally under images/work/shockheaded/ and shown in the work archive gallery.
 
 ## Kept, but not linked as verified online press
 

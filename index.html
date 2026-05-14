@@ -177,6 +177,10 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-source{display:inline-flex;margin-top:.2rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.36);transition:color .2s;}
 .m-source:hover{color:var(--white);}
 .m-sources{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;}
+.m-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.1rem;}
+.m-gallery a{display:block;aspect-ratio:4/3;overflow:hidden;background:#101010;border:1px solid rgba(255,255,255,.08);}
+.m-gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.18);transition:filter .25s ease,transform .35s ease;}
+.m-gallery a:hover img{filter:grayscale(0);transform:scale(1.04);}
 
 /* ABOUT */
 #about{padding:10rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;border-top:1px solid var(--line);}
@@ -320,6 +324,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .modal.alt-layout .m-info,.modal.alt-layout .m-media{order:initial;}
   .m-foot{margin-bottom:1rem;}
   .m-archive{grid-template-columns:1fr;gap:1rem;}
+  .m-gallery{grid-template-columns:repeat(2,1fr);}
   .rv,.rl{transform:translateY(18px);transition:opacity .45s ease,transform .45s ease;}
   .rl.in,.rv.in{transform:none;}
   #about,#contact{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
@@ -853,6 +858,20 @@ const workArchive = {
       ['NWZ review', 'https://www.nwzonline.de/kultur/struwwelpeter-als-musical-premiere-begeistert-in-oldenburg_a_4,3,333327922.html'],
       ['Oldenburgisches Staatstheater', 'https://staatstheater.de/programm/schauspiel/spielzeit-2526/shockheaded-peter'],
       ['Theaterkompass archive', 'https://theaterkompass.de/beitraege/shockheaded-peter-junk-oper-nach-motiven-aus-der-struwwelpeter-von-heinrich-hoffmann-oldenburgisches-staatstheater-62483']
+    ],
+    gallery: [
+      'images/work/shockheaded/shockheaded-01.png',
+      'images/work/shockheaded/shockheaded-02.png',
+      'images/work/shockheaded/shockheaded-03.png',
+      'images/work/shockheaded/shockheaded-04.png',
+      'images/work/shockheaded/shockheaded-05.png',
+      'images/work/shockheaded/shockheaded-06.png',
+      'images/work/shockheaded/shockheaded-07.png',
+      'images/work/shockheaded/shockheaded-08.png',
+      'images/work/shockheaded/shockheaded-09.png',
+      'images/work/shockheaded/shockheaded-10.png',
+      'images/work/shockheaded/shockheaded-11.png',
+      'images/work/shockheaded/shockheaded-12.png'
     ]
   },
   casita: {
@@ -942,9 +961,11 @@ function renderWorkArchive(key){
   const sources=data.sources || (data.source ? [data.source] : []);
   const sourceLinks=sources.map(source => '<a class="m-source" href="'+escapeHtml(source[1])+'" target="_blank" rel="noopener">'+escapeHtml(source[0])+'</a>').join('');
   const sourceBlock=sourceLinks ? '<div class="m-sources">'+sourceLinks+'</div>' : '';
+  const gallery=data.gallery ? '<div><h3>Gallery</h3><div class="m-gallery">'+data.gallery.map((src,idx) => '<a href="'+escapeHtml(src)+'" target="_blank" rel="noopener"><img src="'+escapeHtml(src)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy"></a>').join('')+'</div></div>' : '';
   marchive.innerHTML =
     '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+sourceBlock+'</div>' +
-    '<div><h3>Credits</h3><dl>'+details+'</dl></div>';
+    '<div><h3>Credits</h3><dl>'+details+'</dl></div>' +
+    gallery;
 }
 
 document.querySelectorAll('.work').forEach(w=>{
