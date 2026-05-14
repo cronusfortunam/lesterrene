@@ -42,6 +42,7 @@ These are useful sources and quotes found for Lester Rene's work. Some are alrea
 - Source: theater hof/19 productions and stations
 - Link: https://www.theaterhof19.de/das-haus/produktionen-stationen
 - Use: archive source. It references the NWZ response to the work.
+- Production photos: 12 images saved locally under images/work/casita/ and shown in the work archive gallery through optimized WebP versions.
 
 ### Saturn Return, 2020/2021
 
