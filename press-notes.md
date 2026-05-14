@@ -93,6 +93,7 @@ These are useful sources and quotes found for Lester Rene's work. Some are alrea
 - Source: Radio Bremen
 - Status: kept as a quote, but without a link because the available Wayback result does not clearly verify Lester or the quote.
 - Use: visible press card and hero quote, no outbound link.
+- Production photos: 12 images saved locally under images/work/quantum-leap/ and shown in the work archive gallery.
 
 ### From the Lighthouse, 2017
 
