@@ -941,18 +941,18 @@ const workArchive = {
       ['theater hof/19 productions', 'https://www.theaterhof19.de/das-haus/produktionen-stationen']
     ],
     gallery: [
-      ['images/work/casita/thumbs/_C7A2349.webp', 'images/work/casita/large/_C7A2349.webp'],
-      ['images/work/casita/thumbs/_C7A2808.webp', 'images/work/casita/large/_C7A2808.webp'],
-      ['images/work/casita/thumbs/_C7A2843.webp', 'images/work/casita/large/_C7A2843.webp'],
-      ['images/work/casita/thumbs/_C7A3028.webp', 'images/work/casita/large/_C7A3028.webp'],
-      ['images/work/casita/thumbs/_C7A3210.webp', 'images/work/casita/large/_C7A3210.webp'],
-      ['images/work/casita/thumbs/_C7A3327.webp', 'images/work/casita/large/_C7A3327.webp'],
-      ['images/work/casita/thumbs/_C7A3335.webp', 'images/work/casita/large/_C7A3335.webp'],
-      ['images/work/casita/thumbs/_C7A3622.webp', 'images/work/casita/large/_C7A3622.webp'],
-      ['images/work/casita/thumbs/_C7A3820.webp', 'images/work/casita/large/_C7A3820.webp'],
-      ['images/work/casita/thumbs/_C7A4074.webp', 'images/work/casita/large/_C7A4074.webp'],
-      ['images/work/casita/thumbs/_C7A4296.webp', 'images/work/casita/large/_C7A4296.webp'],
-      ['images/work/casita/thumbs/_C7A5608.webp', 'images/work/casita/large/_C7A5608.webp']
+      ['images/work/casita/thumbs/casita-01.webp', 'images/work/casita/large/casita-01.webp'],
+      ['images/work/casita/thumbs/casita-02.webp', 'images/work/casita/large/casita-02.webp'],
+      ['images/work/casita/thumbs/casita-03.webp', 'images/work/casita/large/casita-03.webp'],
+      ['images/work/casita/thumbs/casita-04.webp', 'images/work/casita/large/casita-04.webp'],
+      ['images/work/casita/thumbs/casita-05.webp', 'images/work/casita/large/casita-05.webp'],
+      ['images/work/casita/thumbs/casita-06.webp', 'images/work/casita/large/casita-06.webp'],
+      ['images/work/casita/thumbs/casita-07.webp', 'images/work/casita/large/casita-07.webp'],
+      ['images/work/casita/thumbs/casita-08.webp', 'images/work/casita/large/casita-08.webp'],
+      ['images/work/casita/thumbs/casita-09.webp', 'images/work/casita/large/casita-09.webp'],
+      ['images/work/casita/thumbs/casita-10.webp', 'images/work/casita/large/casita-10.webp'],
+      ['images/work/casita/thumbs/casita-11.webp', 'images/work/casita/large/casita-11.webp'],
+      ['images/work/casita/thumbs/casita-12.webp', 'images/work/casita/large/casita-12.webp']
     ]
   },
   saturn: {
@@ -1074,7 +1074,8 @@ function renderWorkArchive(key){
   if(mgallery) {
     mgallery.innerHTML = data.gallery ? '<h3>Gallery · '+data.gallery.length+' photos</h3><div class="m-gallery">'+data.gallery.map((item,idx) => {
       const thumb=Array.isArray(item) ? item[0] : item;
-      return '<button type="button" data-gallery-index="'+idx+'" aria-label="Open production photo '+(idx+1)+'"><img src="'+escapeHtml(thumb)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy" decoding="async"></button>';
+      const full=Array.isArray(item) ? item[1] : item;
+      return '<button type="button" data-gallery-index="'+idx+'" aria-label="Open production photo '+(idx+1)+'"><img src="'+escapeHtml(thumb)+'" data-full="'+escapeHtml(full)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy" decoding="async"></button>';
     }).join('')+'</div>' : '';
   }
 }
@@ -1102,6 +1103,12 @@ function stepLightbox(delta){
 }
 
 if(mgallery) {
+  mgallery.addEventListener('error', e => {
+    const img=e.target.closest('img[data-full]');
+    if(!img || img.dataset.fallbackLoaded) return;
+    img.dataset.fallbackLoaded='true';
+    img.src=img.dataset.full;
+  }, true);
   mgallery.addEventListener('click', e => {
     const btn=e.target.closest('[data-gallery-index]');
     if(!btn) return;
