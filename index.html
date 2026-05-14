@@ -178,7 +178,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .m-source:hover{color:var(--white);}
 .m-sources{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;}
 .m-media-gallery{margin-top:1.1rem;}
-.m-media-gallery h3{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.32);margin-bottom:.65rem;font-weight:400;}
+.m-media-gallery h3{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.58);margin-bottom:.65rem;font-weight:400;}
 .m-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:.1rem;}
 .m-gallery button{display:block;aspect-ratio:4/3;overflow:hidden;background:#101010;border:1px solid rgba(255,255,255,.08);cursor:pointer;padding:0;}
 .m-gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.18);transition:filter .25s ease,transform .35s ease;}
@@ -1072,7 +1072,7 @@ function renderWorkArchive(key){
     '<div><h3>Archive</h3><p>'+escapeHtml(data.synopsis)+'</p><h3>Press</h3><p>'+escapeHtml(data.press)+'</p>'+sourceBlock+'</div>' +
     '<div><h3>Credits</h3><dl>'+details+'</dl></div>';
   if(mgallery) {
-    mgallery.innerHTML = data.gallery ? '<h3>Gallery</h3><div class="m-gallery">'+data.gallery.map((item,idx) => {
+    mgallery.innerHTML = data.gallery ? '<h3>Gallery · '+data.gallery.length+' photos</h3><div class="m-gallery">'+data.gallery.map((item,idx) => {
       const thumb=Array.isArray(item) ? item[0] : item;
       return '<button type="button" data-gallery-index="'+idx+'" aria-label="Open production photo '+(idx+1)+'"><img src="'+escapeHtml(thumb)+'" alt="'+escapeHtml(data.title || key)+' production photo '+(idx+1)+'" loading="lazy" decoding="async"></button>';
     }).join('')+'</div>' : '';
