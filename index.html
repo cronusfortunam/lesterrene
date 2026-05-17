@@ -897,6 +897,7 @@ let modalTouchStartX=0;
 let modalTouchStartY=0;
 let modalEdgeSwipe=false;
 let modalSwipeClosing=false;
+let bodyLocked=false;
 
 const workArchive = {
   shockheaded: {
@@ -1128,10 +1129,33 @@ function settleLightboxSwipe(){
 
 function closeLightboxFromEdge(){
   if(!lightbox) return;
-  lightbox.style.transition='transform .2s ease, opacity .2s ease';
-  lightbox.style.transform='translate3d(100vw,0,0)';
+  lightbox.style.transition='opacity .14s ease';
   lightbox.style.opacity='0';
-  window.setTimeout(closeLightbox, 170);
+  window.setTimeout(closeLightbox, 120);
+}
+
+function lockBodyScroll(){
+  if(bodyLocked) return;
+  modalReturnScrollY=window.scrollY || window.pageYOffset || 0;
+  document.body.style.position='fixed';
+  document.body.style.top='-'+modalReturnScrollY+'px';
+  document.body.style.left='0';
+  document.body.style.right='0';
+  document.body.style.width='100%';
+  bodyLocked=true;
+}
+
+function unlockBodyScroll(){
+  if(!bodyLocked) return;
+  const restoreY=modalReturnScrollY;
+  document.body.style.position='';
+  document.body.style.top='';
+  document.body.style.left='';
+  document.body.style.right='';
+  document.body.style.width='';
+  document.body.style.overflow='';
+  bodyLocked=false;
+  window.scrollTo(0, restoreY);
 }
 
 if(mgallery) {
@@ -1208,11 +1232,8 @@ document.querySelectorAll('.work').forEach(w=>{
     myt.href='https://www.youtube.com/watch?v='+vid;
     renderWorkArchive(this.dataset.work);
     modal.classList.toggle('alt-layout', this.classList.contains('alt'));
-    if(!modal.classList.contains('open')) {
-      modalReturnScrollY=window.scrollY || window.pageYOffset || 0;
-    }
+    if(!modal.classList.contains('open')) lockBodyScroll();
     modal.classList.add('open');
-    document.body.style.overflow='hidden';
   });
 });
 
@@ -1236,9 +1257,7 @@ function closeModal(){
   if(marchive) marchive.innerHTML='';
   if(mgallery) mgallery.innerHTML='';
   currentGallery=[];
-  document.body.style.overflow='';
-  const restoreY=modalReturnScrollY;
-  window.setTimeout(()=>window.scrollTo(0, restoreY), 0);
+  unlockBodyScroll();
 }
 document.getElementById('mclose').addEventListener('click',closeModal);
 modal.addEventListener('click',function(e){if(e.target===this)closeModal();});
@@ -1259,7 +1278,7 @@ function settleModalSwipe(){
 
 function closeModalFromEdge(){
   modalSwipeClosing=true;
-  document.body.style.overflow='';
+  unlockBodyScroll();
   modal.style.pointerEvents='none';
   modal.style.transition='opacity .16s ease';
   modal.style.opacity='0';
