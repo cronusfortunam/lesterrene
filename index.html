@@ -1101,11 +1101,35 @@ function closeLightbox(){
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden','true');
   if(lbImg) lbImg.removeAttribute('src');
+  resetLightboxSwipe();
 }
 
 function stepLightbox(delta){
   if(!lightbox || !lightbox.classList.contains('open')) return;
   showLightbox(currentGalleryIndex + delta);
+}
+
+function resetLightboxSwipe(){
+  if(!lightbox) return;
+  lightbox.style.transition='';
+  lightbox.style.transform='';
+  lightbox.style.opacity='';
+}
+
+function settleLightboxSwipe(){
+  if(!lightbox) return;
+  lightbox.style.transition='transform .18s ease, opacity .18s ease';
+  lightbox.style.transform='';
+  lightbox.style.opacity='';
+  window.setTimeout(resetLightboxSwipe, 190);
+}
+
+function closeLightboxFromEdge(){
+  if(!lightbox) return;
+  lightbox.style.transition='transform .2s ease, opacity .2s ease';
+  lightbox.style.transform='translate3d(100vw,0,0)';
+  lightbox.style.opacity='0';
+  window.setTimeout(closeLightbox, 170);
 }
 
 if(mgallery) {
@@ -1137,7 +1161,14 @@ if(lightbox) {
     if(!lightbox.classList.contains('open') || !e.touches.length) return;
     const dx=e.touches[0].clientX-lightboxTouchStartX;
     const dy=e.touches[0].clientY-lightboxTouchStartY;
-    if(lightboxTouchStartX < 32 && dx > 0) return;
+    if(lightboxTouchStartX < 34 && dx > 0 && Math.abs(dx) > Math.abs(dy) * 1.1) {
+      e.preventDefault();
+      const pull=Math.min(dx, window.innerWidth) * .42;
+      lightbox.style.transition='none';
+      lightbox.style.transform='translate3d('+pull+'px,0,0)';
+      lightbox.style.opacity=String(Math.max(.58, 1 - dx / window.innerWidth));
+      return;
+    }
     if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 12) e.preventDefault();
   }, {passive:false});
   lightbox.addEventListener('touchend', e => {
@@ -1146,7 +1177,12 @@ if(lightbox) {
     if(!touch) return;
     const dx=touch.clientX-lightboxTouchStartX;
     const dy=touch.clientY-lightboxTouchStartY;
-    if(lightboxTouchStartX < 32 && dx > 0) return;
+    if(lightboxTouchStartX < 34 && dx > 0 && Math.abs(dx) > Math.abs(dy) * 1.1) {
+      lightboxTouchHandled=true;
+      if(dx > 64) closeLightboxFromEdge();
+      else settleLightboxSwipe();
+      return;
+    }
     if(Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy) * 1.35) return;
     lightboxTouchHandled=true;
     stepLightbox(dx > 0 ? -1 : 1);
@@ -1195,9 +1231,31 @@ function closeModal(){
   if(mgallery) mgallery.innerHTML='';
   currentGallery=[];
   document.body.style.overflow='';
+  resetModalSwipe();
 }
 document.getElementById('mclose').addEventListener('click',closeModal);
 modal.addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+function resetModalSwipe(){
+  modal.style.transition='';
+  modal.style.transform='';
+  modal.style.opacity='';
+}
+
+function settleModalSwipe(){
+  modal.style.transition='transform .18s ease, opacity .18s ease';
+  modal.style.transform='';
+  modal.style.opacity='';
+  window.setTimeout(resetModalSwipe, 190);
+}
+
+function closeModalFromEdge(){
+  modal.style.transition='transform .2s ease, opacity .2s ease';
+  modal.style.transform='translate3d(100vw,0,0)';
+  modal.style.opacity='0';
+  window.setTimeout(closeModal, 170);
+}
+
 modal.addEventListener('touchstart', e => {
   if(!modal.classList.contains('open') || !e.touches.length) return;
   modalTouchStartX=e.touches[0].clientX;
@@ -1208,7 +1266,13 @@ modal.addEventListener('touchmove', e => {
   if(!modal.classList.contains('open') || !modalEdgeSwipe || !e.touches.length) return;
   const dx=e.touches[0].clientX-modalTouchStartX;
   const dy=e.touches[0].clientY-modalTouchStartY;
-  if(dx > 12 && Math.abs(dx) > Math.abs(dy) * 1.15) e.preventDefault();
+  if(dx > 12 && Math.abs(dx) > Math.abs(dy) * 1.15) {
+    e.preventDefault();
+    const pull=Math.min(dx, window.innerWidth) * .42;
+    modal.style.transition='none';
+    modal.style.transform='translate3d('+pull+'px,0,0)';
+    modal.style.opacity=String(Math.max(.58, 1 - dx / window.innerWidth));
+  }
 }, {passive:false});
 modal.addEventListener('touchend', e => {
   if(!modal.classList.contains('open') || !modalEdgeSwipe) return;
@@ -1217,7 +1281,8 @@ modal.addEventListener('touchend', e => {
   if(!touch) return;
   const dx=touch.clientX-modalTouchStartX;
   const dy=touch.clientY-modalTouchStartY;
-  if(dx > 54 && Math.abs(dx) > Math.abs(dy) * 1.15) closeModal();
+  if(dx > 64 && Math.abs(dx) > Math.abs(dy) * 1.15) closeModalFromEdge();
+  else settleModalSwipe();
 }, {passive:true});
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape') {
