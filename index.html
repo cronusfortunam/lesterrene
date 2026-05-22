@@ -128,6 +128,11 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .wh{padding:0 3.5rem;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5rem;}
 .wh h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,4rem);letter-spacing:.05em;}
 .wh .cnt{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);}
+.work-intro{max-width:420px;font-size:.93rem;line-height:1.85;color:rgba(240,237,232,.42);}
+.work-subhead{padding:6rem 3.5rem 2.2rem;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(260px,.45fr) 1fr;gap:3rem;align-items:end;background:#050505;}
+.work-sub-k{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.28);}
+.work-subhead h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4.7vw,4rem);letter-spacing:.05em;line-height:.92;margin-top:.65rem;}
+.work-subhead p{font-size:.93rem;line-height:1.85;color:rgba(240,237,232,.42);max-width:520px;}
 
 .work{display:grid;grid-template-columns:1fr 1fr;min-height:72vh;border-top:1px solid var(--line);overflow:hidden;cursor:pointer;position:relative;text-decoration:none;color:inherit;}
 .work-th{position:relative;overflow:hidden;background:#111;}
@@ -145,6 +150,14 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .work.alt{direction:rtl;}
 .work.alt .work-in{direction:ltr;}
 .work.alt .work-th-ov{background:linear-gradient(to left,transparent 55%,#000);}
+.theatre-list{border-top:1px solid var(--line);background:#050505;}
+.theatre-item{display:grid;grid-template-columns:minmax(180px,.28fr) minmax(220px,.32fr) 1fr auto;gap:2rem;align-items:center;padding:1.45rem 3.5rem;border-bottom:1px solid var(--line);color:inherit;transition:background .25s,color .25s;}
+.theatre-item:hover{background:var(--off);}
+.theatre-role{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.3);}
+.theatre-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,3.5vw,3.25rem);letter-spacing:.04em;line-height:.95;color:var(--white);}
+.theatre-desc{font-size:.93rem;line-height:1.75;color:rgba(240,237,232,.48);}
+.theatre-link{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.35);white-space:nowrap;}
+.theatre-link::after{content:"";display:inline-block;width:.42rem;height:.42rem;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-.05rem) rotate(45deg);margin-left:.45rem;}
 
 /* MODAL */
 .modal{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;overscroll-behavior:contain;}
@@ -324,7 +337,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
   .hero-scroll{display:none;}
-  .wh{padding:0 1.5rem;}
+  .wh{padding:0 1.5rem;display:block;margin-bottom:3.5rem;}
+  .work-intro{margin-top:1rem;}
+  .work-subhead{padding:4rem 1.5rem 2rem;grid-template-columns:1fr;gap:1.2rem;}
   .work{grid-template-columns:1fr;min-height:auto;direction:ltr!important;}
   .work-th{height:68vw;min-height:260px;}
   .work-bg{transition:none;}
@@ -333,6 +348,8 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .work:hover .work-cta{background:transparent;color:inherit;}
   .work-th-ov{background:linear-gradient(to top,#000,transparent)!important;}
   .work-in{padding:2rem 1.5rem;}
+  .theatre-item{grid-template-columns:1fr;gap:.65rem;padding:1.45rem 1.5rem;}
+  .theatre-link{margin-top:.2rem;}
   .m-grid{grid-template-columns:1fr;gap:1.4rem;}
   .modal.alt-layout .m-info,.modal.alt-layout .m-media{order:initial;}
   .m-foot{margin-bottom:1rem;}
@@ -447,20 +464,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 <section id="work">
   <div class="wh rv">
     <h2 data-i18n="works_title">Selected Works</h2>
-  </div>
-
-  <div class="work" data-work="shockheaded" data-vid="pzR0bAEY5iQ" data-poster="images/optimized/work-shockheaded-fast.webp" data-title="Shockheaded Peter" data-sub="Staatstheater Oldenburg · 2026">
-    <div class="work-th">
-      <div class="work-bg" data-bg="images/optimized/work-shockheaded-fast.webp"></div>
-      <div class="work-th-ov"></div>
-    </div>
-    <div class="work-in rv">
-      <div class="work-name">Shockheaded<br>Peter</div>
-      <div class="work-meta">Staatstheater Oldenburg · Associated Choreographer · 2026</div>
-      <p class="work-desc">Movement choreography for a full Schauspiel ensemble in a phantasmagorical musical theatre production — horror aesthetics, dark humour, physical precision.</p>
-      <p class="work-press"><span data-i18n="wp1">"The ensemble brilliantly delivers in the choreography of Lester René" — NWZ, 2026</span></p>
-      <span class="work-cta">Watch trailer <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
-    </div>
+    <p class="work-intro" data-i18n="works_intro">Authorial choreographic works created for dance companies, independent stages and full-evening dance-theatre contexts.</p>
   </div>
 
   <div class="work alt" data-work="casita" data-vid="SlcQWtYrpK4" data-poster="images/optimized/work-casita.webp" data-title="Casita" data-sub="theater hof/19, Oldenburg · 2023">
@@ -517,6 +521,43 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <p class="work-press"><span data-i18n="wp5">"Very fresh. Very surprising. Essential viewing" — Radio Bremen, 2017</span></p>
       <span class="work-cta">Watch trailer <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
     </div>
+  </div>
+
+  <div class="work-subhead rv">
+    <div>
+      <div class="work-sub-k" data-i18n="theatre_label">Theatre productions</div>
+      <h3 data-i18n="theatre_title">Choreography for theatre</h3>
+    </div>
+    <p data-i18n="theatre_intro">Movement and choreography created inside theatre productions, separated from Lester René's own authorial works.</p>
+  </div>
+
+  <div class="work alt" data-work="shockheaded" data-vid="pzR0bAEY5iQ" data-poster="images/optimized/work-shockheaded-fast.webp" data-title="Shockheaded Peter" data-sub="Staatstheater Oldenburg · 2026">
+    <div class="work-th">
+      <div class="work-bg" data-bg="images/optimized/work-shockheaded-fast.webp"></div>
+      <div class="work-th-ov"></div>
+    </div>
+    <div class="work-in rv">
+      <div class="work-name">Shockheaded<br>Peter</div>
+      <div class="work-meta">Staatstheater Oldenburg · Movement choreography · 2026</div>
+      <p class="work-desc">Movement choreography for a full Schauspiel ensemble in a phantasmagorical musical theatre production — horror aesthetics, dark humour, physical precision.</p>
+      <p class="work-press"><span data-i18n="wp1">"The ensemble brilliantly delivers in the choreography of Lester René" — NWZ, 2026</span></p>
+      <span class="work-cta">Watch trailer <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
+    </div>
+  </div>
+
+  <div class="theatre-list">
+    <a class="theatre-item rv" href="https://www.oldenburger-onlinezeitung.de/kultur/staatstheater-paulina-hobratschk-begeistert-als-momo-142371.html" target="_blank" rel="noopener noreferrer">
+      <span class="theatre-role" data-i18n="theatre_momo_role">Choreography · Großes Haus · 2024</span>
+      <span class="theatre-title">Momo</span>
+      <span class="theatre-desc" data-i18n="theatre_momo_desc">Choreography for Katharina Birch's production at the Oldenburgisches Staatstheater.</span>
+      <span class="theatre-link" data-i18n="theatre_source">Source</span>
+    </a>
+    <a class="theatre-item rv" href="https://theaterkompass.de/beitraege/urauffuehrung-im-osten-was-neues-von-lukasz-lawicki-oldenburgisches-staatstheater-59585" target="_blank" rel="noopener noreferrer">
+      <span class="theatre-role" data-i18n="theatre_osten_role">Choreography · Exhalle · 2024</span>
+      <span class="theatre-title">Im Osten was Neues</span>
+      <span class="theatre-desc" data-i18n="theatre_osten_desc">Choreography for Lukasz Lawicki's premiere at the Oldenburgisches Staatstheater.</span>
+      <span class="theatre-link" data-i18n="theatre_source">Source</span>
+    </a>
   </div>
 </section>
 
@@ -1273,6 +1314,15 @@ const translations = {
     hero_desc: 'Where the visceral meets the poetic — and bodies become language.',
 
     works_title: 'Selected Works',
+    works_intro: 'Authorial choreographic works created for dance companies, independent stages and full-evening dance-theatre contexts.',
+    theatre_label: 'Theatre productions',
+    theatre_title: 'Choreography for theatre',
+    theatre_intro: "Movement and choreography created inside theatre productions, separated from Lester René's own authorial works.",
+    theatre_momo_role: 'Choreography · Großes Haus · 2024',
+    theatre_momo_desc: "Choreography for Katharina Birch's production at the Oldenburgisches Staatstheater.",
+    theatre_osten_role: 'Choreography · Exhalle · 2024',
+    theatre_osten_desc: "Choreography for Lukasz Lawicki's premiere at the Oldenburgisches Staatstheater.",
+    theatre_source: 'Source',
 
     about_label: 'Biography',
     collab_label: 'Collaborators',
@@ -1325,6 +1375,15 @@ const translations = {
     hero_desc: 'Donde lo visceral se encuentra con lo poético — y los cuerpos se convierten en lenguaje.',
 
     works_title: 'Obras seleccionadas',
+    works_intro: 'Obras coreográficas de autor creadas para compañías de danza, escenarios independientes y contextos de danza-teatro de larga duración.',
+    theatre_label: 'Producciones teatrales',
+    theatre_title: 'Coreografía para teatro',
+    theatre_intro: 'Movimiento y coreografía creados dentro de producciones teatrales, separados de las obras propias de Lester René.',
+    theatre_momo_role: 'Coreografía · Großes Haus · 2024',
+    theatre_momo_desc: 'Coreografía para la producción de Katharina Birch en el Oldenburgisches Staatstheater.',
+    theatre_osten_role: 'Coreografía · Exhalle · 2024',
+    theatre_osten_desc: 'Coreografía para el estreno de Lukasz Lawicki en el Oldenburgisches Staatstheater.',
+    theatre_source: 'Fuente',
 
     about_label: 'Biografía',
     collab_label: 'Colaboradores',
@@ -1377,6 +1436,15 @@ const translations = {
     hero_desc: 'Wo das Viszеrale auf das Poetische trifft — und Körper zur Sprache werden.',
 
     works_title: 'Ausgewählte Werke',
+    works_intro: 'Eigene choreografische Arbeiten für Tanzcompagnien, freie Bühnen und abendfüllende Tanztheater-Kontexte.',
+    theatre_label: 'Theaterproduktionen',
+    theatre_title: 'Choreografie für Theater',
+    theatre_intro: 'Bewegung und Choreografie innerhalb von Theaterproduktionen, getrennt von Lester Renés eigenen Werken.',
+    theatre_momo_role: 'Choreografie · Großes Haus · 2024',
+    theatre_momo_desc: 'Choreografie für Katharina Birchs Produktion am Oldenburgischen Staatstheater.',
+    theatre_osten_role: 'Choreografie · Exhalle · 2024',
+    theatre_osten_desc: 'Choreografie für die Uraufführung von Lukasz Lawicki am Oldenburgischen Staatstheater.',
+    theatre_source: 'Quelle',
 
     about_label: 'Biografie',
     collab_label: 'Kollaborationen',
@@ -1429,6 +1497,15 @@ const translations = {
     hero_desc: 'Dove il viscerale incontra il poetico — e i corpi diventano linguaggio.',
 
     works_title: 'Opere selezionate',
+    works_intro: 'Opere coreografiche autoriali create per compagnie di danza, scene indipendenti e contesti di danza-teatro serali.',
+    theatre_label: 'Produzioni teatrali',
+    theatre_title: 'Coreografia per teatro',
+    theatre_intro: 'Movimento e coreografia creati dentro produzioni teatrali, separati dalle opere autoriali di Lester René.',
+    theatre_momo_role: 'Coreografia · Großes Haus · 2024',
+    theatre_momo_desc: 'Coreografia per la produzione di Katharina Birch all’Oldenburgisches Staatstheater.',
+    theatre_osten_role: 'Coreografia · Exhalle · 2024',
+    theatre_osten_desc: 'Coreografia per la prima di Lukasz Lawicki all’Oldenburgisches Staatstheater.',
+    theatre_source: 'Fonte',
 
     about_label: 'Biografia',
     collab_label: 'Collaboratori',
