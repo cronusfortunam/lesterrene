@@ -150,13 +150,20 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .work.alt{direction:rtl;}
 .work.alt .work-in{direction:ltr;}
 .work.alt .work-th-ov{background:linear-gradient(to left,transparent 55%,#000);}
-.theatre-list{border-top:1px solid var(--line);background:#050505;}
-.theatre-item{display:grid;grid-template-columns:minmax(180px,.28fr) minmax(220px,.32fr) 1fr auto;gap:2rem;align-items:center;padding:1.45rem 3.5rem;border-bottom:1px solid var(--line);color:inherit;transition:background .25s,color .25s;}
+.theatre-list{border-top:1px solid var(--line);background:#050505;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;}
+.theatre-item{background:#000;color:inherit;display:grid;grid-template-rows:auto 1fr;min-height:560px;transition:background .25s;}
 .theatre-item:hover{background:var(--off);}
+.theatre-img{position:relative;min-height:300px;background:#111;overflow:hidden;}
+.theatre-img img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.18);transition:filter .35s ease,transform .35s ease;}
+.theatre-item:hover .theatre-img img{filter:grayscale(0);transform:scale(1.025);}
+.theatre-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#000,transparent 62%);pointer-events:none;}
+.theatre-body{padding:2.2rem 2rem 2.4rem;display:flex;flex-direction:column;gap:1rem;}
 .theatre-role{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.3);}
-.theatre-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,3.5vw,3.25rem);letter-spacing:.04em;line-height:.95;color:var(--white);}
-.theatre-desc{font-size:.93rem;line-height:1.75;color:rgba(240,237,232,.48);}
-.theatre-link{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.35);white-space:nowrap;}
+.theatre-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,3.7rem);letter-spacing:.04em;line-height:.95;color:var(--white);}
+.theatre-desc{font-size:.93rem;line-height:1.75;color:rgba(240,237,232,.48);max-width:520px;}
+.theatre-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:auto;padding-top:.6rem;}
+.theatre-link{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.48);white-space:nowrap;border:1px solid rgba(255,255,255,.14);padding:.62rem .9rem;transition:background .25s,color .25s,border-color .25s;}
+.theatre-link:hover{background:var(--white);color:#000;border-color:var(--white);}
 .theatre-link::after{content:"";display:inline-block;width:.42rem;height:.42rem;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-.05rem) rotate(45deg);margin-left:.45rem;}
 
 /* MODAL */
@@ -348,7 +355,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .work:hover .work-cta{background:transparent;color:inherit;}
   .work-th-ov{background:linear-gradient(to top,#000,transparent)!important;}
   .work-in{padding:2rem 1.5rem;}
-  .theatre-item{grid-template-columns:1fr;gap:.65rem;padding:1.45rem 1.5rem;}
+  .theatre-list{grid-template-columns:1fr;}
+  .theatre-item{min-height:auto;}
+  .theatre-img{min-height:235px;}
+  .theatre-body{padding:1.6rem 1.5rem 1.8rem;}
   .theatre-link{margin-top:.2rem;}
   .m-grid{grid-template-columns:1fr;gap:1.4rem;}
   .modal.alt-layout .m-info,.modal.alt-layout .m-media{order:initial;}
@@ -546,18 +556,36 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   </div>
 
   <div class="theatre-list">
-    <a class="theatre-item rv" href="https://www.oldenburger-onlinezeitung.de/kultur/staatstheater-paulina-hobratschk-begeistert-als-momo-142371.html" target="_blank" rel="noopener noreferrer">
-      <span class="theatre-role" data-i18n="theatre_momo_role">Choreography · Großes Haus · 2024</span>
-      <span class="theatre-title">Momo</span>
-      <span class="theatre-desc" data-i18n="theatre_momo_desc">Choreography for Katharina Birch's production at the Oldenburgisches Staatstheater.</span>
-      <span class="theatre-link" data-i18n="theatre_source">Source</span>
-    </a>
-    <a class="theatre-item rv" href="https://theaterkompass.de/beitraege/urauffuehrung-im-osten-was-neues-von-lukasz-lawicki-oldenburgisches-staatstheater-59585" target="_blank" rel="noopener noreferrer">
-      <span class="theatre-role" data-i18n="theatre_osten_role">Choreography · Exhalle · 2024</span>
-      <span class="theatre-title">Im Osten was Neues</span>
-      <span class="theatre-desc" data-i18n="theatre_osten_desc">Choreography for Lukasz Lawicki's premiere at the Oldenburgisches Staatstheater.</span>
-      <span class="theatre-link" data-i18n="theatre_source">Source</span>
-    </a>
+    <article class="theatre-item rv">
+      <div class="theatre-img">
+        <img src="https://img.youtube.com/vi/PHVGUFL9jMY/hqdefault.jpg" alt="Momo production still" loading="lazy" decoding="async">
+      </div>
+      <div class="theatre-body">
+        <span class="theatre-role" data-i18n="theatre_momo_role">Choreography · Großes Haus · 2024</span>
+        <span class="theatre-title">Momo</span>
+        <span class="theatre-desc" data-i18n="theatre_momo_desc">Choreography for Katharina Birch's production at the Oldenburgisches Staatstheater. Trailer and production photos are documented by Georg & Paul.</span>
+        <span class="theatre-actions">
+          <a class="theatre-link" href="https://www.youtube.com/watch?v=PHVGUFL9jMY" target="_blank" rel="noopener noreferrer" data-i18n="theatre_trailer">Trailer</a>
+          <a class="theatre-link" href="https://www.georgundpaul.de/2024/11/momo-2/" target="_blank" rel="noopener noreferrer" data-i18n="theatre_photos">Photos</a>
+          <a class="theatre-link" href="https://www.oldenburger-onlinezeitung.de/kultur/staatstheater-paulina-hobratschk-begeistert-als-momo-142371.html" target="_blank" rel="noopener noreferrer" data-i18n="theatre_source">Source</a>
+        </span>
+      </div>
+    </article>
+    <article class="theatre-item rv">
+      <div class="theatre-img">
+        <img src="images/work/im-osten-was-neues/im-osten-poster.webp" alt="Im Osten was Neues poster image" loading="lazy" decoding="async">
+      </div>
+      <div class="theatre-body">
+        <span class="theatre-role" data-i18n="theatre_osten_role">Choreography · Exhalle · 2024</span>
+        <span class="theatre-title">Im Osten was Neues</span>
+        <span class="theatre-desc" data-i18n="theatre_osten_desc">Choreography for Lukasz Lawicki's premiere at the Oldenburgisches Staatstheater. Trailer by the theatre; photos by Stephan Walzl.</span>
+        <span class="theatre-actions">
+          <a class="theatre-link" href="https://www.youtube.com/watch?v=TDtKux_aEtU" target="_blank" rel="noopener noreferrer" data-i18n="theatre_trailer">Trailer</a>
+          <a class="theatre-link" href="https://www.instagram.com/p/C57uA_Ko_nV/" target="_blank" rel="noopener noreferrer" data-i18n="theatre_photos">Photos</a>
+          <a class="theatre-link" href="https://theaterkompass.de/beitraege/urauffuehrung-im-osten-was-neues-von-lukasz-lawicki-oldenburgisches-staatstheater-59585" target="_blank" rel="noopener noreferrer" data-i18n="theatre_source">Source</a>
+        </span>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -1319,9 +1347,11 @@ const translations = {
     theatre_title: 'Choreography for theatre',
     theatre_intro: "Movement and choreography created inside theatre productions, separated from Lester René's own authorial works.",
     theatre_momo_role: 'Choreography · Großes Haus · 2024',
-    theatre_momo_desc: "Choreography for Katharina Birch's production at the Oldenburgisches Staatstheater.",
+    theatre_momo_desc: "Choreography for Katharina Birch's production at the Oldenburgisches Staatstheater. Trailer and production photos are documented by Georg & Paul.",
     theatre_osten_role: 'Choreography · Exhalle · 2024',
-    theatre_osten_desc: "Choreography for Lukasz Lawicki's premiere at the Oldenburgisches Staatstheater.",
+    theatre_osten_desc: "Choreography for Lukasz Lawicki's premiere at the Oldenburgisches Staatstheater. Trailer by the theatre; photos by Stephan Walzl.",
+    theatre_trailer: 'Trailer',
+    theatre_photos: 'Photos',
     theatre_source: 'Source',
 
     about_label: 'Biography',
@@ -1380,9 +1410,11 @@ const translations = {
     theatre_title: 'Coreografía para teatro',
     theatre_intro: 'Movimiento y coreografía creados dentro de producciones teatrales, separados de las obras propias de Lester René.',
     theatre_momo_role: 'Coreografía · Großes Haus · 2024',
-    theatre_momo_desc: 'Coreografía para la producción de Katharina Birch en el Oldenburgisches Staatstheater.',
+    theatre_momo_desc: 'Coreografía para la producción de Katharina Birch en el Oldenburgisches Staatstheater. El tráiler y las fotos de producción están documentados por Georg & Paul.',
     theatre_osten_role: 'Coreografía · Exhalle · 2024',
-    theatre_osten_desc: 'Coreografía para el estreno de Lukasz Lawicki en el Oldenburgisches Staatstheater.',
+    theatre_osten_desc: 'Coreografía para el estreno de Lukasz Lawicki en el Oldenburgisches Staatstheater. Tráiler del teatro; fotos de Stephan Walzl.',
+    theatre_trailer: 'Tráiler',
+    theatre_photos: 'Fotos',
     theatre_source: 'Fuente',
 
     about_label: 'Biografía',
@@ -1441,9 +1473,11 @@ const translations = {
     theatre_title: 'Choreografie für Theater',
     theatre_intro: 'Bewegung und Choreografie innerhalb von Theaterproduktionen, getrennt von Lester Renés eigenen Werken.',
     theatre_momo_role: 'Choreografie · Großes Haus · 2024',
-    theatre_momo_desc: 'Choreografie für Katharina Birchs Produktion am Oldenburgischen Staatstheater.',
+    theatre_momo_desc: 'Choreografie für Katharina Birchs Produktion am Oldenburgischen Staatstheater. Trailer und Produktionsfotos sind bei Georg & Paul dokumentiert.',
     theatre_osten_role: 'Choreografie · Exhalle · 2024',
-    theatre_osten_desc: 'Choreografie für die Uraufführung von Lukasz Lawicki am Oldenburgischen Staatstheater.',
+    theatre_osten_desc: 'Choreografie für die Uraufführung von Lukasz Lawicki am Oldenburgischen Staatstheater. Trailer vom Theater; Fotos von Stephan Walzl.',
+    theatre_trailer: 'Trailer',
+    theatre_photos: 'Fotos',
     theatre_source: 'Quelle',
 
     about_label: 'Biografie',
@@ -1502,9 +1536,11 @@ const translations = {
     theatre_title: 'Coreografia per teatro',
     theatre_intro: 'Movimento e coreografia creati dentro produzioni teatrali, separati dalle opere autoriali di Lester René.',
     theatre_momo_role: 'Coreografia · Großes Haus · 2024',
-    theatre_momo_desc: 'Coreografia per la produzione di Katharina Birch all’Oldenburgisches Staatstheater.',
+    theatre_momo_desc: 'Coreografia per la produzione di Katharina Birch all’Oldenburgisches Staatstheater. Trailer e foto di produzione sono documentati da Georg & Paul.',
     theatre_osten_role: 'Coreografia · Exhalle · 2024',
-    theatre_osten_desc: 'Coreografia per la prima di Lukasz Lawicki all’Oldenburgisches Staatstheater.',
+    theatre_osten_desc: 'Coreografia per la prima di Lukasz Lawicki all’Oldenburgisches Staatstheater. Trailer del teatro; foto di Stephan Walzl.',
+    theatre_trailer: 'Trailer',
+    theatre_photos: 'Foto',
     theatre_source: 'Fonte',
 
     about_label: 'Biografia',
