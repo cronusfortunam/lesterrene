@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="LR">
+  <rect width="512" height="512" fill="#000000"/>
+  <rect x="40" y="40" width="432" height="432" fill="none" stroke="#f0ede8" stroke-opacity="0.16" stroke-width="2"/>
+  <text x="256" y="315" text-anchor="middle" fill="#f0ede8" font-family="Bodoni 72, Didot, Georgia, serif" font-size="176" letter-spacing="-10">LR</text>
+</svg>
