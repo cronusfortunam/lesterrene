@@ -383,10 +383,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   #cur,#ring{display:none;}
   nav{
     display:grid;
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0,1fr) auto;
     align-items:center;
-    column-gap:.9rem;
-    row-gap:.55rem;
+    column-gap:.7rem;
+    row-gap:.35rem;
     padding:1.05rem 1.25rem;
     background:transparent;
     backdrop-filter:none;
@@ -400,14 +400,15 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     letter-spacing:.12em;
   }
   nav:not(.scrolled) .nav-logo{height:0;opacity:0;overflow:hidden;transform:translateY(-4px);}
-  .lang-sel{grid-column:1;grid-row:3;justify-self:start;gap:.38rem;max-width:100%;}
-  .lang-btn{font-size:.58rem;letter-spacing:.12em;}
+  .lang-sel{grid-column:2;grid-row:2;justify-self:end;gap:.24rem;max-width:100%;}
+  .lang-btn{font-size:.52rem;letter-spacing:.08em;padding:.18rem .02rem;}
+  .lang-sep{font-size:.5rem;}
   .nav-links{
     grid-column:1;
     grid-row:2;
     width:100%;
     justify-content:flex-start;
-    gap:.9rem;
+    gap:.62rem;
     min-width:0;
     overflow-x:auto;
     overflow-y:hidden;
@@ -417,12 +418,12 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     -webkit-overflow-scrolling:touch;
   }
   .nav-links::-webkit-scrollbar{display:none;}
-  .nav-links a{font-size:.58rem;letter-spacing:.1em;flex:0 0 auto;}
+  .nav-links a{font-size:.52rem;letter-spacing:.07em;flex:0 0 auto;}
 
   nav.scrolled{padding:.72rem 1.25rem;background:rgba(0,0,0,.64);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
   nav.scrolled .nav-logo{opacity:1;transform:none;pointer-events:auto;}
-  nav.scrolled .nav-links{grid-column:1;grid-row:2;justify-content:flex-start;gap:.9rem;}
-  nav.scrolled .lang-sel{grid-column:1;grid-row:3;justify-self:start;}
+  nav.scrolled .nav-links{grid-column:1;grid-row:2;justify-content:flex-start;gap:.62rem;}
+  nav.scrolled .lang-sel{grid-column:2;grid-row:2;justify-self:end;}
   .hero-bot{align-items:flex-start;gap:1.5rem;}
   .hero-copy{max-width:100%;}
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
