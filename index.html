@@ -161,11 +161,6 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .mq-t{display:flex;animation:mq 22s linear infinite;white-space:nowrap;}
 .mq-t span{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.28em;color:var(--muted);padding:0 3rem;border-right:1px solid var(--line);}
 .mq-t span.hi{color:var(--white);}
-.mq-ideas{background:rgba(2,2,2,.58);padding:.72rem 0;border-top:1px solid rgba(255,255,255,.065);border-bottom:1px solid rgba(255,255,255,.065);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
-.mq-top{position:absolute;top:4.85rem;left:0;right:0;z-index:3;}
-.mq-ideas .mq-t{animation-duration:28s;}
-.mq-ideas span{font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.18em;color:rgba(240,237,232,.34);}
-.mq-ideas span.hi{font-family:'DM Serif Display',serif;font-size:.9rem;letter-spacing:0;color:rgba(240,237,232,.68);text-transform:none;}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* IDEAS */
@@ -429,7 +424,6 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   nav.scrolled .nav-logo{opacity:1;transform:none;pointer-events:auto;}
   nav.scrolled .nav-links{grid-column:1;grid-row:2;justify-content:flex-start;gap:.62rem;}
   nav.scrolled .lang-sel{grid-column:2;grid-row:2;justify-self:end;}
-  .mq-top{top:5.95rem;}
   .hero-bot{align-items:flex-start;gap:1.5rem;}
   .hero-copy{max-width:100%;}
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
@@ -527,14 +521,6 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <button class="lang-btn" data-lang="it" translate="no" aria-pressed="false">IT</button>
   </div>
 </nav>
-
-<!-- IDEAS MARQUEE -->
-<div class="mq mq-ideas mq-top" aria-label="NWZ 50 Visionen announcement">
-  <div class="mq-t">
-    <span class="hi">Gastautor der NWZ-Serie “50 Visionen für Oldenburg”</span><span>Eine Universität für alle Künste · Veröffentlichung am 4. Juni 2026</span><span class="hi">Kultur ist kein Luxus</span><span>Choreographer · dancer · cultural thinker</span>
-    <span class="hi">Gastautor der NWZ-Serie “50 Visionen für Oldenburg”</span><span>Eine Universität für alle Künste · Veröffentlichung am 4. Juni 2026</span><span class="hi">Kultur ist kein Luxus</span><span>Choreographer · dancer · cultural thinker</span>
-  </div>
-</div>
 
 <button class="a11y-toggle" id="a11y-toggle" type="button" aria-expanded="false" aria-controls="a11y-panel" title="Accessibility">Aa</button>
 <div class="a11y-panel" id="a11y-panel" aria-hidden="true">
@@ -1991,6 +1977,7 @@ const heroQuotes = {
   en: [
     '“Very fresh. Very surprising. Essential viewing.” — Radio Bremen',
     '“Individual bodies repeatedly become one flow, one figure.” — Tanznetz.de',
+    'Choreographer · dancer · cultural thinker · NWZ “50 Visionen für Oldenburg”, 4 June 2026',
     '“An ensemble that moves with its era.” — Radio Bremen',
     '“Two conflicting worlds moving toward a shared harmony.” — Kreiszeitung',
     '“Powerful and striking images.” — Ostsee Zeitung',
@@ -2001,6 +1988,7 @@ const heroQuotes = {
   es: [
     '“Muy fresco. Muy sorprendente. Imprescindible.” — Radio Bremen',
     '“Los cuerpos individuales se convierten una y otra vez en un flujo, una figura.” — Tanznetz.de',
+    'Coreógrafo · bailarín · pensador cultural · NWZ “50 Visionen für Oldenburg”, 4 de junio de 2026',
     '“Un ensemble que se mueve con su época.” — Radio Bremen',
     '“Dos mundos en conflicto avanzan hacia una armonía común.” — Kreiszeitung',
     '“Imágenes poderosas e impactantes.” — Ostsee Zeitung',
@@ -2011,6 +1999,7 @@ const heroQuotes = {
   de: [
     '„Sehr frisch. Sehr überraschend. Unbedingt sehenswert.“ — Radio Bremen',
     '„Einzelne Körper werden immer wieder zu einem Fluss, einer Figur.“ — Tanznetz.de',
+    'Choreograf · Tänzer · kultureller Denker · NWZ „50 Visionen für Oldenburg“, 4. Juni 2026',
     '„Ein Ensemble, das mit der Zeit geht.“ — Radio Bremen',
     '„Zwei widersprechende Welten nähern sich einer gemeinsamen Harmonie.“ — Kreiszeitung',
     '„Kraftvolle und eindrucksvolle Bilder.“ — Ostsee Zeitung',
@@ -2021,6 +2010,7 @@ const heroQuotes = {
   it: [
     '“Molto fresco. Molto sorprendente. Assolutamente da vedere.” — Radio Bremen',
     '“I singoli corpi diventano ripetutamente un flusso, una figura.” — Tanznetz.de',
+    'Coreografo · danzatore · pensatore culturale · NWZ “50 Visionen für Oldenburg”, 4 giugno 2026',
     '“Un ensemble che si muove con il proprio tempo.” — Radio Bremen',
     '“Due mondi in conflitto verso un’armonia condivisa.” — Kreiszeitung',
     '“Immagini potenti e suggestive.” — Ostsee Zeitung',
