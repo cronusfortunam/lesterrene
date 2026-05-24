@@ -153,6 +153,11 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
   transition:opacity .55s ease;
 }
 .hero-quote.fade{opacity:0;}
+.hero-bot-main{display:flex;flex-direction:column;gap:1.05rem;align-items:flex-start;}
+.hero-note{display:inline-flex;align-items:center;gap:.72rem;color:rgba(240,237,232,.48);transition:color .25s;}
+.hero-note:hover{color:rgba(240,237,232,.82);}
+.hero-note-k{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(240,237,232,.28);}
+.hero-note-v{font-family:'DM Serif Display',serif;font-size:1.08rem;line-height:1.2;color:rgba(240,237,232,.72);}
 .hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
 .scroll-bar{width:1px;height:60px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent);}
 
@@ -432,6 +437,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .hero-title{font-size:clamp(4rem,22vw,6.4rem);margin-bottom:1.6rem;}
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
+  .hero-bot-main{gap:.85rem;}
+  .hero-note{display:grid;gap:.28rem;}
+  .hero-note-v{font-size:.98rem;}
   .hero-scroll{display:none;}
   .wh{padding:0 1.5rem;display:block;margin-bottom:3.5rem;}
   .work-intro{margin-top:1rem;}
@@ -560,7 +568,13 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <span class="hero-ital">René</span>
     </div>
     <div class="hero-bot">
-      <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
+      <div class="hero-bot-main">
+        <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
+        <a class="hero-note" href="#ideas">
+          <span class="hero-note-k">NWZ</span>
+          <span class="hero-note-v">Guest author · 50 Visionen für Oldenburg</span>
+        </a>
+      </div>
       <div class="hero-scroll"><div class="scroll-bar"></div>Scroll</div>
     </div>
   </div>
@@ -1977,7 +1991,6 @@ const heroQuotes = {
   en: [
     '“Very fresh. Very surprising. Essential viewing.” — Radio Bremen',
     '“Individual bodies repeatedly become one flow, one figure.” — Tanznetz.de',
-    'Choreographer · dancer · cultural thinker · NWZ “50 Visionen für Oldenburg”, 4 June 2026',
     '“An ensemble that moves with its era.” — Radio Bremen',
     '“Two conflicting worlds moving toward a shared harmony.” — Kreiszeitung',
     '“Powerful and striking images.” — Ostsee Zeitung',
@@ -1988,7 +2001,6 @@ const heroQuotes = {
   es: [
     '“Muy fresco. Muy sorprendente. Imprescindible.” — Radio Bremen',
     '“Los cuerpos individuales se convierten una y otra vez en un flujo, una figura.” — Tanznetz.de',
-    'Coreógrafo · bailarín · pensador cultural · NWZ “50 Visionen für Oldenburg”, 4 de junio de 2026',
     '“Un ensemble que se mueve con su época.” — Radio Bremen',
     '“Dos mundos en conflicto avanzan hacia una armonía común.” — Kreiszeitung',
     '“Imágenes poderosas e impactantes.” — Ostsee Zeitung',
@@ -1999,7 +2011,6 @@ const heroQuotes = {
   de: [
     '„Sehr frisch. Sehr überraschend. Unbedingt sehenswert.“ — Radio Bremen',
     '„Einzelne Körper werden immer wieder zu einem Fluss, einer Figur.“ — Tanznetz.de',
-    'Choreograf · Tänzer · kultureller Denker · NWZ „50 Visionen für Oldenburg“, 4. Juni 2026',
     '„Ein Ensemble, das mit der Zeit geht.“ — Radio Bremen',
     '„Zwei widersprechende Welten nähern sich einer gemeinsamen Harmonie.“ — Kreiszeitung',
     '„Kraftvolle und eindrucksvolle Bilder.“ — Ostsee Zeitung',
@@ -2010,7 +2021,6 @@ const heroQuotes = {
   it: [
     '“Molto fresco. Molto sorprendente. Assolutamente da vedere.” — Radio Bremen',
     '“I singoli corpi diventano ripetutamente un flusso, una figura.” — Tanznetz.de',
-    'Coreografo · danzatore · pensatore culturale · NWZ “50 Visionen für Oldenburg”, 4 giugno 2026',
     '“Un ensemble che si muove con il proprio tempo.” — Radio Bremen',
     '“Due mondi in conflitto verso un’armonia condivisa.” — Kreiszeitung',
     '“Immagini potenti e suggestive.” — Ostsee Zeitung',
