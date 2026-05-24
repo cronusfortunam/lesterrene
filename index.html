@@ -383,7 +383,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   #cur,#ring{display:none;}
   nav{
     display:grid;
-    grid-template-columns:1fr auto;
+    grid-template-columns:1fr;
     align-items:center;
     column-gap:.9rem;
     row-gap:.55rem;
@@ -400,21 +400,29 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     letter-spacing:.12em;
   }
   nav:not(.scrolled) .nav-logo{height:0;opacity:0;overflow:hidden;transform:translateY(-4px);}
-  .lang-sel{justify-self:end;gap:.38rem;}
+  .lang-sel{grid-column:1;grid-row:3;justify-self:start;gap:.38rem;max-width:100%;}
   .lang-btn{font-size:.58rem;letter-spacing:.12em;}
   .nav-links{
     grid-column:1;
+    grid-row:2;
     width:100%;
     justify-content:flex-start;
-    gap:clamp(.72rem,3.2vw,1.12rem);
+    gap:.9rem;
     min-width:0;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    padding-bottom:.15rem;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
   }
-  .nav-links a{font-size:clamp(.55rem,2.35vw,.62rem);letter-spacing:.12em;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{font-size:.58rem;letter-spacing:.1em;flex:0 0 auto;}
 
   nav.scrolled{padding:.72rem 1.25rem;background:rgba(0,0,0,.64);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
   nav.scrolled .nav-logo{opacity:1;transform:none;pointer-events:auto;}
-  nav.scrolled .nav-links{grid-column:1;justify-content:flex-start;gap:clamp(.72rem,3.2vw,1.12rem);}
-  nav.scrolled .lang-sel{grid-column:2;justify-self:end;}
+  nav.scrolled .nav-links{grid-column:1;grid-row:2;justify-content:flex-start;gap:.9rem;}
+  nav.scrolled .lang-sel{grid-column:1;grid-row:3;justify-self:start;}
   .hero-bot{align-items:flex-start;gap:1.5rem;}
   .hero-copy{max-width:100%;}
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
@@ -711,9 +719,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <h2 class="a-h">Body<br>as<br><em>language</em></h2>
       <img class="about-portrait" src="images/csm_lester_gonzales_24_25_c_Stephan_Walzl_8875938947.jpg" alt="Portrait of Lester René González Álvarez" loading="lazy" decoding="async">
     </div>
-    <p class="a-p">Lester René is a choreographer working at the intersection of contemporary dance, physical theatre, and interdisciplinary performance. His work draws on a rich and distinctive movement vocabulary — at once expressive and precise, fluid and exacting — to build choreographic worlds that move between the visceral and the poetic.</p>
-    <p class="a-p">Whether for large ensembles or intimate duets, his pieces navigate tension and transformation: between <strong>fear and courage</strong>, chaos and harmony, tradition and new reality.</p>
-    <p class="a-p">Born in Cuba, trained in Camagüey, Madrid and Dresden — including studies at the <strong>Palucca University of Dance</strong> and a formative period with <strong>The Forsythe Company</strong> — he has been based in northern Germany since 2012.</p>
+    <p class="a-p">Lester René is a Cuban-born choreographer, dancer and cultural thinker based in Oldenburg, Germany. His work moves between contemporary dance, physical theatre and interdisciplinary performance, using the body as a precise and poetic language for conflict, transformation and collective imagination.</p>
+    <p class="a-p">His choreographic practice ranges from large ensemble works to intimate dance-theatre formats, creating stage worlds where movement, music, image and dramaturgy operate as one living system. Across works such as <strong>From the Lighthouse</strong>, <strong>Quantum Leap</strong>, <strong>Saturn Return</strong> and <strong>Casita</strong>, he explores fear and courage, identity and change, intimacy and social tension.</p>
+    <p class="a-p">Alongside his artistic work, Lester René develops ideas about culture as a public force. Invited as a guest author for the Nordwest-Zeitung series <strong>50 Visionen für Oldenburg</strong>, he proposes artistic ecosystems where dance, music, theatre, film, design, architecture and visual arts enrich one another and extend into the life of the city.</p>
+    <p class="a-p">Born in Cuba and trained in Camagüey, Madrid and Dresden — including studies at the <strong>Palucca University of Dance</strong> and a formative period with <strong>The Forsythe Company</strong> — he has been based in northern Germany since 2012.</p>
   </div>
   <div class="rv">
     <div class="d-block">
