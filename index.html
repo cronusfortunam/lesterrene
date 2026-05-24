@@ -153,11 +153,15 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
   transition:opacity .55s ease;
 }
 .hero-quote.fade{opacity:0;}
-.hero-bot-main{display:flex;flex-direction:column;gap:1.05rem;align-items:flex-start;}
-.hero-note{display:inline-flex;align-items:center;gap:.72rem;color:rgba(240,237,232,.48);transition:color .25s;}
-.hero-note:hover{color:rgba(240,237,232,.82);}
-.hero-note-k{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(240,237,232,.28);}
-.hero-note-v{font-family:'DM Serif Display',serif;font-size:1.08rem;line-height:1.2;color:rgba(240,237,232,.72);}
+.hero-bot-main{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
+.hero-note{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem 1rem;align-items:center;max-width:min(620px,58vw);padding:.9rem 1rem;border:1px solid rgba(240,237,232,.12);background:rgba(0,0,0,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);}
+.hero-note-brand{font-family:'DM Serif Display',serif;font-size:1.02rem;color:rgba(240,237,232,.8);letter-spacing:.02em;}
+.hero-note-date{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.32);white-space:nowrap;}
+.hero-note-k{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.28);grid-column:1;}
+.hero-note-title{font-family:'DM Serif Display',serif;font-size:1.08rem;line-height:1.2;color:rgba(240,237,232,.76);grid-column:2 / 4;}
+.hero-note-copy{font-size:.76rem;line-height:1.55;color:rgba(240,237,232,.45);grid-column:2 / 3;}
+.hero-note-action{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.58);background:transparent;border:0;border-bottom:1px solid rgba(240,237,232,.24);padding:0 0 .12rem;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;grid-column:3;}
+.hero-note-action:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 .hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
 .scroll-bar{width:1px;height:60px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent);}
 
@@ -438,8 +442,11 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
   .hero-bot-main{gap:.85rem;}
-  .hero-note{display:grid;gap:.28rem;}
-  .hero-note-v{font-size:.98rem;}
+  .hero-note{grid-template-columns:1fr;max-width:100%;gap:.45rem;padding:.8rem .9rem;}
+  .hero-note-brand,.hero-note-date,.hero-note-k,.hero-note-title,.hero-note-copy,.hero-note-action{grid-column:1;}
+  .hero-note-title{font-size:1rem;}
+  .hero-note-copy{font-size:.7rem;}
+  .hero-note-date{white-space:normal;}
   .hero-scroll{display:none;}
   .wh{padding:0 1.5rem;display:block;margin-bottom:3.5rem;}
   .work-intro{margin-top:1rem;}
@@ -559,6 +566,11 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <img data-src="images/hero/IMG_5302.jpg" alt="Lester René">
     <img data-src="images/hero/img_8535-2.jpg" alt="Lester René">
     <img data-src="images/hero/momo-10.jpg" alt="Momo" class="hero-focus-top">
+    <img data-src="images/hero/img-5408.webp" alt="Lester René">
+    <img data-src="images/hero/img-3767.webp" alt="Lester René">
+    <img data-src="images/hero/dscf-1696.webp" alt="Lester René">
+    <img data-src="images/hero/dscf-1657.webp" alt="Lester René">
+    <img data-src="images/hero/dscf-1691.webp" alt="Lester René">
   </div>
   <div class="hero-ov"></div>
   <div class="hero-c">
@@ -570,10 +582,14 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <div class="hero-bot">
       <div class="hero-bot-main">
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
-        <a class="hero-note" href="#ideas">
-          <span class="hero-note-k">NWZ</span>
-          <span class="hero-note-v">Guest author · 50 Visionen für Oldenburg</span>
-        </a>
+        <div class="hero-note">
+          <span class="hero-note-brand">NWZ</span>
+          <span class="hero-note-date">Veröffentlichung am 4. Juni 2026</span>
+          <span class="hero-note-k">Presse</span>
+          <span class="hero-note-title">Gastautor der NWZ-Serie „50 Visionen für Oldenburg“</span>
+          <span class="hero-note-copy">Ein kommender Gastbeitrag, der am 4. Juni erscheint.</span>
+          <button class="hero-note-action" type="button" data-news-placeholder>Mehr erfahren</button>
+        </div>
       </div>
       <div class="hero-scroll"><div class="scroll-bar"></div>Scroll</div>
     </div>
@@ -590,13 +606,12 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   <article class="idea-feature rv">
     <div>
       <div class="idea-type" data-i18n="ideas_type">Publication · NWZ</div>
-      <h3 class="idea-title">Eine Universität für alle Künste</h3>
-      <p class="idea-sub" data-i18n="ideas_feature_sub">My contribution to the NWZ series “50 Visionen für Oldenburg”</p>
-      <blockquote class="idea-quote">“Kultur ist kein Luxus, sondern ein lebenswichtiges Organ der Gesellschaft.”</blockquote>
+      <h3 class="idea-title" data-i18n="ideas_feature_title">Forthcoming public contribution</h3>
+      <p class="idea-sub" data-i18n="ideas_feature_sub">A guest text for the NWZ series “50 Visionen für Oldenburg”, published on 4 June 2026.</p>
     </div>
     <div class="idea-side">
       <div class="idea-date" data-i18n="ideas_date">Publication · 4 June 2026</div>
-      <a class="idea-link" href="ideas/universitaet-fuer-alle-kuenste/" data-i18n="ideas_read">Read the vision</a>
+      <button class="idea-link" type="button" data-news-placeholder data-i18n="ideas_read">More soon</button>
     </div>
   </article>
 </section>
@@ -850,28 +865,6 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 <!-- PRESS -->
 <section id="press">
   <div class="ph rv"><h2 data-i18n="press_title">News / Press</h2><span style="font-size:.93rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)" data-i18n="press_sub">Editorial voice · selected reviews</span></div>
-  <article class="news-feature rv" data-press-item="nwz-50-visionen" data-state="upcoming">
-    <div class="news-mark">
-      <div class="news-logo" aria-label="NWZ">NWZ</div>
-      <div class="news-date" data-i18n="news_nwz_date">Veröffentlichung am 4. Juni 2026</div>
-    </div>
-    <figure class="news-image" hidden>
-      <img alt="NWZ article image" loading="lazy" decoding="async">
-    </figure>
-    <div class="news-body">
-      <div>
-        <div class="news-label" data-i18n="news_label">Presse</div>
-        <h3 class="news-title">Gastautor der NWZ-Serie „50 Visionen für Oldenburg“</h3>
-        <p class="news-sub" data-i18n="news_nwz_sub">A forthcoming guest article positioning Lester René as a cultural thinker and public voice in Oldenburg.</p>
-      </div>
-      <div class="news-actions">
-        <button class="news-action" type="button" data-news-placeholder data-i18n="news_more">Mehr erfahren</button>
-        <a class="news-action news-action-live" href="#" target="_blank" rel="noopener noreferrer" hidden data-i18n="news_read">Artikel lesen</a>
-        <a class="news-action news-action-pdf" href="#" target="_blank" rel="noopener noreferrer" hidden data-i18n="news_pdf">PDF</a>
-        <span class="news-status" data-i18n="news_status">Coming soon</span>
-      </div>
-    </div>
-  </article>
   <div class="pg">
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q1">You feel the sea, the wind and perhaps the approaching danger. Impressive.</p><div><div class="pc-src"><a href="https://www.oldenburger-onlinezeitung.de/kultur/ballettcompagnie-zeigt-tanz-vielfalt-25188.html" target="_blank" rel="noopener">Oldenburger Onlinezeitung</a></div><div class="pc-w">From the Lighthouse, 2017</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q2">An interesting and demanding movement language that carries you along and gives you something to think about.</p><div><div class="pc-src"><a href="https://www.tanznetz.de/de/article/2017/ballettcompagnie-oldenburg-jully-nikolais-alvarez" target="_blank" rel="noopener">Tanznetz.de</a></div><div class="pc-w">From the Lighthouse, 2017</div></div></div>
@@ -1596,9 +1589,10 @@ const translations = {
     ideas_title: 'Ideas',
     ideas_sub: 'Thoughts on culture, cities and artistic ecosystems.',
     ideas_type: 'Publication · NWZ',
-    ideas_feature_sub: 'My contribution to the NWZ series “50 Visionen für Oldenburg”',
+    ideas_feature_title: 'Forthcoming public contribution',
+    ideas_feature_sub: 'A guest text for the NWZ series “50 Visionen für Oldenburg”, published on 4 June 2026.',
     ideas_date: 'Publication · 4 June 2026',
-    ideas_read: 'Read the vision',
+    ideas_read: 'More soon',
 
     works_title: 'Selected Works',
     works_intro: 'Authorial choreographic works created for dance companies, independent stages and full-evening dance-theatre contexts.',
@@ -1680,9 +1674,10 @@ const translations = {
     ideas_title: 'Ideas',
     ideas_sub: 'Pensamientos sobre cultura, ciudades y ecosistemas artísticos.',
     ideas_type: 'Publicación · NWZ',
-    ideas_feature_sub: 'Mi contribución a la serie de NWZ “50 Visionen für Oldenburg”',
+    ideas_feature_title: 'Próxima contribución pública',
+    ideas_feature_sub: 'Un texto invitado para la serie de NWZ “50 Visionen für Oldenburg”, publicado el 4 de junio de 2026.',
     ideas_date: 'Publicación · 4 de junio de 2026',
-    ideas_read: 'Leer la visión',
+    ideas_read: 'Próximamente',
 
     works_title: 'Obras seleccionadas',
     works_intro: 'Obras coreográficas de autor creadas para compañías de danza, escenarios independientes y contextos de danza-teatro de larga duración.',
@@ -1764,9 +1759,10 @@ const translations = {
     ideas_title: 'Ideen',
     ideas_sub: 'Gedanken über Kultur, Städte und künstlerische Ökosysteme.',
     ideas_type: 'Publikation · NWZ',
-    ideas_feature_sub: 'Mein Beitrag zur NWZ-Serie „50 Visionen für Oldenburg“',
+    ideas_feature_title: 'Kommender öffentlicher Beitrag',
+    ideas_feature_sub: 'Ein Gastbeitrag für die NWZ-Serie „50 Visionen für Oldenburg“, Veröffentlichung am 4. Juni 2026.',
     ideas_date: 'Veröffentlichung · 4. Juni 2026',
-    ideas_read: 'Vision lesen',
+    ideas_read: 'Demnächst',
 
     works_title: 'Ausgewählte Werke',
     works_intro: 'Eigene choreografische Arbeiten für Tanzcompagnien, freie Bühnen und abendfüllende Tanztheater-Kontexte.',
@@ -1848,9 +1844,10 @@ const translations = {
     ideas_title: 'Idee',
     ideas_sub: 'Pensieri su cultura, città ed ecosistemi artistici.',
     ideas_type: 'Pubblicazione · NWZ',
-    ideas_feature_sub: 'Il mio contributo alla serie NWZ “50 Visionen für Oldenburg”',
+    ideas_feature_title: 'Prossimo contributo pubblico',
+    ideas_feature_sub: 'Un testo da autore ospite per la serie NWZ “50 Visionen für Oldenburg”, pubblicato il 4 giugno 2026.',
     ideas_date: 'Pubblicazione · 4 giugno 2026',
-    ideas_read: 'Leggi la visione',
+    ideas_read: 'Prossimamente',
 
     works_title: 'Opere selezionate',
     works_intro: 'Opere coreografiche autoriali create per compagnie di danza, scene indipendenti e contesti di danza-teatro serali.',
