@@ -106,6 +106,7 @@ nav.scrolled .nav-links{gap:2.5rem;}
 
 /* HERO */
 #hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 4rem;position:relative;overflow:hidden;}
+body.has-top-marquee #hero{padding-top:3.2rem;}
 .hero-bg{position:absolute;inset:0;background:#000;}
 .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.035) translate3d(0,0,0);transition:opacity 2.6s ease-in-out;will-change:opacity,transform;}
 .hero-bg img.hero-vertical{object-position:center 18%;}
@@ -161,6 +162,11 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .mq-t{display:flex;animation:mq 22s linear infinite;white-space:nowrap;}
 .mq-t span{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.28em;color:var(--muted);padding:0 3rem;border-right:1px solid var(--line);}
 .mq-t span.hi{color:var(--white);}
+.mq-ideas{background:#020202;padding:.72rem 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);}
+.mq-top{position:fixed;top:4.85rem;left:0;right:0;z-index:480;}
+.mq-ideas .mq-t{animation-duration:28s;}
+.mq-ideas span{font-family:'DM Sans',sans-serif;font-size:.68rem;letter-spacing:.18em;color:rgba(240,237,232,.42);}
+.mq-ideas span.hi{font-family:'DM Serif Display',serif;font-size:.9rem;letter-spacing:0;color:rgba(240,237,232,.82);text-transform:none;}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* IDEAS */
@@ -424,6 +430,8 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   nav.scrolled .nav-logo{opacity:1;transform:none;pointer-events:auto;}
   nav.scrolled .nav-links{grid-column:1;grid-row:2;justify-content:flex-start;gap:.62rem;}
   nav.scrolled .lang-sel{grid-column:2;grid-row:2;justify-self:end;}
+  .mq-top{top:5.95rem;}
+  body.has-top-marquee #hero{padding-top:3.8rem;}
   .hero-bot{align-items:flex-start;gap:1.5rem;}
   .hero-copy{max-width:100%;}
   #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
@@ -496,7 +504,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 }
 </style>
 </head>
-<body>
+<body class="has-top-marquee">
 
 <div id="cur"></div>
 <div id="ring"></div>
@@ -521,6 +529,14 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <button class="lang-btn" data-lang="it" translate="no" aria-pressed="false">IT</button>
   </div>
 </nav>
+
+<!-- IDEAS MARQUEE -->
+<div class="mq mq-ideas mq-top" aria-label="NWZ 50 Visionen announcement">
+  <div class="mq-t">
+    <span class="hi">Gastautor der NWZ-Serie “50 Visionen für Oldenburg”</span><span>Eine Universität für alle Künste · Veröffentlichung am 4. Juni 2026</span><span class="hi">Kultur ist kein Luxus</span><span>Choreographer · dancer · cultural thinker</span>
+    <span class="hi">Gastautor der NWZ-Serie “50 Visionen für Oldenburg”</span><span>Eine Universität für alle Künste · Veröffentlichung am 4. Juni 2026</span><span class="hi">Kultur ist kein Luxus</span><span>Choreographer · dancer · cultural thinker</span>
+  </div>
+</div>
 
 <button class="a11y-toggle" id="a11y-toggle" type="button" aria-expanded="false" aria-controls="a11y-panel" title="Accessibility">Aa</button>
 <div class="a11y-panel" id="a11y-panel" aria-hidden="true">
@@ -717,7 +733,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   <div class="rl">
     <div class="a-label" data-i18n="about_label">Biography</div>
     <div class="about-title-row">
-      <h2 class="a-h">Body<br>as<br><em>language</em></h2>
+      <h2 class="a-h">Body as<br><em>language</em></h2>
       <img class="about-portrait" src="images/csm_lester_gonzales_24_25_c_Stephan_Walzl_8875938947.jpg" alt="Portrait of Lester René González Álvarez" loading="lazy" decoding="async">
     </div>
     <p class="a-p">Lester René is a Cuban-born choreographer, dancer and cultural thinker based in Oldenburg, Germany. His work moves between contemporary dance, physical theatre and interdisciplinary performance, using the body as a precise and poetic language for conflict, transformation and collective imagination.</p>
