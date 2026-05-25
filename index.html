@@ -105,7 +105,7 @@ nav.scrolled .nav-links{gap:2.5rem;}
 .nav-links a:hover,.nav-links a.active{color:var(--white);}
 
 /* HERO */
-#hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 3.5rem 4rem;position:relative;overflow:hidden;}
+#hero{height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:7.2rem 3.5rem 4rem;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:#000;}
 .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.035) translate3d(0,0,0);transition:opacity 2.6s ease-in-out;will-change:opacity,transform;}
 .hero-bg img.hero-vertical{object-position:center 18%;}
@@ -128,14 +128,15 @@ html.hero-image-ready .hero-bg img.hero-vertical{animation-name:heroFloatVertica
   100%{transform:scale(1.075) translate3d(1.1%,-.85%,0);}
 }
 .hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 48%,rgba(0,0,0,.12) 78%,rgba(0,0,0,.28) 100%);pointer-events:none;}
-.hero-c{position:relative;z-index:2;transition:opacity 1.8s ease,transform 1.8s ease;}
+.hero-c{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(330px,420px);gap:clamp(2rem,6vw,6rem);align-items:end;transition:opacity 1.8s ease,transform 1.8s ease;}
 html.hero-type-loading .hero-c{opacity:0;transform:translateY(16px);}
 html.hero-type-ready .hero-c{opacity:1;transform:none;}
-.hero-tag{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.6rem,13.5vw,12.5rem);line-height:.88;letter-spacing:.02em;color:var(--white);margin-bottom:2.5rem;}
+.hero-tag{grid-column:1;font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,11.2vw,10rem);line-height:.9;letter-spacing:.02em;color:var(--white);margin-bottom:1.8rem;}
 .hero-ital{font-family:'DM Serif Display',serif;font-style:italic;font-size:.82em;letter-spacing:0;display:block;}
-.hero-bot{display:flex;align-items:flex-end;justify-content:space-between;}
+.hero-bot{grid-column:2;grid-row:1 / span 2;align-self:end;display:block;}
 .hero-copy{
+  display:none;
   max-width:760px;
   font-size:.88rem;
   color:var(--muted);
@@ -153,13 +154,18 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
   transition:opacity .55s ease;
 }
 .hero-quote.fade{opacity:0;}
-.hero-bot-main{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
-.hero-note{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem 1rem;align-items:center;max-width:min(620px,58vw);padding:.9rem 1rem;border:1px solid rgba(240,237,232,.12);background:rgba(0,0,0,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);}
+.hero-statement{max-width:720px;font-family:'DM Serif Display',serif;font-size:clamp(1.12rem,2.05vw,1.65rem);line-height:1.32;color:rgba(240,237,232,.86);letter-spacing:0;margin-bottom:.15rem;}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.3rem;}
+.hero-action{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.2);padding:.78rem 1rem;color:rgba(240,237,232,.72);transition:background .25s,color .25s,border-color .25s;}
+.hero-action:hover{background:var(--white);color:#000;border-color:var(--white);}
+.hero-action.secondary{border-color:rgba(255,255,255,.12);color:rgba(240,237,232,.5);}
+.hero-bot-main{display:flex;flex-direction:column;gap:.72rem;align-items:stretch;}
+.hero-note{display:grid;grid-template-columns:auto 1fr auto;gap:.58rem .82rem;align-items:center;max-width:100%;padding:.68rem .82rem;border:1px solid rgba(240,237,232,.1);background:rgba(0,0,0,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);}
 .hero-note-brand{font-family:'DM Serif Display',serif;font-size:1.02rem;color:rgba(240,237,232,.8);letter-spacing:.02em;}
 .hero-note-date{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.32);white-space:nowrap;}
 .hero-note-k{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.28);grid-column:1;}
-.hero-note-title{font-family:'DM Serif Display',serif;font-size:1.08rem;line-height:1.2;color:rgba(240,237,232,.76);grid-column:2 / 4;}
-.hero-note-copy{font-size:.76rem;line-height:1.55;color:rgba(240,237,232,.45);grid-column:2 / 3;}
+.hero-note-title{font-family:'DM Serif Display',serif;font-size:.98rem;line-height:1.22;color:rgba(240,237,232,.74);grid-column:2 / 4;}
+.hero-note-copy{font-size:.68rem;line-height:1.45;color:rgba(240,237,232,.42);grid-column:2 / 3;}
 .hero-note-action{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.58);background:transparent;border:0;border-bottom:1px solid rgba(240,237,232,.24);padding:0 0 .12rem;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;grid-column:3;}
 .hero-note-action:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 .hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
@@ -171,6 +177,17 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .mq-t span{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:.28em;color:var(--muted);padding:0 3rem;border-right:1px solid var(--line);}
 .mq-t span.hi{color:var(--white);}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* DIRECTORS */
+#directors{padding:4.6rem 3.5rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(260px,.36fr) minmax(0,1fr);gap:clamp(2.5rem,5vw,4.5rem);background:#030303;align-items:start;}
+.dir-k{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem;}
+.dir-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.25rem,4.25vw,4.25rem);line-height:.95;letter-spacing:.04em;max-width:100%;overflow-wrap:anywhere;hyphens:auto;}
+.dir-copy{font-size:.9rem;line-height:1.75;color:rgba(240,237,232,.56);max-width:560px;margin-bottom:1.5rem;}
+.dir-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-bottom:2rem;}
+.dir-item{background:#070707;padding:1.2rem 1rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.52);line-height:1.55;}
+.dir-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
+.dir-action{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.16);padding:.78rem 1rem;color:rgba(240,237,232,.64);transition:background .25s,color .25s,border-color .25s;}
+.dir-action:hover{background:var(--white);color:#000;border-color:var(--white);}
 
 /* IDEAS */
 #ideas{padding:6rem 3.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#030303;display:grid;grid-template-columns:minmax(220px,.32fr) 1fr;gap:clamp(3rem,7vw,7rem);align-items:start;}
@@ -348,6 +365,8 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .news-modal-close:hover{background:var(--white);color:#000;border-color:var(--white);}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
 .pc{background:var(--off);padding:2.5rem 2rem;display:flex;flex-direction:column;justify-content:space-between;gap:2rem;transition:background .3s;}
+.pc.featured{background:#090909;}
+.pc.featured .pc-q{font-size:1.12rem;color:rgba(240,237,232,.78);}
 .pc:hover{background:var(--dark);}
 .pc-mark{font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:.8;color:rgba(255,255,255,.05);}
 .pc-q{font-family:'DM Serif Display',serif;font-size:.98rem;font-style:italic;color:rgba(240,237,232,.65);line-height:1.7;flex:1;}
@@ -433,21 +452,31 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   nav.scrolled .nav-logo{opacity:1;transform:none;pointer-events:auto;}
   nav.scrolled .nav-links{grid-column:1;grid-row:2;justify-content:flex-start;gap:.62rem;}
   nav.scrolled .lang-sel{grid-column:2;grid-row:2;justify-self:end;}
+  .hero-c{display:block;}
   .hero-bot{align-items:flex-start;gap:1.5rem;}
   .hero-copy{max-width:100%;}
-  #hero{height:100svh;min-height:680px;padding:0 1.5rem 2.2rem;}
+  #hero{height:100svh;min-height:620px;padding:5.8rem 1.5rem 1.7rem;}
   .hero-bg img{transition:opacity 1.8s ease-in-out;}
   html.hero-image-ready .hero-bg img{animation-duration:11s;}
-  .hero-title{font-size:clamp(4rem,22vw,6.4rem);margin-bottom:1.6rem;}
+  .hero-title{font-size:clamp(3.25rem,18vw,5.35rem);line-height:.92;margin-bottom:1.05rem;}
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
-  .hero-quote{font-size:.62rem;letter-spacing:.05em;line-height:1.65;}
-  .hero-bot-main{gap:.85rem;}
-  .hero-note{grid-template-columns:1fr;max-width:100%;gap:.45rem;padding:.8rem .9rem;}
+  .hero-statement{font-size:clamp(1rem,4.4vw,1.18rem);line-height:1.34;max-width:31rem;}
+  .hero-actions{gap:.55rem;}
+  .hero-action{font-size:.62rem;letter-spacing:.12em;padding:.68rem .78rem;}
+  .hero-copy{display:none;}
+  .hero-bot-main{gap:.66rem;}
+  .hero-note{grid-template-columns:1fr;max-width:100%;gap:.34rem;padding:.6rem .7rem;}
   .hero-note-brand,.hero-note-date,.hero-note-k,.hero-note-title,.hero-note-copy,.hero-note-action{grid-column:1;}
-  .hero-note-title{font-size:1rem;}
-  .hero-note-copy{font-size:.7rem;}
+  .hero-note-brand{font-size:.9rem;}
+  .hero-note-title{font-size:.9rem;}
+  .hero-note-copy{display:none;}
   .hero-note-date{white-space:normal;}
   .hero-scroll{display:none;}
+  #directors{grid-template-columns:1fr;gap:1.7rem;padding:4rem 1.5rem;}
+  .dir-copy{font-size:.93rem;margin-bottom:1.5rem;}
+  .dir-list{grid-template-columns:1fr 1fr;margin-bottom:1.5rem;}
+  .dir-item{font-size:.62rem;padding:1rem .85rem;}
+  .dir-action{font-size:.62rem;letter-spacing:.12em;padding:.7rem .82rem;}
   .wh{padding:0 1.5rem;display:block;margin-bottom:3.5rem;}
   .work-intro{margin-top:1rem;}
   .work-subhead{padding:4rem 1.5rem 2rem;grid-template-columns:1fr;gap:1.2rem;}
@@ -581,6 +610,11 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
     <div class="hero-bot">
       <div class="hero-bot-main">
+        <p class="hero-statement" data-i18n="hero_statement">Cuban-born choreographer and dancer based in Germany, creating contemporary dance and physical theatre for institutional stages.</p>
+        <div class="hero-actions">
+          <a class="hero-action" href="#work" data-i18n="hero_cta_works">View selected works</a>
+          <a class="hero-action secondary" href="#contact" data-i18n="hero_cta_contact">Contact / Work with me</a>
+        </div>
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
         <div class="hero-note">
           <span class="hero-note-brand">NWZ</span>
@@ -596,26 +630,6 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   </div>
 </section>
 
-<!-- IDEAS -->
-<section id="ideas">
-  <div class="rv">
-    <div class="ideas-k" data-i18n="ideas_label">Ideas</div>
-    <h2 class="ideas-h" data-i18n="ideas_title">Ideas</h2>
-    <p class="ideas-sub" data-i18n="ideas_sub">Thoughts on culture, cities and artistic ecosystems.</p>
-  </div>
-  <article class="idea-feature rv">
-    <div>
-      <div class="idea-type" data-i18n="ideas_type">Publication · NWZ</div>
-      <h3 class="idea-title" data-i18n="ideas_feature_title">Forthcoming public contribution</h3>
-      <p class="idea-sub" data-i18n="ideas_feature_sub">A guest text for the NWZ series “50 Visionen für Oldenburg”, published on 4 June 2026.</p>
-    </div>
-    <div class="idea-side">
-      <div class="idea-date" data-i18n="ideas_date">Publication · 4 June 2026</div>
-      <button class="idea-link" type="button" data-news-placeholder data-i18n="ideas_read">More soon</button>
-    </div>
-  </article>
-</section>
-
 <!-- MARQUEE -->
 <div class="mq">
   <div class="mq-t">
@@ -624,6 +638,27 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   </div>
 </div>
 
+<!-- DIRECTORS -->
+<section id="directors">
+  <div class="rv">
+    <div class="dir-k" data-i18n="directors_label">For artistic directors</div>
+    <h2 class="dir-h" data-i18n="directors_title">Commissioned work</h2>
+  </div>
+  <div class="rv">
+    <p class="dir-copy" data-i18n="directors_copy">Available for commissioned works, repertory creation, movement direction and workshops. Lester René works across contemporary dance, physical theatre and visually driven stage work for institutional and independent contexts.</p>
+    <div class="dir-list">
+      <div class="dir-item" data-i18n="directors_item_1">Commissioned works</div>
+      <div class="dir-item" data-i18n="directors_item_2">Repertory creation</div>
+      <div class="dir-item" data-i18n="directors_item_3">Movement direction</div>
+      <div class="dir-item" data-i18n="directors_item_4">Workshops / teaching</div>
+    </div>
+    <div class="dir-actions">
+      <a class="dir-action" href="#work" data-i18n="directors_cta_works">See work</a>
+      <a class="dir-action" href="#contact" data-i18n="directors_cta_contact">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
 <!-- WORKS -->
 <section id="work">
   <div class="wh rv">
@@ -631,21 +666,21 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <p class="work-intro" data-i18n="works_intro">Authorial choreographic works created for dance companies, independent stages and full-evening dance-theatre contexts.</p>
   </div>
 
-  <div class="work alt" data-work="casita" data-vid="SlcQWtYrpK4" data-poster="images/optimized/work-casita.webp" data-title="Casita" data-sub="theater hof/19, Oldenburg · 2023">
+  <div class="work" data-work="casita" data-vid="SlcQWtYrpK4" data-poster="images/optimized/work-casita.webp" data-title="Casita" data-sub="theater hof/19, Oldenburg · 2023 · 2024 · 2025">
     <div class="work-th">
       <div class="work-bg" data-bg="images/optimized/work-casita.webp"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
       <div class="work-name">Casita</div>
-      <div class="work-meta">theater hof/19, Oldenburg · Choreographer & Creator · 2023</div>
+      <div class="work-meta">theater hof/19, Oldenburg · Choreographer & Creator · 2023 · 2024 · 2025</div>
       <p class="work-desc">Intimate dance-theatre duet tracing cohabitation — tenderness, conflict, reconciliation — through a full range of movement registers, from playful to raw.</p>
       <p class="work-press"><span data-i18n="wp2">"Impressive and humorous in equal measure" — NWZ, 2023</span></p>
       <span class="work-cta">Watch trailer <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
     </div>
   </div>
 
-  <div class="work" data-work="saturn" data-vid="aGiRpuLrWPw" data-poster="images/optimized/work-saturn.webp" data-title="Saturn Return" data-sub="TanzCompagnie, Volkstheater Rostock · 2021 / 2022">
+  <div class="work alt" data-work="saturn" data-vid="aGiRpuLrWPw" data-poster="images/optimized/work-saturn.webp" data-title="Saturn Return" data-sub="TanzCompagnie, Volkstheater Rostock · 2021 / 2022">
     <div class="work-th">
       <div class="work-bg" data-bg="images/optimized/work-saturn.webp"></div>
       <div class="work-th-ov"></div>
@@ -659,28 +694,28 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     </div>
   </div>
 
-  <div class="work alt" data-work="quantum" data-vid="BYc_OdOUKCM" data-poster="images/optimized/work-quantum.webp" data-title="Quantum Leap" data-sub="BallettCompagnie Oldenburg · 2019">
+  <div class="work" data-work="quantum" data-vid="BYc_OdOUKCM" data-poster="images/optimized/work-quantum.webp" data-title="Quantum Leap" data-sub="BallettCompagnie Oldenburg · 2019">
     <div class="work-th">
       <div class="work-bg" data-bg="images/optimized/work-quantum.webp"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
       <div class="work-name">Quantum<br>Leap</div>
-      <div class="work-meta">BallettCompagnie Oldenburg · 2019</div>
+      <div class="work-meta">BallettCompagnie Oldenburg · Choreographer · 2019</div>
       <p class="work-desc">Ensemble work for 13 dancers exploring identity loss and transformation — two conflicting worlds moving toward shared harmony. World-premiere score by Johann Pätzold.</p>
       <p class="work-press"><span data-i18n="wp4">"Ballet catapulted into the next millennium — an ensemble that moves with its era" — Radio Bremen</span></p>
       <span class="work-cta">Watch trailer <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
     </div>
   </div>
 
-  <div class="work" data-work="lighthouse" data-vid="sfSVtK-gxGg" data-poster="https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg" data-title="From the Lighthouse" data-sub="BallettCompagnie Oldenburg · Debut · 2017">
+  <div class="work alt" data-work="lighthouse" data-vid="sfSVtK-gxGg" data-poster="https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg" data-title="From the Lighthouse" data-sub="BallettCompagnie Oldenburg · Debut · 2017">
     <div class="work-th">
       <div class="work-bg" data-bg="https://img.youtube.com/vi/sfSVtK-gxGg/maxresdefault.jpg"></div>
       <div class="work-th-ov"></div>
     </div>
     <div class="work-in rv">
       <div class="work-name">From the<br>Lighthouse</div>
-      <div class="work-meta">BallettCompagnie Oldenburg · Debut · 2017</div>
+      <div class="work-meta">BallettCompagnie Oldenburg · Choreographer · Debut · 2017</div>
       <p class="work-desc">Ensemble work for 7 dancers. The lighthouse as symbol of warning and illumination — exploring fear, collective resilience, and the courage to grow beyond oneself.</p>
       <p class="work-press"><span data-i18n="wp5">"Very fresh. Very surprising. Essential viewing" — Radio Bremen, 2017</span></p>
       <span class="work-cta">Watch trailer <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7 2.5l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></span>
@@ -783,6 +818,26 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   </div>
 </section>
 
+<!-- IDEAS -->
+<section id="ideas">
+  <div class="rv">
+    <div class="ideas-k" data-i18n="ideas_label">Ideas</div>
+    <h2 class="ideas-h" data-i18n="ideas_title">Ideas</h2>
+    <p class="ideas-sub" data-i18n="ideas_sub">Thoughts on culture, cities and artistic ecosystems.</p>
+  </div>
+  <article class="idea-feature rv">
+    <div>
+      <div class="idea-type" data-i18n="ideas_type">Publication · NWZ</div>
+      <h3 class="idea-title" data-i18n="ideas_feature_title">Forthcoming public contribution</h3>
+      <p class="idea-sub" data-i18n="ideas_feature_sub">A guest text for the NWZ series “50 Visionen für Oldenburg”, published on 4 June 2026.</p>
+    </div>
+    <div class="idea-side">
+      <div class="idea-date" data-i18n="ideas_date">Publication · 4 June 2026</div>
+      <button class="idea-link" type="button" data-news-placeholder data-i18n="ideas_read">More soon</button>
+    </div>
+  </article>
+</section>
+
 <!-- COLLABORATORS -->
 <section id="collaborators">
   <div class="cb-head rv">
@@ -866,10 +921,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 <section id="press">
   <div class="ph rv"><h2 data-i18n="press_title">News / Press</h2><span style="font-size:.93rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)" data-i18n="press_sub">Editorial voice · selected reviews</span></div>
   <div class="pg">
-    <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q1">You feel the sea, the wind and perhaps the approaching danger. Impressive.</p><div><div class="pc-src"><a href="https://www.oldenburger-onlinezeitung.de/kultur/ballettcompagnie-zeigt-tanz-vielfalt-25188.html" target="_blank" rel="noopener">Oldenburger Onlinezeitung</a></div><div class="pc-w">From the Lighthouse, 2017</div></div></div>
+    <div class="pc featured rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q4">Powerful and striking images. Every movement precisely choreographed.</p><div><div class="pc-src"><a href="https://www.ostsee-zeitung.de/lokales/rostock/volkstheater-rostock-lohnen-sich-die-tanzstuecke-saturn-return-und-the-great-migration-TSAAEEGYCZRRZFIZSTZDBIWCVM.html" target="_blank" rel="noopener">Ostsee Zeitung</a></div><div class="pc-w">Saturn Return, 2020</div></div></div>
+    <div class="pc featured rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q3">Ballet catapulted into the next millennium — an ensemble that moves with its era.</p><div><div class="pc-src">Radio Bremen</div><div class="pc-w">Quantum Leap, 2019</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q2">An interesting and demanding movement language that carries you along and gives you something to think about.</p><div><div class="pc-src"><a href="https://www.tanznetz.de/de/article/2017/ballettcompagnie-oldenburg-jully-nikolais-alvarez" target="_blank" rel="noopener">Tanznetz.de</a></div><div class="pc-w">From the Lighthouse, 2017</div></div></div>
-    <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q3">Ballet catapulted into the next millennium — an ensemble that moves with its era.</p><div><div class="pc-src">Radio Bremen</div><div class="pc-w">Quantum Leap, 2019</div></div></div>
-    <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q4">Powerful and striking images. Every movement precisely choreographed.</p><div><div class="pc-src"><a href="https://www.ostsee-zeitung.de/lokales/rostock/volkstheater-rostock-lohnen-sich-die-tanzstuecke-saturn-return-und-the-great-migration-TSAAEEGYCZRRZFIZSTZDBIWCVM.html" target="_blank" rel="noopener">Ostsee Zeitung</a></div><div class="pc-w">Saturn Return, 2020</div></div></div>
+    <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q1">You feel the sea, the wind and perhaps the approaching danger. Impressive.</p><div><div class="pc-src"><a href="https://www.oldenburger-onlinezeitung.de/kultur/ballettcompagnie-zeigt-tanz-vielfalt-25188.html" target="_blank" rel="noopener">Oldenburger Onlinezeitung</a></div><div class="pc-w">From the Lighthouse, 2017</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q5">Impressive and humorous in equal measure — with a whole range of emotions.</p><div><div class="pc-src"><a href="press/casita-presse-nwz.pdf" target="_blank" rel="noopener">NWZ</a></div><div class="pc-w">Casita, 2023</div></div></div>
     <div class="pc rv"><div class="pc-mark">"</div><p class="pc-q" data-i18n="press_q6">The ensemble also brilliantly delivers in the choreography of Lester René. Everything just works.</p><div><div class="pc-src"><a href="https://www.nwzonline.de/kultur/struwwelpeter-als-musical-premiere-begeistert-in-oldenburg_a_4,3,333327922.html" target="_blank" rel="noopener">NWZ</a></div><div class="pc-w">Shockheaded Peter, 2026</div></div></div>
   </div>
@@ -1223,6 +1278,7 @@ const workArchive = {
       ['By / with', 'Eleonora Fabrizi and Lester René'],
       ['Format', 'Dance-theatre duet'],
       ['Venue', 'theater hof/19, Oldenburg'],
+      ['Premiere / Wiederaufnahme', '2023; Wiederaufnahme 2024 / 2025'],
       ['Theme', 'Home, intimacy, cohabitation, individuality and togetherness'],
       ['Support', 'Oldenburgische Landschaft, OLB-Stiftung, EWE-Stiftung']
     ],
@@ -1585,6 +1641,18 @@ const translations = {
     nav_ideas: 'Ideas', nav_work: 'Work', nav_about: 'About', nav_collab: 'People', nav_press: 'Press', nav_contact: 'Contact',
     hero_tag: 'Choreographer · Oldenburg, Germany',
     hero_desc: 'Where the visceral meets the poetic — and bodies become language.',
+    hero_statement: 'Cuban-born choreographer and dancer based in Germany, creating contemporary dance and physical theatre for institutional stages.',
+    hero_cta_works: 'View selected works',
+    hero_cta_contact: 'Contact / Work with me',
+    directors_label: 'For artistic directors',
+    directors_title: 'Commissioned work',
+    directors_copy: 'Commissioned works, repertory creation, movement direction and workshops for institutional and independent contexts.',
+    directors_item_1: 'Commissioned works',
+    directors_item_2: 'Repertory creation',
+    directors_item_3: 'Movement direction',
+    directors_item_4: 'Workshops / teaching',
+    directors_cta_works: 'See work',
+    directors_cta_contact: 'Start a conversation',
     ideas_label: 'Ideas',
     ideas_title: 'Ideas',
     ideas_sub: 'Thoughts on culture, cities and artistic ecosystems.',
@@ -1670,6 +1738,18 @@ const translations = {
     nav_ideas: 'Ideas', nav_work: 'Obra', nav_about: 'Bio', nav_collab: 'Colab.', nav_press: 'Prensa', nav_contact: 'Contacto',
     hero_tag: 'Coreógrafo · Oldenburg, Alemania',
     hero_desc: 'Donde lo visceral se encuentra con lo poético — y los cuerpos se convierten en lenguaje.',
+    hero_statement: 'Coreógrafo y bailarín nacido en Cuba y radicado en Alemania, creando danza contemporánea y teatro físico para escenarios institucionales.',
+    hero_cta_works: 'Ver obras seleccionadas',
+    hero_cta_contact: 'Contacto / Trabajar juntos',
+    directors_label: 'Para direcciones artísticas',
+    directors_title: 'Obra por encargo',
+    directors_copy: 'Encargos coreográficos, creación de repertorio, dirección de movimiento y workshops para contextos institucionales e independientes.',
+    directors_item_1: 'Encargos coreográficos',
+    directors_item_2: 'Creación de repertorio',
+    directors_item_3: 'Dirección de movimiento',
+    directors_item_4: 'Workshops / docencia',
+    directors_cta_works: 'Ver obra',
+    directors_cta_contact: 'Iniciar conversación',
     ideas_label: 'Ideas',
     ideas_title: 'Ideas',
     ideas_sub: 'Pensamientos sobre cultura, ciudades y ecosistemas artísticos.',
@@ -1755,6 +1835,18 @@ const translations = {
     nav_ideas: 'Ideen', nav_work: 'Werk', nav_about: 'Bio', nav_collab: 'Team', nav_press: 'Presse', nav_contact: 'Kontakt',
     hero_tag: 'Choreograf · Oldenburg, Deutschland',
     hero_desc: 'Wo das Viszеrale auf das Poetische trifft — und Körper zur Sprache werden.',
+    hero_statement: 'In Kuba geborener Choreograf und Tänzer mit Sitz in Deutschland, der zeitgenössischen Tanz und Physical Theatre für institutionelle Bühnen entwickelt.',
+    hero_cta_works: 'Ausgewählte Werke',
+    hero_cta_contact: 'Kontakt / Zusammenarbeit',
+    directors_label: 'Für künstlerische Leitungen',
+    directors_title: 'Aufträge',
+    directors_copy: 'Choreografische Aufträge, Repertoirekreation, Movement Direction und Workshops für institutionelle und freie Kontexte.',
+    directors_item_1: 'Auftragsarbeiten',
+    directors_item_2: 'Repertoirekreation',
+    directors_item_3: 'Movement Direction',
+    directors_item_4: 'Workshops / Unterricht',
+    directors_cta_works: 'Werke ansehen',
+    directors_cta_contact: 'Gespräch beginnen',
     ideas_label: 'Ideen',
     ideas_title: 'Ideen',
     ideas_sub: 'Gedanken über Kultur, Städte und künstlerische Ökosysteme.',
@@ -1840,6 +1932,18 @@ const translations = {
     nav_ideas: 'Idee', nav_work: 'Opere', nav_about: 'Bio', nav_collab: 'Collab.', nav_press: 'Stampa', nav_contact: 'Contatto',
     hero_tag: 'Coreografo · Oldenburg, Germania',
     hero_desc: 'Dove il viscerale incontra il poetico — e i corpi diventano linguaggio.',
+    hero_statement: 'Coreografo e danzatore nato a Cuba e con base in Germania, crea danza contemporanea e teatro fisico per scene istituzionali.',
+    hero_cta_works: 'Vedi opere selezionate',
+    hero_cta_contact: 'Contatto / Collaborare',
+    directors_label: 'Per direttori artistici',
+    directors_title: 'Lavori su commissione',
+    directors_copy: 'Commissioni coreografiche, creazione di repertorio, direzione del movimento e workshop per contesti istituzionali e indipendenti.',
+    directors_item_1: 'Commissioni coreografiche',
+    directors_item_2: 'Creazione di repertorio',
+    directors_item_3: 'Direzione del movimento',
+    directors_item_4: 'Workshop / didattica',
+    directors_cta_works: 'Vedi opere',
+    directors_cta_contact: 'Inizia una conversazione',
     ideas_label: 'Idee',
     ideas_title: 'Idee',
     ideas_sub: 'Pensieri su cultura, città ed ecosistemi artistici.',
