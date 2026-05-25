@@ -132,9 +132,9 @@ html.hero-image-ready .hero-bg img.hero-vertical{animation-name:heroFloatVertica
 html.hero-type-loading .hero-c{opacity:0;transform:translateY(16px);}
 html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-tag{font-size:.62rem;letter-spacing:.38em;text-transform:uppercase;color:var(--muted);margin-bottom:1.45rem;}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,11.2vw,10rem);line-height:.9;letter-spacing:.02em;color:var(--white);margin-bottom:1rem;text-shadow:0 3px 32px rgba(0,0,0,.72);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.6rem,9.8vw,8.8rem);line-height:.9;letter-spacing:.02em;color:var(--white);margin-bottom:1rem;text-shadow:0 3px 32px rgba(0,0,0,.72);}
 .hero-ital{font-family:'DM Serif Display',serif;font-style:italic;font-size:.82em;letter-spacing:0;display:block;}
-.hero-role{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.52);line-height:1.75;margin-bottom:1.45rem;max-width:760px;text-shadow:0 2px 22px rgba(0,0,0,.74);}
+.hero-role{font-size:clamp(.72rem,1vw,.88rem);letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.58);line-height:1.8;margin-bottom:1.45rem;max-width:760px;text-shadow:0 2px 22px rgba(0,0,0,.74);}
 .hero-bot{display:flex;align-items:flex-end;justify-content:space-between;}
 .hero-copy{
   display:none;
@@ -454,7 +454,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   #hero{height:100svh;min-height:620px;padding:5.8rem 1.5rem 1.7rem;}
   .hero-bg img{transition:opacity 1.8s ease-in-out;}
   html.hero-image-ready .hero-bg img{animation-duration:11s;}
-  .hero-title{font-size:clamp(3.25rem,18vw,5.35rem);line-height:.92;margin-bottom:1.05rem;}
+  .hero-title{font-size:clamp(2.9rem,15.5vw,4.8rem);line-height:.92;margin-bottom:1.05rem;}
   .hero-tag{font-size:.56rem;letter-spacing:.24em;margin-bottom:.8rem;}
   .hero-role{font-size:.54rem;letter-spacing:.16em;line-height:1.65;margin-bottom:1rem;max-width:22rem;}
   .hero-copy{display:none;}
@@ -603,17 +603,17 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       LESTER
       <span class="hero-ital">René</span>
     </div>
-    <div class="hero-role" data-i18n="hero_role">Cuban-born choreographer · contemporary dance · physical theatre · institutional stages</div>
+    <div class="hero-role" data-i18n="hero_role" data-i18n-html="true">Cuban-born choreographer and dancer based in Germany<br>contemporary dance · physical theatre · institutional stages</div>
     <div class="hero-bot">
       <div class="hero-bot-main">
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
         <div class="hero-note">
           <span class="hero-note-brand">NWZ</span>
-          <span class="hero-note-date">Veröffentlichung am 4. Juni 2026</span>
-          <span class="hero-note-k">Presse</span>
-          <span class="hero-note-title">Gastautor der NWZ-Serie „50 Visionen für Oldenburg“</span>
-          <span class="hero-note-copy">Ein kommender Gastbeitrag, der am 4. Juni erscheint.</span>
-          <button class="hero-note-action" type="button" data-news-placeholder>Mehr erfahren</button>
+          <span class="hero-note-date" data-i18n="hero_nwz_date">Publication on 4 June 2026</span>
+          <span class="hero-note-k" data-i18n="hero_nwz_label">Press</span>
+          <span class="hero-note-title" data-i18n="hero_nwz_title">Guest author of the NWZ series “50 Visionen für Oldenburg”</span>
+          <span class="hero-note-copy" data-i18n="hero_nwz_copy">A forthcoming guest contribution, published on 4 June.</span>
+          <button class="hero-note-action" type="button" data-news-placeholder data-i18n="hero_nwz_more">Learn more</button>
         </div>
       </div>
       <div class="hero-scroll"><div class="scroll-bar"></div>Scroll</div>
@@ -1631,7 +1631,12 @@ const translations = {
   en: {
     nav_ideas: 'Ideas', nav_work: 'Work', nav_about: 'About', nav_collab: 'People', nav_press: 'Press', nav_contact: 'Contact',
     hero_tag: 'Choreographer · Oldenburg, Germany',
-    hero_role: 'Cuban-born choreographer · contemporary dance · physical theatre · institutional stages',
+    hero_role: 'Cuban-born choreographer and dancer based in Germany<br>contemporary dance · physical theatre · institutional stages',
+    hero_nwz_date: 'Publication on 4 June 2026',
+    hero_nwz_label: 'Press',
+    hero_nwz_title: 'Guest author of the NWZ series “50 Visionen für Oldenburg”',
+    hero_nwz_copy: 'A forthcoming guest contribution, published on 4 June.',
+    hero_nwz_more: 'Learn more',
     hero_desc: 'Where the visceral meets the poetic — and bodies become language.',
     hero_statement: 'Cuban-born choreographer and dancer based in Germany, creating contemporary dance and physical theatre for institutional stages.',
     hero_cta_works: 'View selected works',
@@ -1729,7 +1734,12 @@ const translations = {
   es: {
     nav_ideas: 'Ideas', nav_work: 'Obra', nav_about: 'Bio', nav_collab: 'Colab.', nav_press: 'Prensa', nav_contact: 'Contacto',
     hero_tag: 'Coreógrafo · Oldenburg, Alemania',
-    hero_role: 'Nacido en Cuba · danza contemporánea · teatro físico · escenarios institucionales',
+    hero_role: 'Coreógrafo y bailarín nacido en Cuba y radicado en Alemania<br>danza contemporánea · teatro físico · escenarios institucionales',
+    hero_nwz_date: 'Publicación el 4 de junio de 2026',
+    hero_nwz_label: 'Prensa',
+    hero_nwz_title: 'Autor invitado de la serie NWZ “50 Visionen für Oldenburg”',
+    hero_nwz_copy: 'Una próxima contribución invitada, publicada el 4 de junio.',
+    hero_nwz_more: 'Más información',
     hero_desc: 'Donde lo visceral se encuentra con lo poético — y los cuerpos se convierten en lenguaje.',
     hero_statement: 'Coreógrafo y bailarín nacido en Cuba y radicado en Alemania, creando danza contemporánea y teatro físico para escenarios institucionales.',
     hero_cta_works: 'Ver obras seleccionadas',
@@ -1827,7 +1837,12 @@ const translations = {
   de: {
     nav_ideas: 'Ideen', nav_work: 'Werk', nav_about: 'Bio', nav_collab: 'Team', nav_press: 'Presse', nav_contact: 'Kontakt',
     hero_tag: 'Choreograf · Oldenburg, Deutschland',
-    hero_role: 'In Kuba geboren · zeitgenössischer Tanz · Physical Theatre · institutionelle Bühnen',
+    hero_role: 'In Kuba geborener Choreograf und Tänzer mit Sitz in Deutschland<br>zeitgenössischer Tanz · Physical Theatre · institutionelle Bühnen',
+    hero_nwz_date: 'Veröffentlichung am 4. Juni 2026',
+    hero_nwz_label: 'Presse',
+    hero_nwz_title: 'Gastautor der NWZ-Serie „50 Visionen für Oldenburg“',
+    hero_nwz_copy: 'Ein kommender Gastbeitrag, der am 4. Juni erscheint.',
+    hero_nwz_more: 'Mehr erfahren',
     hero_desc: 'Wo das Viszеrale auf das Poetische trifft — und Körper zur Sprache werden.',
     hero_statement: 'In Kuba geborener Choreograf und Tänzer mit Sitz in Deutschland, der zeitgenössischen Tanz und Physical Theatre für institutionelle Bühnen entwickelt.',
     hero_cta_works: 'Ausgewählte Werke',
@@ -1925,7 +1940,12 @@ const translations = {
   it: {
     nav_ideas: 'Idee', nav_work: 'Opere', nav_about: 'Bio', nav_collab: 'Collab.', nav_press: 'Stampa', nav_contact: 'Contatto',
     hero_tag: 'Coreografo · Oldenburg, Germania',
-    hero_role: 'Nato a Cuba · danza contemporanea · teatro fisico · scene istituzionali',
+    hero_role: 'Coreografo e danzatore nato a Cuba e con base in Germania<br>danza contemporanea · teatro fisico · scene istituzionali',
+    hero_nwz_date: 'Pubblicazione il 4 giugno 2026',
+    hero_nwz_label: 'Stampa',
+    hero_nwz_title: 'Autore ospite della serie NWZ “50 Visionen für Oldenburg”',
+    hero_nwz_copy: 'Un prossimo contributo da autore ospite, pubblicato il 4 giugno.',
+    hero_nwz_more: 'Scopri di più',
     hero_desc: 'Dove il viscerale incontra il poetico — e i corpi diventano linguaggio.',
     hero_statement: 'Coreografo e danzatore nato a Cuba e con base in Germania, crea danza contemporanea e teatro fisico per scene istituzionali.',
     hero_cta_works: 'Vedi opere selezionate',
@@ -2050,7 +2070,10 @@ function applyLang(lang) {
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if(t[key] !== undefined) el.textContent = t[key];
+    if(t[key] !== undefined) {
+      if(el.dataset.i18nHtml === 'true') el.innerHTML = t[key];
+      else el.textContent = t[key];
+    }
   });
   // Work CTAs
   document.querySelectorAll('.work-cta').forEach(el => {
