@@ -158,8 +158,8 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-statement,.hero-actions{display:none;}
 .hero-bot-main{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
 .hero-note{display:grid;grid-template-columns:auto 1fr auto;gap:.55rem .72rem;align-items:center;max-width:min(470px,44vw);padding:.68rem .8rem;border:1px solid rgba(240,237,232,.12);background:rgba(0,0,0,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);text-shadow:none;}
-.hero-note-brand{display:flex;align-items:center;width:2.65rem;color:rgba(240,237,232,.8);}
-.hero-note-logo{display:block;width:100%;height:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.78;}
+.hero-note-brand{display:flex;align-items:center;width:2.65rem;color:rgba(240,237,232,.78);}
+.hero-note-logo{display:block;font-family:'DM Sans',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:-.02em;line-height:1;color:rgba(240,237,232,.78);filter:grayscale(1);}
 .hero-note-date{font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,232,.32);white-space:nowrap;}
 .hero-note-k{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.28);grid-column:1;}
 .hero-note-title{font-family:'DM Serif Display',serif;font-size:.92rem;line-height:1.2;color:rgba(240,237,232,.76);grid-column:2 / 4;}
@@ -609,7 +609,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <div class="hero-bot-main">
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
         <div class="hero-note">
-          <span class="hero-note-brand"><img class="hero-note-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/NWZ-Logo.png" alt="NWZ"></span>
+          <span class="hero-note-brand" aria-label="NWZ"><span class="hero-note-logo">NWZ</span></span>
           <span class="hero-note-date" data-i18n="hero_nwz_date">Publication on 4 June 2026</span>
           <span class="hero-note-k" data-i18n="hero_nwz_label">Press</span>
           <span class="hero-note-title" data-i18n="hero_nwz_title">Guest author of the NWZ series “50 Visionen für Oldenburg”</span>
