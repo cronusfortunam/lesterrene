@@ -158,7 +158,8 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-statement,.hero-actions{display:none;}
 .hero-bot-main{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
 .hero-note{display:grid;grid-template-columns:auto 1fr auto;gap:.55rem .72rem;align-items:center;max-width:min(470px,44vw);padding:.68rem .8rem;border:1px solid rgba(240,237,232,.12);background:rgba(0,0,0,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);text-shadow:none;}
-.hero-note-brand{font-family:'DM Serif Display',serif;font-size:.92rem;color:rgba(240,237,232,.8);letter-spacing:.02em;}
+.hero-note-brand{display:flex;align-items:center;width:2.65rem;color:rgba(240,237,232,.8);}
+.hero-note-logo{display:block;width:100%;height:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.78;}
 .hero-note-date{font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,232,.32);white-space:nowrap;}
 .hero-note-k{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.28);grid-column:1;}
 .hero-note-title{font-family:'DM Serif Display',serif;font-size:.92rem;line-height:1.2;color:rgba(240,237,232,.76);grid-column:2 / 4;}
@@ -608,7 +609,7 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <div class="hero-bot-main">
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
         <div class="hero-note">
-          <span class="hero-note-brand">NWZ</span>
+          <span class="hero-note-brand"><img class="hero-note-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/NWZ-Logo.png" alt="NWZ"></span>
           <span class="hero-note-date" data-i18n="hero_nwz_date">Publication on 4 June 2026</span>
           <span class="hero-note-k" data-i18n="hero_nwz_label">Press</span>
           <span class="hero-note-title" data-i18n="hero_nwz_title">Guest author of the NWZ series “50 Visionen für Oldenburg”</span>
@@ -772,35 +773,35 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   <div class="rl">
     <div class="a-label" data-i18n="about_label">Biography</div>
     <div class="about-title-row">
-      <h2 class="a-h">Body as<br><em>language</em></h2>
+      <h2 class="a-h" data-i18n="about_title" data-i18n-html="true">Body as<br><em>language</em></h2>
       <img class="about-portrait" src="images/csm_lester_gonzales_24_25_c_Stephan_Walzl_8875938947.jpg" alt="Portrait of Lester René González Álvarez" loading="lazy" decoding="async">
     </div>
-    <p class="a-p">Lester René is a Cuban-born choreographer, dancer and cultural thinker based in Oldenburg, Germany. His work moves between contemporary dance, physical theatre and interdisciplinary performance, using the body as a precise and poetic language for conflict, transformation and collective imagination.</p>
-    <p class="a-p">His choreographic practice ranges from large ensemble works to intimate dance-theatre formats, creating stage worlds where movement, music, image and dramaturgy operate as one living system. Across works such as <strong>From the Lighthouse</strong>, <strong>Quantum Leap</strong>, <strong>Saturn Return</strong> and <strong>Casita</strong>, he explores fear and courage, identity and change, intimacy and social tension.</p>
-    <p class="a-p">Alongside his artistic work, Lester René develops ideas about culture as a public force. Invited as a guest author for the Nordwest-Zeitung series <strong>50 Visionen für Oldenburg</strong>, he proposes artistic ecosystems where dance, music, theatre, film, design, architecture and visual arts enrich one another and extend into the life of the city.</p>
-    <p class="a-p">Born in Cuba and trained in Camagüey, Madrid and Dresden — including studies at the <strong>Palucca University of Dance</strong> and a formative period with <strong>The Forsythe Company</strong> — he has been based in northern Germany since 2012.</p>
+    <p class="a-p" data-i18n="about_p1" data-i18n-html="true">Lester René is a Cuban-born choreographer, dancer and cultural thinker based in Oldenburg, Germany. His work moves between contemporary dance, physical theatre and interdisciplinary performance, using the body as a precise and poetic language for conflict, transformation and collective imagination.</p>
+    <p class="a-p" data-i18n="about_p2" data-i18n-html="true">His choreographic practice ranges from large ensemble works to intimate dance-theatre formats, creating stage worlds where movement, music, image and dramaturgy operate as one living system. Across works such as <strong>From the Lighthouse</strong>, <strong>Quantum Leap</strong>, <strong>Saturn Return</strong> and <strong>Casita</strong>, he explores fear and courage, identity and change, intimacy and social tension.</p>
+    <p class="a-p" data-i18n="about_p3" data-i18n-html="true">Alongside his artistic work, Lester René develops ideas about culture as a public force. Invited as a guest author for the Nordwest-Zeitung series <strong>50 Visionen für Oldenburg</strong>, he proposes artistic ecosystems where dance, music, theatre, film, design, architecture and visual arts enrich one another and extend into the life of the city.</p>
+    <p class="a-p" data-i18n="about_p4" data-i18n-html="true">Born in Cuba and trained in Camagüey, Madrid and Dresden — including studies at the <strong>Palucca University of Dance</strong> and a formative period with <strong>The Forsythe Company</strong> — he has been based in northern Germany since 2012.</p>
   </div>
   <div class="rv">
     <div class="d-block">
-      <div class="d-lbl">Education</div>
+      <div class="d-lbl" data-i18n="about_education">Education</div>
       <div class="d-row"><span>Palucca University of Dance, Dresden</span><span>BA · 2012</span></div>
-      <div class="d-row"><span>Autonomous University of Madrid</span><span>Art History</span></div>
-      <div class="d-row"><span>Royal Conservatoire of Dance, Madrid</span><span>Classical Ballet</span></div>
+      <div class="d-row"><span>Autonomous University of Madrid</span><span data-i18n="about_art_history">Art History</span></div>
+      <div class="d-row"><span>Royal Conservatoire of Dance, Madrid</span><span data-i18n="about_classical_ballet">Classical Ballet</span></div>
       <div class="d-row"><span>Vocational School of Arts, Camagüey</span><span>Contemporary Dance</span></div>
     </div>
     <div class="d-block">
-      <div class="d-lbl">Notable collaborations</div>
+      <div class="d-lbl" data-i18n="about_notable">Notable collaborations</div>
       <div class="d-row"><span>The Forsythe Company, Dresden</span><span>2011</span></div>
       <div class="d-row"><span>SemperOper Ballet, Dresden</span><span>2011–12</span></div>
       <div class="d-row"><span>Ballett Staatstheater Nürnberg</span><span>2009</span></div>
     </div>
     <div class="d-block">
-      <div class="d-lbl">Awards</div>
-      <div class="d-row"><span>Best Choreography</span><span>Torrelavega</span></div>
-      <div class="d-row"><span>Public Choice Award</span><span>No-Ballet Contest</span></div>
+      <div class="d-lbl" data-i18n="about_awards">Awards</div>
+      <div class="d-row"><span data-i18n="about_best_choreo">Best Choreography</span><span>Torrelavega</span></div>
+      <div class="d-row"><span data-i18n="about_public_choice">Public Choice Award</span><span>No-Ballet Contest</span></div>
     </div>
     <div class="d-block">
-      <div class="d-lbl">International festivals</div>
+      <div class="d-lbl" data-i18n="about_festivals">International festivals</div>
       <div class="d-row"><span>27th Korean Dance Festival</span><span>Cheongju</span></div>
       <div class="d-row"><span>Festival Internacional de Benicasim</span><span></span></div>
       <div class="d-row"><span>5th TanzGala, Graz</span><span></span></div>
