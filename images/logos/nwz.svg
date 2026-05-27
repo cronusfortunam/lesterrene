@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 92" role="img" aria-labelledby="title">
+  <title id="title">Nordwest-Zeitung</title>
+  <rect width="760" height="92" fill="none"/>
+  <g fill="#f0ede8">
+    <text x="0" y="66" font-family="Georgia, 'Times New Roman', serif" font-size="70" font-weight="700" letter-spacing="-2">Nordwest</text>
+    <text x="388" y="66" font-family="Georgia, 'Times New Roman', serif" font-size="70" font-weight="700" letter-spacing="-2">Zeitung</text>
+  </g>
+</svg>

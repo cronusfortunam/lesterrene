@@ -158,8 +158,9 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-statement,.hero-actions{display:none;}
 .hero-bot-main{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
 .hero-note{display:grid;grid-template-columns:auto 1fr auto;gap:.55rem .72rem;align-items:center;max-width:min(470px,44vw);padding:.68rem .8rem;border:1px solid rgba(240,237,232,.12);background:rgba(0,0,0,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);text-shadow:none;}
-.hero-note-brand{display:flex;align-items:center;width:2.65rem;color:rgba(240,237,232,.78);}
-.hero-note-logo{display:block;font-family:'DM Sans',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:-.02em;line-height:1;color:rgba(240,237,232,.78);filter:grayscale(1);}
+.hero-note-brand{display:flex;align-items:center;gap:.5rem;width:5.25rem;color:rgba(240,237,232,.78);}
+.hero-note-logo{display:block;width:3.45rem;height:auto;opacity:.76;filter:grayscale(1);}
+.hero-note-visionen{display:block;width:1.18rem;height:1.18rem;opacity:.82;filter:grayscale(1);}
 .hero-note-date{font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,232,.32);white-space:nowrap;}
 .hero-note-k{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.28);grid-column:1;}
 .hero-note-title{font-family:'DM Serif Display',serif;font-size:.92rem;line-height:1.2;color:rgba(240,237,232,.76);grid-column:2 / 4;}
@@ -187,19 +188,19 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .dir-action:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 
 /* IDEAS */
-#ideas{padding:6rem 3.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#030303;display:grid;grid-template-columns:minmax(220px,.32fr) 1fr;gap:clamp(3rem,7vw,7rem);align-items:start;}
-.ideas-k{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem;}
-.ideas-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,7rem);line-height:.88;letter-spacing:.03em;}
-.ideas-sub{font-size:.93rem;line-height:1.85;color:rgba(240,237,232,.45);max-width:360px;margin-top:1.5rem;}
-.idea-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.32fr);gap:2.4rem;padding-top:.2rem;border-top:1px solid rgba(255,255,255,.16);}
-.idea-type{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,237,232,.32);margin-bottom:1.15rem;}
-.idea-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.8vw,4.6rem);line-height:1.02;font-weight:400;color:rgba(240,237,232,.94);letter-spacing:0;max-width:820px;}
-.idea-sub{font-size:.93rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,237,232,.36);margin-top:1.2rem;}
+#ideas{padding:2.8rem 3.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#030303;display:grid;grid-template-columns:minmax(210px,.28fr) minmax(0,1fr);gap:clamp(1.8rem,4vw,4rem);align-items:start;}
+.ideas-k{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(240,237,232,.34);margin-bottom:.55rem;}
+.ideas-h{font-family:'DM Serif Display',serif;font-size:clamp(1.55rem,3vw,3rem);line-height:1.05;font-weight:400;letter-spacing:0;color:rgba(240,237,232,.86);}
+.ideas-sub{display:none;}
+.idea-feature{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;padding-top:.1rem;border-top:1px solid rgba(255,255,255,.12);}
+.idea-type{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(240,237,232,.34);margin-bottom:.75rem;}
+.idea-title{font-family:'DM Serif Display',serif;font-size:clamp(1.32rem,2.2vw,2.15rem);line-height:1.1;font-weight:400;color:rgba(240,237,232,.9);letter-spacing:0;max-width:720px;}
+.idea-sub{font-size:.88rem;letter-spacing:0;text-transform:none;color:rgba(240,237,232,.46);line-height:1.55;margin-top:.7rem;max-width:620px;}
 .idea-quote{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(1.12rem,2vw,1.55rem);line-height:1.45;color:rgba(240,237,232,.72);border-left:1px solid rgba(240,237,232,.18);padding-left:1.2rem;margin:2rem 0 0;max-width:620px;}
-.idea-side{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:100%;}
-.idea-date{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.3);line-height:1.7;}
-.idea-link{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.62);border:1px solid rgba(255,255,255,.16);padding:.78rem 1rem;width:fit-content;transition:background .25s,color .25s,border-color .25s;}
-.idea-link:hover{background:var(--white);color:#000;border-color:var(--white);}
+.idea-side{display:flex;align-items:flex-end;justify-content:space-between;gap:1.4rem;min-height:100%;flex-direction:column;}
+.idea-date{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.32);line-height:1.6;text-align:right;white-space:nowrap;}
+.idea-link{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.5);border-bottom:1px solid rgba(240,237,232,.2);padding:0 0 .12rem;background:transparent;transition:color .25s,border-color .25s;}
+.idea-link:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 
 /* WORKS */
 #work{padding:4.2rem 0 0;}
@@ -461,7 +462,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   .hero-bot-main{gap:.85rem;}
   .hero-note{grid-template-columns:1fr;max-width:100%;gap:.45rem;padding:.8rem .9rem;}
   .hero-note-brand,.hero-note-date,.hero-note-k,.hero-note-title,.hero-note-copy,.hero-note-action{grid-column:1;}
-  .hero-note-brand{font-size:.9rem;}
+  .hero-note-brand{width:4.9rem;}
+  .hero-note-logo{width:3.15rem;}
+  .hero-note-visionen{width:1.08rem;height:1.08rem;}
   .hero-note-title{font-size:.9rem;}
   .hero-note-copy{display:none;}
   .hero-note-date{white-space:normal;}
@@ -608,7 +611,10 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <div class="hero-bot-main">
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
         <div class="hero-note">
-          <span class="hero-note-brand" aria-label="NWZ"><span class="hero-note-logo">NWZ</span></span>
+          <span class="hero-note-brand" aria-label="NWZ · 50 Visionen für Oldenburg">
+            <img class="hero-note-logo" src="images/logos/nwz.svg" alt="NWZ">
+            <img class="hero-note-visionen" src="images/logos/50-visionen.svg" alt="50 Visionen für Oldenburg">
+          </span>
           <span class="hero-note-date" data-i18n="hero_nwz_date">Publication on 4 June 2026</span>
           <span class="hero-note-k" data-i18n="hero_nwz_label">Press</span>
           <span class="hero-note-title" data-i18n="hero_nwz_title">Guest author of the NWZ series “50 Visionen für Oldenburg”</span>
@@ -807,14 +813,14 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 <section id="ideas">
   <div class="rv">
     <div class="ideas-k" data-i18n="ideas_label">Ideas</div>
-    <h2 class="ideas-h" data-i18n="ideas_title">Ideas</h2>
+    <h2 class="ideas-h" data-i18n="ideas_title">Writing & public voice</h2>
     <p class="ideas-sub" data-i18n="ideas_sub">Thoughts on culture, cities and artistic ecosystems.</p>
   </div>
   <article class="idea-feature rv">
     <div>
-      <div class="idea-type" data-i18n="ideas_type">Publication · NWZ</div>
-      <h3 class="idea-title" data-i18n="ideas_feature_title">Forthcoming public contribution</h3>
-      <p class="idea-sub" data-i18n="ideas_feature_sub">A guest text for the NWZ series “50 Visionen für Oldenburg”, published on 4 June 2026.</p>
+      <div class="idea-type" data-i18n="ideas_type">NWZ · 50 Visionen für Oldenburg</div>
+      <h3 class="idea-title" data-i18n="ideas_feature_title">Guest author in a regional newspaper series on the future of the city.</h3>
+      <p class="idea-sub" data-i18n="ideas_feature_sub">A forthcoming contribution connecting artistic practice, cultural imagination and public life.</p>
     </div>
     <div class="idea-side">
       <div class="idea-date" data-i18n="ideas_date">Publication · 4 June 2026</div>
@@ -1645,11 +1651,11 @@ const translations = {
     directors_cta_works: 'See work',
     directors_cta_contact: 'Contact',
     ideas_label: 'Ideas',
-    ideas_title: 'Ideas',
+    ideas_title: 'Writing & public voice',
     ideas_sub: 'Thoughts on culture, cities and artistic ecosystems.',
-    ideas_type: 'Publication · NWZ',
-    ideas_feature_title: 'Forthcoming public contribution',
-    ideas_feature_sub: 'A guest text for the NWZ series “50 Visionen für Oldenburg”, published on 4 June 2026.',
+    ideas_type: 'NWZ · 50 Visionen für Oldenburg',
+    ideas_feature_title: 'Guest author in a regional newspaper series on the future of the city.',
+    ideas_feature_sub: 'A forthcoming contribution connecting artistic practice, cultural imagination and public life.',
     ideas_date: 'Publication · 4 June 2026',
     ideas_read: 'More soon',
 
@@ -1761,11 +1767,11 @@ const translations = {
     directors_cta_works: 'Ver obra',
     directors_cta_contact: 'Contacto',
     ideas_label: 'Ideas',
-    ideas_title: 'Ideas',
+    ideas_title: 'Escritura y voz pública',
     ideas_sub: 'Pensamientos sobre cultura, ciudades y ecosistemas artísticos.',
-    ideas_type: 'Publicación · NWZ',
-    ideas_feature_title: 'Próxima contribución pública',
-    ideas_feature_sub: 'Un texto invitado para la serie de NWZ “50 Visionen für Oldenburg”, publicado el 4 de junio de 2026.',
+    ideas_type: 'NWZ · 50 Visionen für Oldenburg',
+    ideas_feature_title: 'Autor invitado en una serie regional sobre el futuro de la ciudad.',
+    ideas_feature_sub: 'Una próxima contribución que conecta práctica artística, imaginación cultural y vida pública.',
     ideas_date: 'Publicación · 4 de junio de 2026',
     ideas_read: 'Próximamente',
 
@@ -1877,11 +1883,11 @@ const translations = {
     directors_cta_works: 'Werke ansehen',
     directors_cta_contact: 'Kontakt',
     ideas_label: 'Ideen',
-    ideas_title: 'Ideen',
+    ideas_title: 'Schreiben & öffentliche Stimme',
     ideas_sub: 'Gedanken über Kultur, Städte und künstlerische Ökosysteme.',
-    ideas_type: 'Publikation · NWZ',
-    ideas_feature_title: 'Kommender öffentlicher Beitrag',
-    ideas_feature_sub: 'Ein Gastbeitrag für die NWZ-Serie „50 Visionen für Oldenburg“, Veröffentlichung am 4. Juni 2026.',
+    ideas_type: 'NWZ · 50 Visionen für Oldenburg',
+    ideas_feature_title: 'Gastautor in einer regionalen Zeitungsserie über die Zukunft der Stadt.',
+    ideas_feature_sub: 'Ein kommender Beitrag über künstlerische Praxis, kulturelle Vorstellungskraft und öffentliches Leben.',
     ideas_date: 'Veröffentlichung · 4. Juni 2026',
     ideas_read: 'Demnächst',
 
@@ -1993,11 +1999,11 @@ const translations = {
     directors_cta_works: 'Vedi opere',
     directors_cta_contact: 'Contatto',
     ideas_label: 'Idee',
-    ideas_title: 'Idee',
+    ideas_title: 'Scrittura e voce pubblica',
     ideas_sub: 'Pensieri su cultura, città ed ecosistemi artistici.',
-    ideas_type: 'Pubblicazione · NWZ',
-    ideas_feature_title: 'Prossimo contributo pubblico',
-    ideas_feature_sub: 'Un testo da autore ospite per la serie NWZ “50 Visionen für Oldenburg”, pubblicato il 4 giugno 2026.',
+    ideas_type: 'NWZ · 50 Visionen für Oldenburg',
+    ideas_feature_title: 'Autore ospite in una serie regionale sul futuro della città.',
+    ideas_feature_sub: 'Un prossimo contributo che collega pratica artistica, immaginazione culturale e vita pubblica.',
     ideas_date: 'Pubblicazione · 4 giugno 2026',
     ideas_read: 'Prossimamente',
 
