@@ -177,15 +177,14 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* DIRECTORS */
-#directors{padding:2.6rem 3.5rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(260px,.36fr) minmax(0,1fr);gap:clamp(2.2rem,4vw,3.8rem);background:#030303;align-items:start;}
-.dir-k{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
-.dir-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.25rem,4.25vw,4.25rem);line-height:.95;letter-spacing:.04em;max-width:100%;overflow-wrap:anywhere;hyphens:auto;}
-.dir-copy{font-size:.9rem;line-height:1.6;color:rgba(240,237,232,.56);max-width:560px;margin-bottom:1rem;}
-.dir-list{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-bottom:1rem;}
-.dir-item{background:#070707;padding:.72rem .85rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.52);line-height:1.45;}
-.dir-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
-.dir-action{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.16);padding:.56rem .82rem;color:rgba(240,237,232,.64);transition:background .25s,color .25s,border-color .25s;}
-.dir-action:hover{background:var(--white);color:#000;border-color:var(--white);}
+#directors{padding:1.55rem 3.5rem;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(210px,.28fr) minmax(0,1fr);gap:clamp(1.6rem,3.4vw,3.2rem);background:#030303;align-items:center;}
+.dir-k{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(240,237,232,.34);margin-bottom:.38rem;}
+.dir-h{font-family:'DM Serif Display',serif;font-size:clamp(1.35rem,2.4vw,2.25rem);line-height:1.05;letter-spacing:0;font-weight:400;color:rgba(240,237,232,.84);max-width:100%;}
+.dir-copy{font-size:.93rem;line-height:1.55;color:rgba(240,237,232,.52);max-width:760px;margin-bottom:.75rem;}
+.dir-list{display:none;}
+.dir-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.dir-action{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.46);border-bottom:1px solid rgba(240,237,232,.18);padding-bottom:.12rem;transition:color .25s,border-color .25s;}
+.dir-action:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 
 /* IDEAS */
 #ideas{padding:6rem 3.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#030303;display:grid;grid-template-columns:minmax(220px,.32fr) 1fr;gap:clamp(3rem,7vw,7rem);align-items:start;}
@@ -638,12 +637,6 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   </div>
   <div class="rv">
     <p class="dir-copy" data-i18n="directors_copy">Available for commissioned works, repertory creation, movement direction and workshops. Lester René works across contemporary dance, physical theatre and visually driven stage work for institutional and independent contexts.</p>
-    <div class="dir-list">
-      <div class="dir-item" data-i18n="directors_item_1">Commissioned works</div>
-      <div class="dir-item" data-i18n="directors_item_2">Repertory creation</div>
-      <div class="dir-item" data-i18n="directors_item_3">Movement direction</div>
-      <div class="dir-item" data-i18n="directors_item_4">Workshops / teaching</div>
-    </div>
     <div class="dir-actions">
       <a class="dir-action" href="#work" data-i18n="directors_cta_works">See work</a>
       <a class="dir-action" href="#contact" data-i18n="directors_cta_contact">Start a conversation</a>
@@ -1642,15 +1635,15 @@ const translations = {
     hero_statement: 'Cuban-born choreographer and dancer based in Germany, creating contemporary dance and physical theatre for institutional stages.',
     hero_cta_works: 'View selected works',
     hero_cta_contact: 'Contact / Work with me',
-    directors_label: 'For artistic directors',
-    directors_title: 'Commissioned work',
-    directors_copy: 'Commissioned works, repertory creation, movement direction and workshops for institutional and independent contexts.',
+    directors_label: 'Availability',
+    directors_title: 'New works and collaborations',
+    directors_copy: 'Lester René creates contemporary dance works and movement material for companies, theatres and independent contexts.',
     directors_item_1: 'Commissioned works',
     directors_item_2: 'Repertory creation',
     directors_item_3: 'Movement direction',
     directors_item_4: 'Workshops / teaching',
     directors_cta_works: 'See work',
-    directors_cta_contact: 'Start a conversation',
+    directors_cta_contact: 'Contact',
     ideas_label: 'Ideas',
     ideas_title: 'Ideas',
     ideas_sub: 'Thoughts on culture, cities and artistic ecosystems.',
@@ -1758,15 +1751,15 @@ const translations = {
     hero_statement: 'Coreógrafo y bailarín nacido en Cuba y radicado en Alemania, creando danza contemporánea y teatro físico para escenarios institucionales.',
     hero_cta_works: 'Ver obras seleccionadas',
     hero_cta_contact: 'Contacto / Trabajar juntos',
-    directors_label: 'Para direcciones artísticas',
-    directors_title: 'Obra por encargo',
-    directors_copy: 'Encargos coreográficos, creación de repertorio, dirección de movimiento y workshops para contextos institucionales e independientes.',
+    directors_label: 'Disponibilidad',
+    directors_title: 'Nuevas obras y colaboraciones',
+    directors_copy: 'Lester René crea obras de danza contemporánea y material de movimiento para compañías, teatros y contextos independientes.',
     directors_item_1: 'Encargos coreográficos',
     directors_item_2: 'Creación de repertorio',
     directors_item_3: 'Dirección de movimiento',
     directors_item_4: 'Workshops / docencia',
     directors_cta_works: 'Ver obra',
-    directors_cta_contact: 'Iniciar conversación',
+    directors_cta_contact: 'Contacto',
     ideas_label: 'Ideas',
     ideas_title: 'Ideas',
     ideas_sub: 'Pensamientos sobre cultura, ciudades y ecosistemas artísticos.',
@@ -1874,15 +1867,15 @@ const translations = {
     hero_statement: 'In Kuba geborener Choreograf und Tänzer mit Sitz in Deutschland, der zeitgenössischen Tanz und Physical Theatre für institutionelle Bühnen entwickelt.',
     hero_cta_works: 'Ausgewählte Werke',
     hero_cta_contact: 'Kontakt / Zusammenarbeit',
-    directors_label: 'Für künstlerische Leitungen',
-    directors_title: 'Aufträge',
-    directors_copy: 'Choreografische Aufträge, Repertoirekreation, Movement Direction und Workshops für institutionelle und freie Kontexte.',
+    directors_label: 'Verfügbarkeit',
+    directors_title: 'Neue Arbeiten und Kollaborationen',
+    directors_copy: 'Lester René entwickelt zeitgenössische Tanzarbeiten und Bewegungsmaterial für Compagnien, Theater und freie Kontexte.',
     directors_item_1: 'Auftragsarbeiten',
     directors_item_2: 'Repertoirekreation',
     directors_item_3: 'Movement Direction',
     directors_item_4: 'Workshops / Unterricht',
     directors_cta_works: 'Werke ansehen',
-    directors_cta_contact: 'Gespräch beginnen',
+    directors_cta_contact: 'Kontakt',
     ideas_label: 'Ideen',
     ideas_title: 'Ideen',
     ideas_sub: 'Gedanken über Kultur, Städte und künstlerische Ökosysteme.',
@@ -1990,15 +1983,15 @@ const translations = {
     hero_statement: 'Coreografo e danzatore nato a Cuba e con base in Germania, crea danza contemporanea e teatro fisico per scene istituzionali.',
     hero_cta_works: 'Vedi opere selezionate',
     hero_cta_contact: 'Contatto / Collaborare',
-    directors_label: 'Per direttori artistici',
-    directors_title: 'Lavori su commissione',
-    directors_copy: 'Commissioni coreografiche, creazione di repertorio, direzione del movimento e workshop per contesti istituzionali e indipendenti.',
+    directors_label: 'Disponibilità',
+    directors_title: 'Nuovi lavori e collaborazioni',
+    directors_copy: 'Lester René crea lavori di danza contemporanea e materiale di movimento per compagnie, teatri e contesti indipendenti.',
     directors_item_1: 'Commissioni coreografiche',
     directors_item_2: 'Creazione di repertorio',
     directors_item_3: 'Direzione del movimento',
     directors_item_4: 'Workshop / didattica',
     directors_cta_works: 'Vedi opere',
-    directors_cta_contact: 'Inizia una conversazione',
+    directors_cta_contact: 'Contatto',
     ideas_label: 'Idee',
     ideas_title: 'Idee',
     ideas_sub: 'Pensieri su cultura, città ed ecosistemi artistici.',
