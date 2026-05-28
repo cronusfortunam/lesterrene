@@ -1,2 +1,19 @@
 .DS_Store
 **/.DS_Store
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Local development output
+node_modules/
+dist/
+build/
+.wrangler/
+.cloudflare/
+
+# Editor and OS noise
+.idea/
+.vscode/
+*.log
