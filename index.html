@@ -172,15 +172,18 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .hero-quote.fade{opacity:0;}
 .hero-statement,.hero-actions{display:none;}
 .hero-bot-main{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;}
-.hero-note{display:grid;grid-template-columns:1fr auto;gap:.55rem .85rem;align-items:center;max-width:min(520px,46vw);padding:.72rem .85rem;border:1px solid rgba(240,237,232,.12);background:rgba(0,0,0,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);text-shadow:none;}
+.hero-note{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:.55rem .85rem;align-items:center;max-width:min(520px,46vw);padding:.72rem .85rem;border:1px solid rgba(240,237,232,.14);background:rgba(0,0,0,.34);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:rgba(240,237,232,.58);text-shadow:none;}
+.hero-note::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.58) 58%,rgba(0,0,0,.22));z-index:0;pointer-events:none;}
+.hero-note-bg{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 62%;opacity:.58;filter:grayscale(.08);z-index:0;}
 .hero-note-brand{display:flex;align-items:center;gap:.7rem;width:auto;color:rgba(240,237,232,.78);grid-column:1 / 3;}
+.hero-note-brand,.hero-note-date,.hero-note-k,.hero-note-title,.hero-note-copy,.hero-note-action{position:relative;z-index:1;}
 .hero-note-logo{display:block;width:7.2rem;height:auto;opacity:.84;filter:grayscale(1);}
 .hero-note-visionen{display:block;width:2.15rem;height:2.15rem;opacity:.88;filter:grayscale(1);}
 .hero-note-date{font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,232,.32);white-space:nowrap;grid-column:1;}
 .hero-note-k{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,237,232,.28);grid-column:1;}
 .hero-note-title{font-family:'DM Serif Display',serif;font-size:.92rem;line-height:1.2;color:rgba(240,237,232,.76);grid-column:1 / 3;}
 .hero-note-copy{font-size:.68rem;line-height:1.45;color:rgba(240,237,232,.45);grid-column:1 / 2;}
-.hero-note-action{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.58);background:transparent;border:0;border-bottom:1px solid rgba(240,237,232,.24);padding:0 0 .12rem;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;grid-column:3;}
+.hero-note-action{font-family:'DM Sans',sans-serif;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(240,237,232,.58);background:transparent;border:0;border-bottom:1px solid rgba(240,237,232,.24);padding:0 0 .12rem;cursor:pointer;white-space:nowrap;transition:color .2s,border-color .2s;grid-column:2;}
 .hero-note-action:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
 .hero-scroll{display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
 .scroll-bar{width:1px;height:60px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent);}
@@ -213,6 +216,7 @@ html.hero-type-ready .hero-c{opacity:1;transform:none;}
 .idea-sub{font-size:.88rem;letter-spacing:0;text-transform:none;color:rgba(240,237,232,.46);line-height:1.55;margin-top:.7rem;max-width:620px;}
 .idea-quote{font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(1.12rem,2vw,1.55rem);line-height:1.45;color:rgba(240,237,232,.72);border-left:1px solid rgba(240,237,232,.18);padding-left:1.2rem;margin:2rem 0 0;max-width:620px;}
 .idea-side{display:flex;align-items:flex-end;justify-content:space-between;gap:1.4rem;min-height:100%;flex-direction:column;}
+.idea-mark{width:4.4rem;height:4.4rem;object-fit:contain;opacity:.72;filter:grayscale(1);}
 .idea-date{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.32);line-height:1.6;text-align:right;white-space:nowrap;}
 .idea-link{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,237,232,.5);border-bottom:1px solid rgba(240,237,232,.2);padding:0 0 .12rem;background:transparent;transition:color .25s,border-color .25s;}
 .idea-link:hover{color:var(--white);border-color:rgba(240,237,232,.72);}
@@ -626,14 +630,15 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
       <div class="hero-bot-main">
         <p class="hero-copy"><span class="hero-quote" id="hero-quote"></span></p>
         <div class="hero-note">
+          <img class="hero-note-bg" src="images/nwz-article-lester.jpeg" alt="">
           <span class="hero-note-brand" aria-label="NWZ · 50 Visionen für Oldenburg">
             <img class="hero-note-logo" src="images/logos/nwz.svg" alt="NWZ">
             <img class="hero-note-visionen" src="images/logos/50-visionen.svg" alt="50 Visionen für Oldenburg">
           </span>
           <span class="hero-note-date" data-i18n="hero_nwz_date">Publication on 4 June 2026</span>
           <span class="hero-note-k" data-i18n="hero_nwz_label">Press</span>
-          <span class="hero-note-title" data-i18n="hero_nwz_title">Guest author of the NWZ series “50 Visionen für Oldenburg”</span>
-          <span class="hero-note-copy" data-i18n="hero_nwz_copy">Published today as part of the NWZ series.</span>
+          <span class="hero-note-title" data-i18n="hero_nwz_title">Eine Universität für alle Künste</span>
+          <span class="hero-note-copy" data-i18n="hero_nwz_copy">A vision for Oldenburg through culture, education and shared artistic space.</span>
           <a class="hero-note-action" href="https://www.nwzonline.de/oldenburg/50-visionen-fuer-oldenburg-lester-ren_a_4,3,603040546.html" target="_blank" rel="noopener noreferrer" data-i18n="hero_nwz_more">Read article</a>
         </div>
       </div>
@@ -834,10 +839,12 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
   <article class="idea-feature rv">
     <div>
       <div class="idea-type" data-i18n="ideas_type">NWZ · 50 Visionen für Oldenburg</div>
-      <h3 class="idea-title" data-i18n="ideas_feature_title">Guest author in a regional newspaper series on the future of the city.</h3>
-      <p class="idea-sub" data-i18n="ideas_feature_sub">Published today: a contribution connecting artistic practice, cultural imagination and public life.</p>
+      <h3 class="idea-title" data-i18n="ideas_feature_title">Eine Universität für alle Künste</h3>
+      <p class="idea-sub" data-i18n="ideas_feature_sub">A public vision for Oldenburg: a place where dance, music, theatre, film, design, architecture and visual arts strengthen one another and move into the life of the city.</p>
+      <blockquote class="idea-quote" data-i18n="ideas_quote">“Kultur ist kein Luxus, sondern ein lebenswichtiges Organ der Gesellschaft.”</blockquote>
     </div>
     <div class="idea-side">
+      <img class="idea-mark" src="images/logos/50-visionen.svg" alt="50 Visionen für Oldenburg">
       <div class="idea-date" data-i18n="ideas_date">Publication · 4 June 2026</div>
       <a class="idea-link" href="https://www.nwzonline.de/oldenburg/50-visionen-fuer-oldenburg-lester-ren_a_4,3,603040546.html" target="_blank" rel="noopener noreferrer" data-i18n="ideas_read">Read article</a>
     </div>
@@ -1650,8 +1657,8 @@ const translations = {
     hero_role: 'Cuban-born artist based in Germany<br>creating contemporary dance works that combine theatrical storytelling, strong physicality and striking visual imagery',
     hero_nwz_date: '4 June 2026',
     hero_nwz_label: 'Press',
-    hero_nwz_title: 'Guest author · “50 Visionen für Oldenburg”',
-    hero_nwz_copy: 'Published today as part of the NWZ series.',
+    hero_nwz_title: 'Eine Universität für alle Künste',
+    hero_nwz_copy: 'A vision for Oldenburg through culture, education and shared artistic space.',
     hero_nwz_more: 'Read article',
     hero_desc: 'Where the visceral meets the poetic — and bodies become language.',
     hero_statement: 'Cuban-born choreographer and dancer based in Germany, creating contemporary dance and physical theatre for institutional stages.',
@@ -1670,8 +1677,9 @@ const translations = {
     ideas_title: 'Writing & public voice',
     ideas_sub: 'Thoughts on culture, cities and artistic ecosystems.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
-    ideas_feature_title: 'Guest author in a regional newspaper series on the future of the city.',
-    ideas_feature_sub: 'Published today: a contribution connecting artistic practice, cultural imagination and public life.',
+    ideas_feature_title: 'Eine Universität für alle Künste',
+    ideas_feature_sub: 'A public vision for Oldenburg: a place where dance, music, theatre, film, design, architecture and visual arts strengthen one another and move into the life of the city.',
+    ideas_quote: '“Kultur ist kein Luxus, sondern ein lebenswichtiges Organ der Gesellschaft.”',
     ideas_date: 'Publication · 4 June 2026',
     ideas_read: 'Read article',
 
@@ -1766,8 +1774,8 @@ const translations = {
     hero_role: 'Artista nacido en Cuba y radicado en Alemania<br>crea obras de danza contemporánea que combinan narración teatral, fuerte fisicalidad e imágenes escénicas impactantes',
     hero_nwz_date: '4 de junio de 2026',
     hero_nwz_label: 'Prensa',
-    hero_nwz_title: 'Autor invitado · “50 Visionen für Oldenburg”',
-    hero_nwz_copy: 'Publicado hoy dentro de la serie de NWZ.',
+    hero_nwz_title: 'Eine Universität für alle Künste',
+    hero_nwz_copy: 'Una visión para Oldenburg desde la cultura, la educación y los espacios artísticos compartidos.',
     hero_nwz_more: 'Leer artículo',
     hero_desc: 'Donde lo visceral se encuentra con lo poético — y los cuerpos se convierten en lenguaje.',
     hero_statement: 'Coreógrafo y bailarín nacido en Cuba y radicado en Alemania, creando danza contemporánea y teatro físico para escenarios institucionales.',
@@ -1786,8 +1794,9 @@ const translations = {
     ideas_title: 'Escritura y voz pública',
     ideas_sub: 'Pensamientos sobre cultura, ciudades y ecosistemas artísticos.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
-    ideas_feature_title: 'Autor invitado en una serie regional sobre el futuro de la ciudad.',
-    ideas_feature_sub: 'Publicado hoy: una contribución que conecta práctica artística, imaginación cultural y vida pública.',
+    ideas_feature_title: 'Eine Universität für alle Künste',
+    ideas_feature_sub: 'Una visión pública para Oldenburg: un lugar donde danza, música, teatro, cine, diseño, arquitectura y artes visuales se fortalecen mutuamente y entran en la vida de la ciudad.',
+    ideas_quote: '“Kultur ist kein Luxus, sondern ein lebenswichtiges Organ der Gesellschaft.”',
     ideas_date: 'Publicación · 4 de junio de 2026',
     ideas_read: 'Leer artículo',
 
@@ -1882,8 +1891,8 @@ const translations = {
     hero_role: 'In Kuba geborener Künstler mit Sitz in Deutschland<br>entwickelt zeitgenössische Tanzarbeiten, die theatrales Erzählen, starke Körperlichkeit und eindrucksvolle Bilder verbinden',
     hero_nwz_date: '4. Juni 2026',
     hero_nwz_label: 'Presse',
-    hero_nwz_title: 'Gastautor · „50 Visionen für Oldenburg“',
-    hero_nwz_copy: 'Heute in der NWZ-Serie veröffentlicht.',
+    hero_nwz_title: 'Eine Universität für alle Künste',
+    hero_nwz_copy: 'Eine Vision für Oldenburg durch Kultur, Bildung und gemeinsame künstlerische Räume.',
     hero_nwz_more: 'Artikel lesen',
     hero_desc: 'Wo das Viszеrale auf das Poetische trifft — und Körper zur Sprache werden.',
     hero_statement: 'In Kuba geborener Choreograf und Tänzer mit Sitz in Deutschland, der zeitgenössischen Tanz und Physical Theatre für institutionelle Bühnen entwickelt.',
@@ -1902,8 +1911,9 @@ const translations = {
     ideas_title: 'Schreiben & öffentliche Stimme',
     ideas_sub: 'Gedanken über Kultur, Städte und künstlerische Ökosysteme.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
-    ideas_feature_title: 'Gastautor in einer regionalen Zeitungsserie über die Zukunft der Stadt.',
-    ideas_feature_sub: 'Heute veröffentlicht: ein Beitrag über künstlerische Praxis, kulturelle Vorstellungskraft und öffentliches Leben.',
+    ideas_feature_title: 'Eine Universität für alle Künste',
+    ideas_feature_sub: 'Eine öffentliche Vision für Oldenburg: ein Ort, an dem Tanz, Musik, Theater, Film, Design, Architektur und bildende Kunst einander stärken und in das Leben der Stadt hineinwirken.',
+    ideas_quote: '„Kultur ist kein Luxus, sondern ein lebenswichtiges Organ der Gesellschaft.“',
     ideas_date: 'Veröffentlichung · 4. Juni 2026',
     ideas_read: 'Artikel lesen',
 
@@ -1998,8 +2008,8 @@ const translations = {
     hero_role: 'Artista nato a Cuba e con base in Germania<br>crea lavori di danza contemporanea che combinano narrazione teatrale, forte fisicità e immagini sceniche incisive',
     hero_nwz_date: '4 giugno 2026',
     hero_nwz_label: 'Stampa',
-    hero_nwz_title: 'Autore ospite · “50 Visionen für Oldenburg”',
-    hero_nwz_copy: 'Pubblicato oggi nella serie NWZ.',
+    hero_nwz_title: 'Eine Universität für alle Künste',
+    hero_nwz_copy: 'Una visione per Oldenburg attraverso cultura, educazione e spazi artistici condivisi.',
     hero_nwz_more: 'Leggi articolo',
     hero_desc: 'Dove il viscerale incontra il poetico — e i corpi diventano linguaggio.',
     hero_statement: 'Coreografo e danzatore nato a Cuba e con base in Germania, crea danza contemporanea e teatro fisico per scene istituzionali.',
@@ -2018,8 +2028,9 @@ const translations = {
     ideas_title: 'Scrittura e voce pubblica',
     ideas_sub: 'Pensieri su cultura, città ed ecosistemi artistici.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
-    ideas_feature_title: 'Autore ospite in una serie regionale sul futuro della città.',
-    ideas_feature_sub: 'Pubblicato oggi: un contributo che collega pratica artistica, immaginazione culturale e vita pubblica.',
+    ideas_feature_title: 'Eine Universität für alle Künste',
+    ideas_feature_sub: 'Una visione pubblica per Oldenburg: un luogo in cui danza, musica, teatro, cinema, design, architettura e arti visive si rafforzano a vicenda ed entrano nella vita della città.',
+    ideas_quote: '“Kultur ist kein Luxus, sondern ein lebenswichtiges Organ der Gesellschaft.”',
     ideas_date: 'Pubblicazione · 4 giugno 2026',
     ideas_read: 'Leggi articolo',
 
