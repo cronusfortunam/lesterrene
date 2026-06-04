@@ -45,6 +45,7 @@
     {
       "@type": "CreativeWork",
       "name": "Gastautor der NWZ-Serie 50 Visionen für Oldenburg",
+      "url": "https://www.nwzonline.de/oldenburg/50-visionen-fuer-oldenburg-lester-ren_a_4,3,603040546.html",
       "publisher": {
         "@type": "Organization",
         "name": "Nordwest-Zeitung (NWZ)"
@@ -632,8 +633,8 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
           <span class="hero-note-date" data-i18n="hero_nwz_date">Publication on 4 June 2026</span>
           <span class="hero-note-k" data-i18n="hero_nwz_label">Press</span>
           <span class="hero-note-title" data-i18n="hero_nwz_title">Guest author of the NWZ series “50 Visionen für Oldenburg”</span>
-          <span class="hero-note-copy" data-i18n="hero_nwz_copy">A forthcoming guest contribution, published on 4 June.</span>
-          <button class="hero-note-action" type="button" data-news-placeholder data-i18n="hero_nwz_more">Learn more</button>
+          <span class="hero-note-copy" data-i18n="hero_nwz_copy">Published today as part of the NWZ series.</span>
+          <a class="hero-note-action" href="https://www.nwzonline.de/oldenburg/50-visionen-fuer-oldenburg-lester-ren_a_4,3,603040546.html" target="_blank" rel="noopener noreferrer" data-i18n="hero_nwz_more">Read article</a>
         </div>
       </div>
       <div class="hero-scroll"><div class="scroll-bar"></div>Scroll</div>
@@ -834,11 +835,11 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
     <div>
       <div class="idea-type" data-i18n="ideas_type">NWZ · 50 Visionen für Oldenburg</div>
       <h3 class="idea-title" data-i18n="ideas_feature_title">Guest author in a regional newspaper series on the future of the city.</h3>
-      <p class="idea-sub" data-i18n="ideas_feature_sub">A forthcoming contribution connecting artistic practice, cultural imagination and public life.</p>
+      <p class="idea-sub" data-i18n="ideas_feature_sub">Published today: a contribution connecting artistic practice, cultural imagination and public life.</p>
     </div>
     <div class="idea-side">
       <div class="idea-date" data-i18n="ideas_date">Publication · 4 June 2026</div>
-      <button class="idea-link" type="button" data-news-placeholder data-i18n="ideas_read">More soon</button>
+      <a class="idea-link" href="https://www.nwzonline.de/oldenburg/50-visionen-fuer-oldenburg-lester-ren_a_4,3,603040546.html" target="_blank" rel="noopener noreferrer" data-i18n="ideas_read">Read article</a>
     </div>
   </article>
 </section>
@@ -1026,8 +1027,9 @@ footer{padding:1.4rem 3.5rem;border-top:1px solid var(--line);display:grid;grid-
 <div class="news-modal" id="news-modal" aria-hidden="true">
   <div class="news-modal-card" role="dialog" aria-modal="true" aria-labelledby="news-modal-title">
     <div class="news-modal-k" data-i18n="news_modal_k">NWZ · 50 Visionen für Oldenburg</div>
-    <h3 id="news-modal-title" data-i18n="news_modal_title">Artikel erscheint am 4. Juni</h3>
-    <p data-i18n="news_modal_text">Der direkte Link, ein Auszug und optional ein PDF werden hier nach Veröffentlichung ergänzt.</p>
+    <h3 id="news-modal-title" data-i18n="news_modal_title">Article published today</h3>
+    <p data-i18n="news_modal_text">The direct link is now available through NWZ.</p>
+    <a class="news-modal-close" href="https://www.nwzonline.de/oldenburg/50-visionen-fuer-oldenburg-lester-ren_a_4,3,603040546.html" target="_blank" rel="noopener noreferrer" data-i18n="news_read">Read article</a>
     <button class="news-modal-close" id="news-modal-close" type="button" data-i18n="close">Close</button>
   </div>
 </div>
@@ -1649,8 +1651,8 @@ const translations = {
     hero_nwz_date: '4 June 2026',
     hero_nwz_label: 'Press',
     hero_nwz_title: 'Guest author · “50 Visionen für Oldenburg”',
-    hero_nwz_copy: 'Forthcoming guest contribution.',
-    hero_nwz_more: 'Learn more',
+    hero_nwz_copy: 'Published today as part of the NWZ series.',
+    hero_nwz_more: 'Read article',
     hero_desc: 'Where the visceral meets the poetic — and bodies become language.',
     hero_statement: 'Cuban-born choreographer and dancer based in Germany, creating contemporary dance and physical theatre for institutional stages.',
     hero_cta_works: 'View selected works',
@@ -1669,9 +1671,9 @@ const translations = {
     ideas_sub: 'Thoughts on culture, cities and artistic ecosystems.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
     ideas_feature_title: 'Guest author in a regional newspaper series on the future of the city.',
-    ideas_feature_sub: 'A forthcoming contribution connecting artistic practice, cultural imagination and public life.',
+    ideas_feature_sub: 'Published today: a contribution connecting artistic practice, cultural imagination and public life.',
     ideas_date: 'Publication · 4 June 2026',
-    ideas_read: 'More soon',
+    ideas_read: 'Read article',
 
     works_title: 'Selected Works',
     works_intro: 'Authorial choreographic works created for dance companies, independent stages and full-evening dance-theatre contexts.',
@@ -1721,14 +1723,14 @@ const translations = {
     press_title: 'News / Press', press_sub: 'Editorial voice · selected reviews',
     news_label: 'Press',
     news_nwz_date: 'Publication on 4 June 2026',
-    news_nwz_sub: 'A forthcoming guest article positioning Lester René as a cultural thinker and public voice in Oldenburg.',
+    news_nwz_sub: 'A guest article positioning Lester René as a cultural thinker and public voice in Oldenburg, published today.',
     news_more: 'Learn more',
     news_read: 'Read article',
     news_pdf: 'PDF',
-    news_status: 'Coming soon',
+    news_status: 'Published today',
     news_modal_k: 'NWZ · 50 Visionen für Oldenburg',
-    news_modal_title: 'Article appears on 4 June',
-    news_modal_text: 'The direct link, an excerpt and an optional PDF will be added here after publication.',
+    news_modal_title: 'Article published today',
+    news_modal_text: 'The direct link is now available through NWZ.',
     contact_sub: 'Available for choreographic commissions, collaborations and residencies. Germany and internationally.',
     watch_trailer: 'Watch trailer',
     close: 'Close', watch_yt: 'Watch on YouTube',
@@ -1765,8 +1767,8 @@ const translations = {
     hero_nwz_date: '4 de junio de 2026',
     hero_nwz_label: 'Prensa',
     hero_nwz_title: 'Autor invitado · “50 Visionen für Oldenburg”',
-    hero_nwz_copy: 'Próxima contribución invitada.',
-    hero_nwz_more: 'Más información',
+    hero_nwz_copy: 'Publicado hoy dentro de la serie de NWZ.',
+    hero_nwz_more: 'Leer artículo',
     hero_desc: 'Donde lo visceral se encuentra con lo poético — y los cuerpos se convierten en lenguaje.',
     hero_statement: 'Coreógrafo y bailarín nacido en Cuba y radicado en Alemania, creando danza contemporánea y teatro físico para escenarios institucionales.',
     hero_cta_works: 'Ver obras seleccionadas',
@@ -1785,9 +1787,9 @@ const translations = {
     ideas_sub: 'Pensamientos sobre cultura, ciudades y ecosistemas artísticos.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
     ideas_feature_title: 'Autor invitado en una serie regional sobre el futuro de la ciudad.',
-    ideas_feature_sub: 'Una próxima contribución que conecta práctica artística, imaginación cultural y vida pública.',
+    ideas_feature_sub: 'Publicado hoy: una contribución que conecta práctica artística, imaginación cultural y vida pública.',
     ideas_date: 'Publicación · 4 de junio de 2026',
-    ideas_read: 'Próximamente',
+    ideas_read: 'Leer artículo',
 
     works_title: 'Obras seleccionadas',
     works_intro: 'Obras coreográficas de autor creadas para compañías de danza, escenarios independientes y contextos de danza-teatro de larga duración.',
@@ -1837,14 +1839,14 @@ const translations = {
     press_title: 'Noticias / Prensa', press_sub: 'Voz editorial · críticas seleccionadas',
     news_label: 'Prensa',
     news_nwz_date: 'Publicación el 4 de junio de 2026',
-    news_nwz_sub: 'Un próximo artículo invitado que sitúa a Lester René como pensador cultural y voz pública en Oldenburg.',
+    news_nwz_sub: 'Un artículo invitado que sitúa a Lester René como pensador cultural y voz pública en Oldenburg, publicado hoy.',
     news_more: 'Más información',
     news_read: 'Leer artículo',
     news_pdf: 'PDF',
-    news_status: 'Próximamente',
+    news_status: 'Publicado hoy',
     news_modal_k: 'NWZ · 50 Visionen für Oldenburg',
-    news_modal_title: 'El artículo aparece el 4 de junio',
-    news_modal_text: 'El enlace directo, un extracto y un PDF opcional se añadirán aquí después de la publicación.',
+    news_modal_title: 'Artículo publicado hoy',
+    news_modal_text: 'El enlace directo ya está disponible en NWZ.',
     contact_sub: 'Disponible para encargos coreográficos, colaboraciones y residencias. Alemania e internacional.',
     watch_trailer: 'Ver tráiler',
     close: 'Cerrar', watch_yt: 'Ver en YouTube',
@@ -1881,8 +1883,8 @@ const translations = {
     hero_nwz_date: '4. Juni 2026',
     hero_nwz_label: 'Presse',
     hero_nwz_title: 'Gastautor · „50 Visionen für Oldenburg“',
-    hero_nwz_copy: 'Kommender Gastbeitrag.',
-    hero_nwz_more: 'Mehr erfahren',
+    hero_nwz_copy: 'Heute in der NWZ-Serie veröffentlicht.',
+    hero_nwz_more: 'Artikel lesen',
     hero_desc: 'Wo das Viszеrale auf das Poetische trifft — und Körper zur Sprache werden.',
     hero_statement: 'In Kuba geborener Choreograf und Tänzer mit Sitz in Deutschland, der zeitgenössischen Tanz und Physical Theatre für institutionelle Bühnen entwickelt.',
     hero_cta_works: 'Ausgewählte Werke',
@@ -1901,9 +1903,9 @@ const translations = {
     ideas_sub: 'Gedanken über Kultur, Städte und künstlerische Ökosysteme.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
     ideas_feature_title: 'Gastautor in einer regionalen Zeitungsserie über die Zukunft der Stadt.',
-    ideas_feature_sub: 'Ein kommender Beitrag über künstlerische Praxis, kulturelle Vorstellungskraft und öffentliches Leben.',
+    ideas_feature_sub: 'Heute veröffentlicht: ein Beitrag über künstlerische Praxis, kulturelle Vorstellungskraft und öffentliches Leben.',
     ideas_date: 'Veröffentlichung · 4. Juni 2026',
-    ideas_read: 'Demnächst',
+    ideas_read: 'Artikel lesen',
 
     works_title: 'Ausgewählte Werke',
     works_intro: 'Eigene choreografische Arbeiten für Tanzcompagnien, freie Bühnen und abendfüllende Tanztheater-Kontexte.',
@@ -1953,14 +1955,14 @@ const translations = {
     press_title: 'News / Presse', press_sub: 'Editoriale Stimme · ausgewählte Kritiken',
     news_label: 'Presse',
     news_nwz_date: 'Veröffentlichung am 4. Juni 2026',
-    news_nwz_sub: 'Ein kommender Gastbeitrag, der Lester René als kulturellen Denker und öffentliche Stimme in Oldenburg positioniert.',
+    news_nwz_sub: 'Ein Gastbeitrag, der Lester René als kulturellen Denker und öffentliche Stimme in Oldenburg positioniert, heute veröffentlicht.',
     news_more: 'Mehr erfahren',
     news_read: 'Artikel lesen',
     news_pdf: 'PDF',
-    news_status: 'Erscheint demnächst',
+    news_status: 'Heute veröffentlicht',
     news_modal_k: 'NWZ · 50 Visionen für Oldenburg',
-    news_modal_title: 'Artikel erscheint am 4. Juni',
-    news_modal_text: 'Der direkte Link, ein Auszug und optional ein PDF werden hier nach Veröffentlichung ergänzt.',
+    news_modal_title: 'Artikel heute veröffentlicht',
+    news_modal_text: 'Der direkte Link ist jetzt bei NWZ verfügbar.',
     contact_sub: 'Verfügbar für choreografische Aufträge, Kollaborationen und Residenzen. Deutschland und international.',
     watch_trailer: 'Trailer ansehen',
     close: 'Schließen', watch_yt: 'Auf YouTube ansehen',
@@ -1997,8 +1999,8 @@ const translations = {
     hero_nwz_date: '4 giugno 2026',
     hero_nwz_label: 'Stampa',
     hero_nwz_title: 'Autore ospite · “50 Visionen für Oldenburg”',
-    hero_nwz_copy: 'Prossimo contributo ospite.',
-    hero_nwz_more: 'Scopri di più',
+    hero_nwz_copy: 'Pubblicato oggi nella serie NWZ.',
+    hero_nwz_more: 'Leggi articolo',
     hero_desc: 'Dove il viscerale incontra il poetico — e i corpi diventano linguaggio.',
     hero_statement: 'Coreografo e danzatore nato a Cuba e con base in Germania, crea danza contemporanea e teatro fisico per scene istituzionali.',
     hero_cta_works: 'Vedi opere selezionate',
@@ -2017,9 +2019,9 @@ const translations = {
     ideas_sub: 'Pensieri su cultura, città ed ecosistemi artistici.',
     ideas_type: 'NWZ · 50 Visionen für Oldenburg',
     ideas_feature_title: 'Autore ospite in una serie regionale sul futuro della città.',
-    ideas_feature_sub: 'Un prossimo contributo che collega pratica artistica, immaginazione culturale e vita pubblica.',
+    ideas_feature_sub: 'Pubblicato oggi: un contributo che collega pratica artistica, immaginazione culturale e vita pubblica.',
     ideas_date: 'Pubblicazione · 4 giugno 2026',
-    ideas_read: 'Prossimamente',
+    ideas_read: 'Leggi articolo',
 
     works_title: 'Opere selezionate',
     works_intro: 'Opere coreografiche autoriali create per compagnie di danza, scene indipendenti e contesti di danza-teatro serali.',
@@ -2069,14 +2071,14 @@ const translations = {
     press_title: 'News / Stampa', press_sub: 'Voce editoriale · recensioni selezionate',
     news_label: 'Stampa',
     news_nwz_date: 'Pubblicazione il 4 giugno 2026',
-    news_nwz_sub: 'Un prossimo articolo da autore ospite che posiziona Lester René come pensatore culturale e voce pubblica a Oldenburg.',
+    news_nwz_sub: 'Un articolo da autore ospite che posiziona Lester René come pensatore culturale e voce pubblica a Oldenburg, pubblicato oggi.',
     news_more: 'Scopri di più',
     news_read: 'Leggi articolo',
     news_pdf: 'PDF',
-    news_status: 'In arrivo',
+    news_status: 'Pubblicato oggi',
     news_modal_k: 'NWZ · 50 Visionen für Oldenburg',
-    news_modal_title: 'L’articolo esce il 4 giugno',
-    news_modal_text: 'Il link diretto, un estratto e un eventuale PDF saranno aggiunti qui dopo la pubblicazione.',
+    news_modal_title: 'Articolo pubblicato oggi',
+    news_modal_text: 'Il link diretto è ora disponibile su NWZ.',
     contact_sub: 'Disponibile per commissioni coreografiche, collaborazioni e residenze. Germania e internazionale.',
     watch_trailer: 'Guarda il trailer',
     close: 'Chiudi', watch_yt: 'Guarda su YouTube',
